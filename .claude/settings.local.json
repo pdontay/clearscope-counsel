@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git config *)",
       "Bash(echo \"name: $\\(git config user.name\\)\")",
-      "Bash(echo \"email: $\\(git config user.email\\)\")"
+      "Bash(echo \"email: $\\(git config user.email\\)\")",
+      "Bash(git commit *)",
+      "Bash(brew install *)",
+      "Bash(gh auth *)"
     ]
   }
 }
