@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-c",
+        "import sys; sys.path = [p for p in sys.path if p]; from functools import partial; from http.server import HTTPServer, SimpleHTTPRequestHandler; H = partial(SimpleHTTPRequestHandler, directory='/Users/dontayphillips/Downloads/clearscope-counsel-site copy'); HTTPServer(('127.0.0.1', 8000), H).serve_forever()"
+      ],
+      "port": 8000
+    }
+  ]
+}

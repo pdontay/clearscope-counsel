@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Design review / working source files (large, not part of the site)
+Binder1.pdf
+Website Design Review*.html
