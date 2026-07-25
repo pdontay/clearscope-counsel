@@ -6,10 +6,9 @@
 
   /* ---- Theme toggle (persists; respects OS default) ---- */
   var toggle = document.querySelector('[data-theme-toggle]');
-  var icon = document.querySelector('[data-theme-icon]');
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
+    /* Icon swap is CSS-driven via [data-theme] (see .theme-icon in styles.css). */
     if (toggle) {
       toggle.setAttribute('aria-pressed', String(theme === 'dark'));
       toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
@@ -33,6 +32,7 @@
     function setMenu(open) {
       if (open) header.setAttribute('data-menu-open', ''); else header.removeAttribute('data-menu-open');
       menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       menuBtn.textContent = open ? '✕' : '☰';
     }
     menuBtn.addEventListener('click', function () {
@@ -63,6 +63,52 @@
     items.forEach(function (el) { io.observe(el); });
   } else {
     items.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---- Contact form routing from creator discovery ---- */
+  var consultationForm = document.querySelector('[data-consultation-form]');
+  if (consultationForm && window.URLSearchParams) {
+    var contactParams = new URLSearchParams(window.location.search);
+    var requestedService = contactParams.get('service');
+    var requestedCreator = contactParams.get('creator');
+    var requestedMessage = contactParams.get('message');
+    var serviceField = consultationForm.querySelector('[name="service"]');
+    var messageField = consultationForm.querySelector('[name="message"]');
+    var subjectField = consultationForm.querySelector('[name="_subject"]');
+    var routeStatus = consultationForm.querySelector('[data-form-status]');
+
+    if (requestedService && serviceField) {
+      var matchingOption = Array.prototype.some.call(serviceField.options, function(option) {
+        return option.value === requestedService;
+      });
+      if (matchingOption) serviceField.value = requestedService;
+    }
+
+    if (requestedMessage && messageField && !messageField.value) {
+      messageField.value = requestedMessage;
+    }
+
+    if (requestedCreator) {
+      var creatorField = document.createElement('input');
+      creatorField.type = 'hidden';
+      creatorField.name = 'creator_handle';
+      creatorField.value = requestedCreator;
+      consultationForm.appendChild(creatorField);
+    }
+
+    if (requestedService === 'Free creator contract checklist') {
+      if (subjectField) subjectField.value = 'Creator contract checklist request';
+      if (routeStatus) {
+        routeStatus.textContent = 'Your free creator contract checklist request is selected' +
+          (requestedCreator ? ' for ' + requestedCreator : '') + '. Complete the form to continue.';
+      }
+    } else if (requestedService === 'Influencer agreement drafting') {
+      if (subjectField) subjectField.value = 'Influencer agreement drafting inquiry';
+      if (routeStatus) {
+        routeStatus.textContent = 'Influencer agreement drafting is selected' +
+          (requestedCreator ? ' for ' + requestedCreator : '') + '.';
+      }
+    }
   }
 
 

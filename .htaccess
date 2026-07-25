@@ -1,0 +1,81 @@
+# ClearScope Counsel — static hosting config (Apache / Hostinger)
+# Addresses PageSpeed "efficient cache lifetimes" + Best Practices "Trust and Safety".
+
+# ----------------------------------------------------------------------
+# 1) Cache lifetimes for static assets (speeds up repeat visits)
+# ----------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                 "access plus 1 year"
+  ExpiresByType application/javascript   "access plus 1 year"
+  ExpiresByType text/javascript          "access plus 1 year"
+  ExpiresByType image/svg+xml            "access plus 1 year"
+  ExpiresByType image/png                "access plus 1 year"
+  ExpiresByType image/jpeg               "access plus 1 year"
+  ExpiresByType image/webp               "access plus 1 year"
+  ExpiresByType image/x-icon             "access plus 1 year"
+  ExpiresByType font/woff2               "access plus 1 year"
+  # HTML stays short so content updates show up promptly.
+  ExpiresByType text/html                "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Long-lived, immutable cache for fingerprint-free static assets.
+  <FilesMatch "\.(css|js|svg|png|jpe?g|webp|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  # Always revalidate HTML so edits go live immediately.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # --------------------------------------------------------------------
+  # 2) Trust and Safety headers
+  # --------------------------------------------------------------------
+  # Force HTTPS for a year (only enable once HTTPS is confirmed working).
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # Stop MIME-type sniffing.
+  Header always set X-Content-Type-Options "nosniff"
+  # Clickjacking protection — others may not frame this site.
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Limit referrer leakage.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Trim powerful-feature access.
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Content-Security-Policy — left commented intentionally.
+  # A real policy must allow: Cal.com (app.cal.com), Formspree (formspree.io),
+  # Google Fonts (fonts.googleapis.com / fonts.gstatic.com), and inline scripts
+  # ('unsafe-inline' or nonces). Enable only after testing the booking embed,
+  # the contact form, fonts, and the theme toggle on a staging copy.
+  # Header always set Content-Security-Policy "default-src 'self'; ..."
+</IfModule>
+
+# Chrome Private Prefetch Proxy — serve /.well-known/traffic-advice with the
+# MIME type Googlebot's prefetch-proxy expects, avoiding spurious 404s.
+# https://developer.chrome.com/blog/private-prefetch-proxy/
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^\.well-known/traffic-advice$ - [T=application/trafficadvice+json,END]
+</IfModule>
+
+# Legacy root guide URLs -> canonical /resources/ locations
+Redirect 301 /broker-dealer-vs-investment-adviser.html /resources/broker-dealer-vs-investment-adviser.html
+Redirect 301 /finra-compliance-readiness-checklist.html /resources/finra-compliance-readiness-checklist.html
+Redirect 301 /missouri-business-entity-selection.html /resources/missouri-business-entity-selection.html
+Redirect 301 /startup-legal-launch-checklist.html /resources/startup-legal-launch-checklist.html
+
+# Retired practice areas (2026 repositioning: startup counsel + FINRA compliance consulting)
+Redirect 301 /estate-planning.html /
+Redirect 301 /eeoc-charge-support.html /
+Redirect 301 /small-business-counsel.html /startup-counsel.html
+
+# Retired guides -> resource library
+Redirect 301 /missouri-estate-planning-checklist.html /resources.html
+Redirect 301 /will-vs-trust-missouri.html /resources.html
+Redirect 301 /eeoc-charge-process-what-to-expect.html /resources.html
+Redirect 301 /small-business-legal-health-audit.html /resources.html
+Redirect 301 /resources/missouri-estate-planning-checklist.html /resources.html
+Redirect 301 /resources/will-vs-trust-missouri.html /resources.html
+Redirect 301 /resources/eeoc-charge-process-what-to-expect.html /resources.html
+Redirect 301 /resources/small-business-legal-health-audit.html /resources.html

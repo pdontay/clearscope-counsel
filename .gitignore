@@ -17,3 +17,29 @@
 # Design review / working source files (large, not part of the site)
 Binder1.pdf
 Website Design Review*.html
+
+# Build artifact / raw source photos (regenerate zip on demand, not versioned)
+/clearscope-site-upload.zip
+/Photos/
+
+# Stale root-level duplicates superseded by assets/ and resources/ reorg
+# (site references assets/... and resources/... only; .htaccess 301s the old paths)
+/Legal Excellence Award.png
+/Professional Accomplishment Award.png
+/Recognized Award.png
+/Signature.png
+/app-icon-1024.png
+/app-icon.svg
+/apple-touch-icon.png
+/favicon.svg
+/flat-fee-balance.png
+/founder-office.png
+/founder-portrait.png
+/icon-180.png
+/icon.svg
+/logo.svg
+/og-card.svg
+/broker-dealer-vs-investment-adviser.html
+/finra-compliance-readiness-checklist.html
+/missouri-business-entity-selection.html
+/startup-legal-launch-checklist.html
