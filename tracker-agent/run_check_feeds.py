@@ -5,6 +5,7 @@ import json
 import sys
 import traceback
 
+from config import MAX_DRAFTS_PER_RUN
 import db
 import feeds
 import mailer
@@ -19,6 +20,22 @@ def main():
     for item in feeds.get_new_items():
         try:
             facts = research.extract_facts(item)
+
+            if not facts.get("is_rule_change", True):
+                print(f"Skipping (not a rule change): {item.get('title')}")
+                continue
+
+            if processed >= MAX_DRAFTS_PER_RUN and facts.get("importance") != "high":
+                print(
+                    f"Hit MAX_DRAFTS_PER_RUN ({MAX_DRAFTS_PER_RUN}) and this item isn't "
+                    "flagged high-importance — stopping here. Remaining new items are "
+                    "untouched (not marked seen) and will be picked up on the next run."
+                )
+                break
+
+            if processed >= MAX_DRAFTS_PER_RUN:
+                print(f"Cap reached, but drafting anyway — flagged high-importance for the BD landscape: {item.get('title')}")
+
             entry = voice.draft_entry(facts)
 
             draft_id = db.create_draft(

@@ -5,7 +5,16 @@ import smtplib
 from email.header import decode_header
 from email.mime.text import MIMEText
 
-from config import GMAIL_ADDRESS, GMAIL_APP_PASSWORD, NOTIFY_EMAIL, SUBJECT_PREFIX
+from config import (
+    EMAIL_ADDRESS,
+    EMAIL_PASSWORD,
+    IMAP_HOST,
+    IMAP_PORT,
+    NOTIFY_EMAIL,
+    SMTP_HOST,
+    SMTP_PORT,
+    SUBJECT_PREFIX,
+)
 
 DRAFT_ID_RE = re.compile(re.escape(SUBJECT_PREFIX) + r"\s*#(\d+)")
 APPROVE_RE = re.compile(r"^\s*(yes|approve|approved|ok|go ahead|publish)\b", re.IGNORECASE)
@@ -54,11 +63,11 @@ def send_draft(entry: dict, facts: dict, draft_id: int) -> str:
 
     msg = MIMEText(body, "plain")
     msg["Subject"] = subject
-    msg["From"] = GMAIL_ADDRESS
+    msg["From"] = EMAIL_ADDRESS
     msg["To"] = NOTIFY_EMAIL
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-        smtp.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
+    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as smtp:
+        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
     return subject
@@ -68,10 +77,10 @@ def send_note(subject_suffix: str, body: str):
     """Generic notification, e.g. 'published live' or 'discarded' confirmations."""
     msg = MIMEText(body, "plain")
     msg["Subject"] = f"{SUBJECT_PREFIX} {subject_suffix}"
-    msg["From"] = GMAIL_ADDRESS
+    msg["From"] = EMAIL_ADDRESS
     msg["To"] = NOTIFY_EMAIL
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-        smtp.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
+    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as smtp:
+        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
 
@@ -109,8 +118,8 @@ def check_replies():
     dicts: {draft_id, intent: 'approve'|'reject'|'revise', text}. Marks each
     processed message as read."""
     results = []
-    with imaplib.IMAP4_SSL("imap.gmail.com") as imap:
-        imap.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
+    with imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT) as imap:
+        imap.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         imap.select("INBOX")
         status, data = imap.search(None, "UNSEEN")
         if status != "OK":

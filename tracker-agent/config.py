@@ -6,20 +6,36 @@ from dotenv import load_dotenv
 load_dotenv(Path(__file__).parent / ".env")
 
 OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"]
-OPENROUTER_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-3.5-sonnet")
+# Primary model tries first; on any failure (rate limit, outage, deprecation),
+# llm.chat() automatically falls back to the secondary model.
+PRIMARY_MODEL = os.environ.get("PRIMARY_MODEL", "google/gemini-3.6-flash")
+SECONDARY_MODEL = os.environ.get("SECONDARY_MODEL", "openai/gpt-4o-mini")
 
-GMAIL_ADDRESS = os.environ["GMAIL_ADDRESS"]
-GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
-NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", GMAIL_ADDRESS)
+EMAIL_ADDRESS = os.environ["EMAIL_ADDRESS"]
+EMAIL_PASSWORD = os.environ["EMAIL_PASSWORD"]
+NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", EMAIL_ADDRESS)
+
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.hostinger.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "465"))
+IMAP_HOST = os.environ.get("IMAP_HOST", "imap.hostinger.com")
+IMAP_PORT = int(os.environ.get("IMAP_PORT", "993"))
 
 GIT_REPO_PATH = os.environ["GIT_REPO_PATH"]
 TRACKER_JSON_RELPATH = "assets/tracker-entries.json"
 
 STATE_DB_PATH = os.environ.get("STATE_DB_PATH", str(Path(__file__).parent / "state.db"))
 
-VOICE_PROMPT_PATH = Path(__file__).parent.parent / "VOICE-AGENT-PROMPT.md"
+# Lives in the site repo (a content/brand asset, not agent infra), so derive
+# it from GIT_REPO_PATH rather than tracker-agent/'s own location on disk —
+# the two aren't necessarily nested the same way on every machine.
+VOICE_PROMPT_PATH = Path(GIT_REPO_PATH) / "VOICE-AGENT-PROMPT.md"
 
 SUBJECT_PREFIX = "[ClearScope Tracker]"
+
+# Hard cap on drafts emailed per run_check_feeds.py run. Once hit, the run
+# stops immediately — remaining new items are left unmarked (not "seen") so
+# they're picked up on the next run instead of being silently dropped.
+MAX_DRAFTS_PER_RUN = int(os.environ.get("MAX_DRAFTS_PER_RUN", "5"))
 
 # Each feed maps to a tracker "track". `crossover` items are shown on both
 # the FINRA and Missouri-founder embeds (see assets/tracker.js).

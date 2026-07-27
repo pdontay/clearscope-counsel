@@ -69,12 +69,19 @@ nano .env   # fill in OPENROUTER_API_KEY, GMAIL_ADDRESS, GMAIL_APP_PASSWORD,
 python3 -c "import db, feeds; db.init_db(); print(len(list(feeds.get_new_items())), 'new items found')"
 ```
 
-### Gmail app password
+### Email account
 
-`GMAIL_APP_PASSWORD` requires 2-factor auth enabled on the account, then
-generate one at https://myaccount.google.com/apppasswords. Consider a
-dedicated Gmail account for this rather than a personal inbox, since the
-agent both sends from it and reads unread mail in it.
+Uses `marketing@clearscopecounsel.com` (Hostinger webmail) for both sending
+drafts (SMTP) and polling for your replies (IMAP) — `imap.hostinger.com:993`
+/ `smtp.hostinger.com:465`, both already set as the defaults in `config.py`.
+Unlike Gmail, Hostinger webmail has no separate "app password" concept —
+`EMAIL_PASSWORD` is the actual mailbox password, so it has full read/send/
+delete access to that inbox. Rotate it (hPanel → Emails → Mailboxes) once
+the pipeline's confirmed working if that's a concern, and update `.env`
+on the VPS to match.
+
+Drafts get sent to `NOTIFY_EMAIL` (your Gmail). When you reply, it lands
+back in `marketing@clearscopecounsel.com`'s inbox — that's what gets polled.
 
 ### Git push access
 
@@ -88,10 +95,12 @@ only — the agent never needs broader GitHub access.
 ## Cron
 
 ```cron
-# Check feeds every 6 hours
-0 */6 * * * /home/deploy/tracker-agent/.venv/bin/python3 /home/deploy/tracker-agent/run_check_feeds.py >> /home/deploy/tracker-agent/feeds.log 2>&1
+# Check feeds once a week (Monday 8am) — regulatory notices don't drop often
+# enough to justify anything more frequent, and it keeps LLM spend minimal.
+0 8 * * 1 /home/deploy/tracker-agent/.venv/bin/python3 /home/deploy/tracker-agent/run_check_feeds.py >> /home/deploy/tracker-agent/feeds.log 2>&1
 
-# Check for your email replies every 10 minutes
+# Check for your email replies every 10 minutes — this one stays frequent so
+# an approval doesn't sit for hours before publishing.
 */10 * * * * /home/deploy/tracker-agent/.venv/bin/python3 /home/deploy/tracker-agent/run_check_replies.py >> /home/deploy/tracker-agent/replies.log 2>&1
 ```
 
