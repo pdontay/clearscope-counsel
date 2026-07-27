@@ -230,5 +230,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/26-10",
     "cta_text": "Need help evaluating your margin compliance options or updating your supervisory procedures?",
     "cta_link": "contact.html?ref=tracker-finra-rule-4210-intraday-margin-standards"
+  },
+  {
+    "id": "finra-board-election-petition-period-2026",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Petition Period Open",
+    "date_posted": "2026-04-06",
+    "headline": "FINRA opens the petition window for its 2026 Board of Governors election after leaving the Small Firm seat unnominated.",
+    "the_change": "FINRA announced its annual Board of Governors election scheduled for July 13, 2026, covering one Large Firm seat and one Small Firm seat. While the Nominating Committee selected Scott Curtis for the Large Firm seat, it chose not to nominate any candidate for the Small Firm seat. Individuals seeking to run as petition candidates have until May 21, 2026, to submit their endorsements to FINRA's Corporate Secretary.",
+    "why_it_matters": "Small broker-dealers will have no representation from this election cycle unless a petition candidate steps forward and successfully reaches the ballot. Securing a ballot spot requires gathering verified firm endorsements\u201486 signatures for small firm candidates and 5 for large firm candidates\u2014by the May deadline. Because member firms can endorse only one candidate for their firm-size category, late-arriving petitions risk losing out on eligible support.",
+    "action_items": [
+      "Evaluate whether your firm's leadership wants to mount a petition candidacy for the open Small Firm seat.",
+      "Verify that your firm endorses no more than one candidate corresponding to your firm-size category.",
+      "Submit required endorsement signatures to FINRA's Corporate Secretary before the May 21, 2026 cutoff."
+    ],
+    "source_name": "FINRA Regulatory Notices: Election Notice - 4/6/2026",
+    "source_url": "https://www.finra.org/rules-guidance/notices/election-notice-040626",
+    "cta_text": "Need guidance on FINRA governance rules or candidate endorsement procedures?",
+    "cta_link": "contact.html?ref=tracker-finra-board-election-petition-period-2026"
   }
 ]
