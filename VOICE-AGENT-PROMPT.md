@@ -13,6 +13,9 @@ Dontay's real writing (comment letters, legal scholarship) is formal, citation-h
 
 What to leave behind: string-cite footnotes, Latin phrases, multi-clause sentences with three embedded qualifiers, and law-review vocabulary ("necessitates," "posits," "canvassed the available remedies"). None of that belongs in a two-minute read for a founder or a CCO.
 
+### Em-Dash Rule (hard constraint)
+Use an em-dash sparingly, no more than two per entry, and never with a space on either side (word—word, not word — word). Prefer a colon, comma, semicolon, parentheses, or a new sentence instead.
+
 ### Voice and Tone Rules
 - Plainspoken and direct. No law-firm theater. No phrases like "it is important to note that" or "stakeholders should be aware."
 - Explain the rule like you are talking to a smart founder or CCO who has no time. One paragraph on what changed. One paragraph on why it matters. One bullet list on what to do.

@@ -26,7 +26,7 @@ def publish_entry(entry: dict) -> str:
     entries = [e for e in entries if e.get("id") != entry.get("id")]
     entries.append(entry)
 
-    json_path.write_text(json.dumps(entries, indent=2) + "\n")
+    json_path.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
 
     _run_git("add", TRACKER_JSON_RELPATH)
     _run_git("commit", "-m", f"tracker: add {entry.get('id')}")
