@@ -268,5 +268,24 @@
     "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-announces-results-board-governors-elections",
     "cta_text": "Need guidance on how FINRA regulatory priorities affect your broker-dealer?",
     "cta_link": "contact.html?ref=tracker-finra-board-elections-july-2026"
+  },
+  {
+    "id": "finra-appoints-kieffer-investor-education",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective July 14, 2026",
+    "date_posted": "2026-07-14",
+    "headline": "FINRA names Christine Kieffer to permanently lead its Investor Education Foundation and outreach strategy.",
+    "the_change": "FINRA appointed Christine Kieffer as Senior Vice President of its Office of Investor Education and President of the FINRA Investor Education Foundation on July 14, 2026. Kieffer had served in the role on an interim basis since April 2026. She now permanently directs FINRA's national investor education strategy, fraud prevention research, and outreach initiatives.",
+    "why_it_matters": "Leadership continuity at the Foundation signals an ongoing regulatory emphasis on retail fraud prevention and investor literacy. While this executive appointment creates no immediate filing duties or rule changes for broker-dealers, Foundation research frequently previews future FINRA exam priorities regarding retail communications and senior investor protections.",
+    "action_items": [
+      "Review current retail client communications and fraud prevention disclosures against FINRA's updated investor education resources.",
+      "Monitor forthcoming Foundation research and toolkits for materials your firm can adapt for client-facing communications.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "FINRA Press Release: FINRA Taps Christine Kieffer to Lead Investor Education Efforts",
+    "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-taps-christine-kieffer-lead-investor-education-efforts",
+    "cta_text": "Questions about retail compliance or FINRA supervisory expectations?",
+    "cta_link": "contact.html?ref=tracker-finra-appoints-kieffer-investor-education"
   }
 ]
