@@ -153,5 +153,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260629",
     "cta_text": "Need assistance reviewing your firm's Rule 15c3-3 computations or FOCUS reporting procedures?",
     "cta_link": "contact.html?ref=tracker-finra-daily-reserve-computations-500m"
+  },
+  {
+    "id": "finra-rule-605-electronic-authorization-form",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective June 17, 2026",
+    "date_posted": "2026-06-17",
+    "headline": "FINRA replaces paper Rule 605 authorization forms with a mandatory online filing system.",
+    "the_change": "Starting June 17, 2026, FINRA members must submit Rule 605 Designated Participant Authorization Forms online through the FINRA Gateway instead of mailing or emailing paper PDFs. FINRA launched this portal to streamline how firms request reporter identification codes and post execution quality report links ahead of expanded SEC Rule 605 requirements that take effect August 1, 2026.",
+    "why_it_matters": "Legacy paper PDF filings are completely void, requiring every broker-dealer using FINRA as its Designated Participant to refile electronically. Firms operating multiple market roles\u2014such as an alternative trading system or OTC market maker alongside standard broker-dealer operations\u2014must file separate authorization forms and track distinct reporter IDs for each function.",
+    "action_items": [
+      "Log into the FINRA Gateway and submit a new electronic authorization form, regardless of past PDF submissions.",
+      "Inventory your firm's operating functions to determine if you need separate submissions and reporter codes for different business lines like an ATS or SDP.",
+      "Verify that your unique reporter identification codes and report hyperlinks are operational ahead of the SEC's August 1, 2026 enforcement date."
+    ],
+    "source_name": "FINRA Information Notice (June 17, 2026)",
+    "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260617",
+    "cta_text": "Need assistance setting up your Rule 605 reporting structure or FINRA Gateway filings?",
+    "cta_link": "contact.html?ref=tracker-finra-rule-605-electronic-authorization-form"
   }
 ]
