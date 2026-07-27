@@ -211,5 +211,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/26-11",
     "cta_text": "Need help updating your Rule 4210 margin compliance procedures?",
     "cta_link": "contact.html?ref=tracker-finra-rule-4210-intraday-margin-interpretations"
+  },
+  {
+    "id": "finra-rule-4210-intraday-margin-standards",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective June 4, 2026",
+    "date_posted": "2026-06-04",
+    "headline": "FINRA is eliminating pattern day trading rules and the $25,000 equity minimum in favor of direct intraday margin monitoring.",
+    "the_change": "FINRA amended Rule 4210 to scrap pattern day trader counting rules and the $25,000 minimum equity requirement entirely, effective June 4, 2026. Under new paragraph (d)(2), firms maintaining customer margin accounts must calculate intraday margin deficits whenever a transaction reduces intraday margin levels. Member firms can satisfy this standard using either a single daily intraday calculation or automated real-time monitoring and trade blocking.",
+    "why_it_matters": "Carrying customer margin accounts will now require direct updates to your firm's trade-processing logic and clearing workflows. Small broker-dealers without in-house tech teams must decide early whether to rely on vendor automated blocks or manual daily calculations. To ease the transition, FINRA is allowing an 18-month phase-in window through October 20, 2027.",
+    "action_items": [
+      "Determine whether your firm will adopt real-time trade blocking or a single daily intraday deficit calculation.",
+      "Coordinate with your clearing firm or margin software vendor to update risk engine calculations before the June 2026 effective date.",
+      "Document your compliance roadmap if your firm needs to utilize the 18-month implementation phase-in window."
+    ],
+    "source_name": "FINRA Regulatory Notices: Regulatory Notice 26-10",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-10",
+    "cta_text": "Need help evaluating your margin compliance options or updating your supervisory procedures?",
+    "cta_link": "contact.html?ref=tracker-finra-rule-4210-intraday-margin-standards"
   }
 ]
