@@ -172,5 +172,25 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260617",
     "cta_text": "Need assistance setting up your Rule 605 reporting structure or FINRA Gateway filings?",
     "cta_link": "contact.html?ref=tracker-finra-rule-605-electronic-authorization-form"
+  },
+  {
+    "id": "finra-rn-26-12-pse-compensation",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective November 17, 2025",
+    "date_posted": "2025-11-17",
+    "headline": "FINRA allows broker-dealers to pay commissions directly to rep-owned personal services entities without separate broker-dealer registration.",
+    "the_change": "Broker-dealers can now pay transaction-based compensation directly to a registered representative's personal services entity (PSE) without requiring that entity to register as a separate broker-dealer. FINRA issued Regulatory Notice 26-12 to align its rules with an SEC staff no-action letter effective November 17, 2025. The guidance applies to all PSE compensation arrangements established on or after that date.",
+    "why_it_matters": "Registered representatives gain tax and operational flexibility without forcing their personal corporate entities into broker-dealer registration. However, the operational burden shifts to your firm's compliance infrastructure. To pay a PSE, you must maintain explicit contract structures, strict recordkeeping under Exchange Act Rules 17a-3 and 17a-4, and appropriate branch supervisory designations.",
+    "action_items": [
+      "Execute a compliant written servicing agreement with each rep-owned PSE before issuing payout checks.",
+      "Update your Written Supervisory Procedures (WSPs) to cover PSE onboarding, verification, and ongoing oversight.",
+      "Evaluate each PSE physical location to determine if it must be registered as a branch office or Office of Supervisory Jurisdiction (OSJ).",
+      "Archive all PSE-related contracts, payout statements, and corporate documents in accordance with SEC Rules 17a-3 and 17a-4."
+    ],
+    "source_name": "FINRA Regulatory Notice 26-12",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-12",
+    "cta_text": "Need help drafting a compliant PSE servicing agreement or updating your WSPs?",
+    "cta_link": "contact.html?ref=tracker-finra-rn-26-12-pse-compensation"
   }
 ]
