@@ -249,5 +249,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/election-notice-040626",
     "cta_text": "Need guidance on FINRA governance rules or candidate endorsement procedures?",
     "cta_link": "contact.html?ref=tracker-finra-board-election-petition-period-2026"
+  },
+  {
+    "id": "finra-board-elections-july-2026",
+    "track": "finra",
+    "status": "in-effect",
+    "status_label": "In Effect",
+    "date_posted": "2026-07-17",
+    "headline": "FINRA member firms elect Jay Gettenberg as Small Firm Governor",
+    "the_change": "FINRA announced the results of its Board of Governors election following its annual member meeting on July 17, 2026. Member firms elected Jay Gettenberg to serve as Small Firm Governor, succeeding Wendy Lanton, and reelected Scott Curtis as Large Firm Governor and Board Chair. Both governors will serve three-year terms.",
+    "why_it_matters": "Small firm leadership on FINRA's board shapes how the regulator approaches rulemaking, exam priorities, and operational burdens on smaller broker-dealers. Gettenberg brings a background in financial operations and regulatory reporting directly into board-level discussions. While board elections do not alter current rules, they dictate which operational perspectives guide FINRA's executive direction.",
+    "action_items": [
+      "Monitor FINRA board updates for prospective shifts in small-firm regulatory and examination priorities.",
+      "Ensure your firm's financial operations and regulatory reporting documentation remain up to standard.",
+      "Confirm with counsel how potential regulatory and board focus changes apply to your specific operations."
+    ],
+    "source_name": "FINRA News Release: FINRA Announces Results of Board of Governors Elections",
+    "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-announces-results-board-governors-elections",
+    "cta_text": "Need guidance on how FINRA regulatory priorities affect your broker-dealer?",
+    "cta_link": "contact.html?ref=tracker-finra-board-elections-july-2026"
   }
 ]
