@@ -95,5 +95,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/26-15",
     "cta_text": "Need help reviewing your firm's best execution procedures?",
     "cta_link": "contact.html?ref=tracker-finra-rn-26-15-rule-5310-best-execution"
+  },
+  {
+    "id": "finra-rule-2210-modernization-proposal",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comments Due September 11, 2026",
+    "date_posted": "2026-07-15",
+    "headline": "FINRA Proposes Replacing Mandatory Pre-Approval for Retail Communications",
+    "the_change": "FINRA issued Regulatory Notice 26-14 proposing to eliminate mandatory principal pre-use approval for retail communications under Rule 2210. The proposal replaces rigid pre-approval with risk-based supervisory standards designed for modern channels like social media and generative AI. Public comments on the proposed framework are due by September 11, 2026.",
+    "why_it_matters": "Routine compliance bottlenecks on low-risk marketing content will disappear for broker-dealers. Replacing automatic pre-approval shifts compliance burden from administrative pre-clearing to substantive supervisory testing and post-use auditing.",
+    "action_items": [
+      "Map your existing communication pre-approval workflows to identify routine content eligible for risk-based post-use review.",
+      "Assess whether your current compliance systems can effectively monitor and archive AI-generated marketing content.",
+      "Submit comments on Regulatory Notice 26-14 before the September 11, 2026 deadline."
+    ],
+    "source_name": "FINRA Regulatory Notice 26-14",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-14",
+    "cta_text": "Need help adapting your communication supervision rules for AI and social media?",
+    "cta_link": "contact.html?ref=tracker-finra-rule-2210-modernization-proposal"
   }
 ]
