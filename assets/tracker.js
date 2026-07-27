@@ -71,38 +71,53 @@
     });
   }
 
+  function withData(grid, embed, limit, filters, data) {
+    var sorted = sortByDateDesc(data);
+
+    if (embed) {
+      var filtered = sorted.filter(function (e) { return e.track === embed || e.track === 'crossover'; });
+      if (limit) filtered = filtered.slice(0, limit);
+      render(grid, filtered);
+      return;
+    }
+
+    render(grid, sorted);
+
+    if (filters) {
+      filters.addEventListener('click', function (evt) {
+        var btn = evt.target.closest('[data-filter]');
+        if (!btn) return;
+        var track = btn.getAttribute('data-filter');
+        Array.prototype.forEach.call(filters.querySelectorAll('[data-filter]'), function (b) {
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        var next = track === 'all' ? sorted : sorted.filter(function (e) { return e.track === track; });
+        render(grid, next);
+      });
+    }
+  }
+
   function init(grid) {
     var embed = grid.getAttribute('data-tracker-embed');
     var limit = parseInt(grid.getAttribute('data-tracker-limit'), 10) || 0;
     var filters = document.querySelector('[data-tracker-filters]');
 
+    // Data embedded in the page (written by tracker-agent/publish.py) renders
+    // synchronously — no fetch round-trip — so the grid never paints its
+    // "Loading…" placeholder before swapping to full height. That swap was a
+    // large, input-independent layout shift (CLS). Pages without the embed
+    // fall back to fetching the JSON directly.
+    var embeddedData = document.getElementById('tracker-data');
+    if (embeddedData) {
+      try {
+        withData(grid, embed, limit, filters, JSON.parse(embeddedData.textContent));
+        return;
+      } catch (e) { /* fall through to fetch */ }
+    }
+
     fetch('assets/tracker-entries.json')
       .then(function (res) { return res.json(); })
-      .then(function (data) {
-        var sorted = sortByDateDesc(data);
-
-        if (embed) {
-          var filtered = sorted.filter(function (e) { return e.track === embed || e.track === 'crossover'; });
-          if (limit) filtered = filtered.slice(0, limit);
-          render(grid, filtered);
-          return;
-        }
-
-        render(grid, sorted);
-
-        if (filters) {
-          filters.addEventListener('click', function (evt) {
-            var btn = evt.target.closest('[data-filter]');
-            if (!btn) return;
-            var track = btn.getAttribute('data-filter');
-            Array.prototype.forEach.call(filters.querySelectorAll('[data-filter]'), function (b) {
-              b.setAttribute('aria-pressed', String(b === btn));
-            });
-            var next = track === 'all' ? sorted : sorted.filter(function (e) { return e.track === track; });
-            render(grid, next);
-          });
-        }
-      })
+      .then(function (data) { withData(grid, embed, limit, filters, data); })
       .catch(function () {
         grid.innerHTML = '<p class="tracker-loading">Couldn&rsquo;t load tracker entries right now. Refresh, or check back shortly.</p>';
       });

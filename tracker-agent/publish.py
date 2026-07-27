@@ -3,6 +3,7 @@ import subprocess
 from pathlib import Path
 
 from config import GIT_REPO_PATH, TRACKER_JSON_RELPATH
+from embed_html import sync_embedded_tracker_data
 
 
 def _run_git(*args):
@@ -28,7 +29,9 @@ def publish_entry(entry: dict) -> str:
 
     json_path.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
 
-    _run_git("add", TRACKER_JSON_RELPATH)
+    changed_pages = sync_embedded_tracker_data(GIT_REPO_PATH, TRACKER_JSON_RELPATH)
+
+    _run_git("add", TRACKER_JSON_RELPATH, *changed_pages)
     _run_git("commit", "-m", f"tracker: add {entry.get('id')}")
     _run_git("push", "origin", "main")
 
