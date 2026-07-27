@@ -133,5 +133,25 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/26-13",
     "cta_text": "Need help updating your firm's Rule 3210 policies or WSPs?",
     "cta_link": "contact.html?ref=tracker-finra-rule-3210-trump-accounts-exception"
+  },
+  {
+    "id": "finra-daily-reserve-computations-500m",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Compliance Date June 30, 2026",
+    "date_posted": "2026-06-30",
+    "headline": "Carrying firms with $500 million in total credits must calculate reserve requirements daily starting June 30, 2026.",
+    "the_change": "Carrying broker-dealers averaging $500 million or more in total credits must perform daily customer and PAB reserve computations under SEC Rule 15c3-3 starting June 30, 2026. FINRA's Information Notice highlights SEC staff guidance allowing firms to offset reserve deposit requirements using next-day sweep program credits. FINRA also created Line Item 4495 in eFOCUS for voluntary reporting of these sweep credit adjustments.",
+    "why_it_matters": "Moving from weekly to daily reserve calculations substantially expands operational compliance obligations for large carrying firms. While the SEC's sweep credit relief lowers required deposit amounts, firms cannot use sweep credits to justify withdrawing cash from reserve bank accounts. CCOs and FINOPs must ensure their accounting software and daily operational procedures account for these dynamic thresholds well before the June deadline.",
+    "action_items": [
+      "Audit your last 12 month-end FOCUS reports to determine if your average total credits reach or exceed $500 million.",
+      "Update financial operational workflows to calculate Rule 15c3-3 reserve requirements using close-of-business data every single business day.",
+      "Configure eFOCUS mapping to report sweep credit adjustments under Line Item 4495 if your firm utilizes a sweep program.",
+      "Revise cash management procedures to prevent using sweep credits as justification for customer reserve account withdrawals."
+    ],
+    "source_name": "FINRA Regulatory Notices: Information Notice 6/29/26",
+    "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260629",
+    "cta_text": "Need assistance reviewing your firm's Rule 15c3-3 computations or FOCUS reporting procedures?",
+    "cta_link": "contact.html?ref=tracker-finra-daily-reserve-computations-500m"
   }
 ]
