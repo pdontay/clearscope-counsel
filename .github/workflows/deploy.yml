@@ -1,0 +1,44 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "tracker-agent/**"
+      - "worker/**"
+      - "*.md"
+      - ".github/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up deploy key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.HOSTINGER_SSH_PORT }}" "${{ secrets.HOSTINGER_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      # No --delete: additive sync only. Removing a page from git will NOT
+      # remove it from the live server on its own — do that by hand in the
+      # Hostinger File Manager if a page is ever fully retired. This trades a
+      # small amount of staleness risk for never auto-deleting something that
+      # exists live but isn't tracked in this repo.
+      - name: Rsync site files to public_html
+        run: |
+          rsync -avz \
+            -e "ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
+            --exclude=".git/" \
+            --exclude=".github/" \
+            --exclude=".claude/" \
+            --exclude=".gitignore" \
+            --exclude="tracker-agent/" \
+            --exclude="worker/" \
+            --exclude="README.md" \
+            --exclude="DEPLOY.md" \
+            --exclude="ACTIVATE-SITE-SCAN.md" \
+            --exclude="VOICE-AGENT-PROMPT.md" \
+            ./ "${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:domains/clearscopecounsel.com/public_html/"

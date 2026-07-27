@@ -1072,6 +1072,30 @@ input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 
   .premier-dialog-actions{flex-direction:column}
   .premier-dialog-actions .btn{width:100%}
 }
+.tracker-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.filter-pill{cursor:pointer;font-weight:600;transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.filter-pill[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+[data-theme="dark"] .filter-pill[aria-pressed="true"]{color:#06201d}
+.tracker-grid{display:grid;gap:1.2rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tracker-card{display:flex;flex-direction:column;gap:.7rem;padding:1.6rem}
+.tracker-card h3{margin-top:.2rem}
+.tracker-date{font-family:var(--mono);font-size:.76rem;color:var(--muted);margin-top:-.3rem}
+.tracker-card p{color:var(--ink-2);font-size:.94rem}
+.tracker-action-label{margin-top:.2rem;margin-bottom:-.3rem}
+.tracker-actions{display:flex;flex-direction:column;gap:.35rem;padding-left:1.2rem;list-style:decimal;color:var(--ink-2);font-size:.94rem}
+.tracker-sifma{font-size:.86rem;color:var(--muted);border-left:2px solid var(--line-strong);padding-left:.7rem}
+.tracker-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;margin-top:.4rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.tracker-source{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.tracker-source:hover{color:var(--teal)}
+.tracker-cta{font-weight:700}
+.tag-track{background:var(--surface-2);color:var(--muted)}
+.status-comment-open,.status-proposed{background:color-mix(in oklab,var(--persimmon) 18%,var(--surface));color:var(--persimmon-600)}
+[data-theme="dark"] .status-comment-open,[data-theme="dark"] .status-proposed{color:var(--persimmon)}
+.tracker-loading{color:var(--muted);grid-column:1/-1}
+.tracker-embed .tracker-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:960px){
+  .tracker-grid,.tracker-embed .tracker-grid{grid-template-columns:1fr}
+}
 @media(prefers-reduced-motion:reduce){
   .creator-card,.creator-avatar img{transition:none}
   .creator-card:hover{transform:none}

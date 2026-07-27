@@ -13,6 +13,7 @@
 # Environment
 .env
 .env.*
+!tracker-agent/.env.example
 
 # Design review / working source files (large, not part of the site)
 Binder1.pdf

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "finra-26-10-intraday-margin",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective June 4, 2026",
+    "date_posted": "2026-04-20",
+    "headline": "The Pattern Day Trader rule is gone. Intraday margin standards replace it.",
+    "the_change": "FINRA Regulatory Notice 26-10, published April 20, 2026, retires the long-standing day-trading margin requirements — including the Pattern Day Trader (PDT) framework — and replaces them with new intraday margin standards under Rule 4210. The amendments took effect June 4, 2026, with an 18-month implementation window that runs through October 20, 2027.",
+    "why_it_matters": "The PDT bright line ($25,000 minimum equity, four-trades-in-five-days counting) is no longer the rule your back office runs on. Firms that built supervisory procedures, alerts, or client disclosures around PDT language now have a stale reference sitting in their compliance manual, and firms without an intraday margin calculation already built into their clearing setup have until October 2027 to get one working.",
+    "action_items": [
+      "Confirm with your clearing firm whether intraday margin calculation is already live on your platform, or whether you're still flagged under the old PDT logic.",
+      "Pull every WSP, client agreement, and disclosure that references \"pattern day trader\" and schedule them for a rewrite — the citation itself is now outdated, not just the mechanics.",
+      "Set an internal deadline well inside the 18-month window (e.g., mid-2027) so the transition isn't a scramble in the final quarter."
+    ],
+    "sifma_note": "SIFMA has a long history of commenting on Rule 4210 margin proposals for exactly this kind of implementation detail. Full analysis of any SIFMA response to this specific notice is still pending review — check back as this entry updates.",
+    "source_name": "FINRA Regulatory Notice 26-10",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-10",
+    "cta_text": "Need your WSPs updated for this?",
+    "cta_link": "contact.html?ref=tracker-finra-26-10"
+  },
+  {
+    "id": "finra-26-14-rule-2210-comment",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comment Period Open",
+    "date_posted": "2026-07-09",
+    "headline": "FINRA wants to modernize the marketing-communications rule — and wants to hear from you first.",
+    "the_change": "FINRA Regulatory Notice 26-14, issued July 9, 2026, requests comment on proposed changes to modernize Rule 2210, the rule governing communications with the public — the one that touches your website copy, social posts, and pitch decks.",
+    "why_it_matters": "Rule 2210 changes flow directly into your content-approval workflow. A comment period is the one window where an operational problem you'd actually live with can still get fixed before the rule locks in — after adoption, you're implementing whatever version FINRA finalizes.",
+    "action_items": [
+      "Read Notice 26-14 and flag anything that would break your current marketing-review process, not just the parts that sound significant.",
+      "If you want influence on the outcome, submit a comment before the window closes, or at minimum track SIFMA's expected response as a proxy for the industry position.",
+      "Hold off on overhauling your content-review process now — comment-period proposals often change materially before adoption."
+    ],
+    "source_name": "FINRA Regulatory Notice 26-14",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-14",
+    "cta_text": "Want help drafting a comment or reviewing your marketing workflow?",
+    "cta_link": "contact.html?ref=tracker-finra-26-14"
+  },
+  {
+    "id": "cta-boi-domestic-exemption",
+    "track": "crossover",
+    "status": "in-effect",
+    "status_label": "In Effect",
+    "date_posted": "2025-03-26",
+    "headline": "Most U.S. companies no longer have to file a beneficial ownership report — but keep your file.",
+    "the_change": "FinCEN's interim final rule, effective March 26, 2025, narrowed the Corporate Transparency Act's \"reporting company\" definition to cover only entities formed under foreign law that have registered to do business in a U.S. state. Domestic U.S. companies and U.S. persons are no longer required to file beneficial ownership information with FinCEN. A final rule is expected from FinCEN later in 2026, and the underlying statute has not been repealed.",
+    "why_it_matters": "If you formed a Missouri LLC and either filed a BOI report or were dreading the deadline, you're very likely exempt right now. \"Very likely\" is doing real work in that sentence — this is an interim rule, not a repeal, and some states have layered on their own transparency filings that this federal rollback doesn't touch.",
+    "action_items": [
+      "Confirm your entity was formed under U.S. law — if so, you're currently exempt from federal BOI reporting.",
+      "Keep any beneficial ownership records you already prepared on file rather than discarding them; a 2026 final rule could reinstate a reporting tier.",
+      "If you're registered to do business in another state — New York in particular — check that state's own transparency-act deadlines separately; they run on their own clock."
+    ],
+    "source_name": "FinCEN Interim Final Rule",
+    "source_url": "https://www.fincen.gov/news/news-releases/fincen-removes-beneficial-ownership-reporting-requirements-us-companies-and-us",
+    "cta_text": "Not sure if this applies to your entity?",
+    "cta_link": "contact.html?ref=tracker-cta-boi"
+  },
+  {
+    "id": "mo-llc-no-annual-report",
+    "track": "missouri",
+    "status": "in-effect",
+    "status_label": "In Effect",
+    "date_posted": "2026-01-01",
+    "headline": "Missouri LLCs don't file an annual report. Corporations do.",
+    "the_change": "Missouri does not require LLCs to file an annual report with the Secretary of State — no form, no fee, ever. Corporations and nonprofit corporations, by contrast, must file a Registration Report annually or biennially, due by the end of the third month following their registration anniversary date, for $20 online (plus a small processing fee) or $45 by mail.",
+    "why_it_matters": "Founders who assume every entity type files something every year either miss a corporate registration report they actually owe, or pay a third-party filing service for an LLC \"annual report\" Missouri never asked for in the first place.",
+    "action_items": [
+      "Confirm your entity type first — LLC vs. corporation changes the answer completely.",
+      "If you're a corporation, calendar your registration-report deadline as three months from your registration anniversary, not your fiscal year-end.",
+      "If you're an LLC, cancel any recurring \"annual report filing\" service charging you for something that doesn't exist in Missouri."
+    ],
+    "source_name": "Missouri Secretary of State — Schedule of Fees",
+    "source_url": "https://www.sos.mo.gov/CMSImages/Business/fees.pdf",
+    "cta_text": "Not sure which filings your entity actually owes?",
+    "cta_link": "contact.html?ref=tracker-mo-annual-report"
+  }
+]

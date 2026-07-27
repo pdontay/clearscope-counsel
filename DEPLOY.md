@@ -4,6 +4,24 @@ This is a **static site** — plain HTML, CSS, and JavaScript with no build step
 It can be hosted anywhere that serves static files. Below is the Hostinger path
 (the method in the tutorial), plus free alternatives.
 
+## Auto-deploy is now live (2026-07-27)
+
+Every push to `main` (this repo, GitHub) triggers `.github/workflows/deploy.yml`,
+which rsyncs the site straight into `domains/clearscopecounsel.com/public_html`
+on the live Hostinger server over SSH. **Manual File Manager uploads are no
+longer the normal path** — just commit and push to `main`.
+
+- Auth is a dedicated SSH keypair (`clearscope-tracker-deploy`), stored as
+  encrypted GitHub Actions secrets (`HOSTINGER_SSH_*`) on this repo. The
+  matching public key lives under Hostinger → Advanced → SSH Access → SSH keys.
+- The sync does **not** use `--delete` — removing a page from git won't remove
+  it from the live server automatically. Retire a page by deleting it in the
+  Hostinger File Manager directly if that's ever needed.
+- `tracker-agent/`, `worker/`, and the root-level `.md` docs are excluded from
+  the sync (not part of the deployed site).
+- This is also the publish step the `tracker-agent/` regulatory tracker uses
+  once you approve a draft by email.
+
 ---
 
 ## 1. Pre-flight — do these before going live
