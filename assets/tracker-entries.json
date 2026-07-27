@@ -192,5 +192,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/26-12",
     "cta_text": "Need help drafting a compliant PSE servicing agreement or updating your WSPs?",
     "cta_link": "contact.html?ref=tracker-finra-rn-26-12-pse-compensation"
+  },
+  {
+    "id": "finra-rule-4210-intraday-margin-interpretations",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective June 4, 2026",
+    "date_posted": "2026-06-04",
+    "headline": "FINRA Scraps Legacy Day Trading Guidance for New Intraday Margin Rules",
+    "the_change": "FINRA published updated rule interpretations under Rule 4210 to support its new intraday margin framework, effective June 4, 2026. The regulator completely deleted all legacy guidance on former day trading margin requirements, replacing them entirely with the intraday standards announced in Regulatory Notice 26-10. FINRA also released standardized customer educational materials explaining the new account requirements.",
+    "why_it_matters": "Your firm's legacy day trading compliance policies are officially obsolete. Broker-dealers carrying margin accounts must update their supervisory controls and margin surveillance systems to align with the redesignated interpretations before the June deadline. Using FINRA's new educational disclosure materials will also help mitigate customer friction and onboarding disputes.",
+    "action_items": [
+      "Purge legacy day trading margin references from your firm's Written Supervisory Procedures.",
+      "Map internal margin surveillance and call routines to the updated Rule 4210 interpretations.",
+      "Integrate FINRA's new margin educational disclosures into customer account opening packets."
+    ],
+    "source_name": "FINRA Regulatory Notice 26-11",
+    "source_url": "https://www.finra.org/rules-guidance/notices/26-11",
+    "cta_text": "Need help updating your Rule 4210 margin compliance procedures?",
+    "cta_link": "contact.html?ref=tracker-finra-rule-4210-intraday-margin-interpretations"
   }
 ]
