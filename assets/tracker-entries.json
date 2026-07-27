@@ -306,5 +306,24 @@
     "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-foundation-research-reveals-gaps-fraud-awareness-may-leave",
     "cta_text": "Need help reviewing your firm's client disclosures or investor education materials?",
     "cta_link": "contact.html?ref=tracker-finra-foundation-fraud-awareness-study-2026"
+  },
+  {
+    "id": "finra-expels-reid-rudiger",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Effective June 17, 2026",
+    "date_posted": "2026-06-17",
+    "headline": "FINRA expels Reid & Rudiger and bars cofounders following $2 million churning scheme",
+    "the_change": "Across nearly six years, 20 customer accounts generated $2 million in commissions and trading fees while suffering $2.7 million in losses. FINRA expelled broker-dealer Reid & Rudiger LLC and permanently barred cofounders Clifford Reid and CEO Edward Rudiger, Jr. Two firm supervisors were also suspended for three months in all principal capacities, fined $5,000 each, and ordered to complete 20 hours of supervisory continuing education.",
+    "why_it_matters": "Supervisors face direct personal liability when firm trading patterns repeatedly generate excessive commissions at retail client expense. FINRA will target individual compliance officers and principals who fail to act on clear red flags like high turnover rates and cost-to-equity ratios. For small firms without deep compliance departments, active account monitoring is a personal regulatory safeguard, not just routine paperwork.",
+    "action_items": [
+      "Audit retail accounts using turnover and cost-to-equity benchmarks to identify potential excessive trading.",
+      "Verify that supervisor exception reports for trading volume are actively reviewed, escalated, and documented.",
+      "Ensure principals undergo targeted training on identifying quantitative suitability red flags."
+    ],
+    "source_name": "FINRA News Releases",
+    "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-expels-reid-rudiger-bars-cofounders",
+    "cta_text": "Need help reviewing your firm's trade surveillance and supervisory procedures?",
+    "cta_link": "contact.html?ref=tracker-finra-expels-reid-rudiger"
   }
 ]
