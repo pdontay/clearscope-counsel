@@ -287,5 +287,24 @@
     "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-taps-christine-kieffer-lead-investor-education-efforts",
     "cta_text": "Questions about retail compliance or FINRA supervisory expectations?",
     "cta_link": "contact.html?ref=tracker-finra-appoints-kieffer-investor-education"
+  },
+  {
+    "id": "finra-foundation-fraud-awareness-study-2026",
+    "track": "finra",
+    "status": "in-effect",
+    "status_label": "Published July 22, 2026",
+    "date_posted": "2026-07-22",
+    "headline": "FINRA Foundation research reveals half of adults cannot identify common fraud schemes unprompted",
+    "the_change": "On July 22, 2026, the FINRA Investor Education Foundation and RAND released a study surveying 1,509 U.S. adults on financial fraud awareness. Only 50% of respondents spontaneously named identity-based fraud, while awareness for opportunity-based (17%) and imposter schemes (14%) dropped even lower. The study established that higher financial literacy directly correlates with lower actual financial loss to scams.",
+    "why_it_matters": "While a research report carries no immediate rulemaking authority, it indicates where regulators see systemic vulnerability in retail client protection. FINRA-regulated firms serving retail investors should expect regulators to emphasize fraud education and client-facing disclosures during routine examinations. Strengthening these disclosures proactive reduces both client loss and firm liability.",
+    "action_items": [
+      "Review existing retail client onboarding materials to ensure common fraud risks are clearly explained.",
+      "Train customer support and operations staff to spot signs that a client may be targeted by imposter or opportunity-based scams.",
+      "Confirm with counsel how this specific change applies to your situation"
+    ],
+    "source_name": "FINRA News Release: Research Reveals Gaps in Fraud Awareness",
+    "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-foundation-research-reveals-gaps-fraud-awareness-may-leave",
+    "cta_text": "Need help reviewing your firm's client disclosures or investor education materials?",
+    "cta_link": "contact.html?ref=tracker-finra-foundation-fraud-awareness-study-2026"
   }
 ]
