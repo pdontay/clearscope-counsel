@@ -162,7 +162,7 @@
     "date_posted": "2026-06-17",
     "headline": "FINRA replaces paper Rule 605 authorization forms with a mandatory online filing system.",
     "the_change": "Starting June 17, 2026, FINRA members must submit Rule 605 Designated Participant Authorization Forms online through the FINRA Gateway instead of mailing or emailing paper PDFs. FINRA launched this portal to streamline how firms request reporter identification codes and post execution quality report links ahead of expanded SEC Rule 605 requirements that take effect August 1, 2026.",
-    "why_it_matters": "Legacy paper PDF filings are completely void, requiring every broker-dealer using FINRA as its Designated Participant to refile electronically. Firms operating multiple market roles\u2014such as an alternative trading system or OTC market maker alongside standard broker-dealer operations\u2014must file separate authorization forms and track distinct reporter IDs for each function.",
+    "why_it_matters": "Legacy paper PDF filings are completely void, requiring every broker-dealer using FINRA as its Designated Participant to refile electronically. Firms operating multiple market roles—such as an alternative trading system or OTC market maker alongside standard broker-dealer operations—must file separate authorization forms and track distinct reporter IDs for each function.",
     "action_items": [
       "Log into the FINRA Gateway and submit a new electronic authorization form, regardless of past PDF submissions.",
       "Inventory your firm's operating functions to determine if you need separate submissions and reporter codes for different business lines like an ATS or SDP.",
@@ -239,7 +239,7 @@
     "date_posted": "2026-04-06",
     "headline": "FINRA opens the petition window for its 2026 Board of Governors election after leaving the Small Firm seat unnominated.",
     "the_change": "FINRA announced its annual Board of Governors election scheduled for July 13, 2026, covering one Large Firm seat and one Small Firm seat. While the Nominating Committee selected Scott Curtis for the Large Firm seat, it chose not to nominate any candidate for the Small Firm seat. Individuals seeking to run as petition candidates have until May 21, 2026, to submit their endorsements to FINRA's Corporate Secretary.",
-    "why_it_matters": "Small broker-dealers will have no representation from this election cycle unless a petition candidate steps forward and successfully reaches the ballot. Securing a ballot spot requires gathering verified firm endorsements\u201486 signatures for small firm candidates and 5 for large firm candidates\u2014by the May deadline. Because member firms can endorse only one candidate for their firm-size category, late-arriving petitions risk losing out on eligible support.",
+    "why_it_matters": "Small broker-dealers will have no representation from this election cycle unless a petition candidate steps forward and successfully reaches the ballot. Securing a ballot spot requires gathering verified firm endorsements—86 signatures for small firm candidates and 5 for large firm candidates—by the May deadline. Because member firms can endorse only one candidate for their firm-size category, late-arriving petitions risk losing out on eligible support.",
     "action_items": [
       "Evaluate whether your firm's leadership wants to mount a petition candidacy for the open Small Firm seat.",
       "Verify that your firm endorses no more than one candidate corresponding to your firm-size category.",
@@ -325,5 +325,24 @@
     "source_url": "https://www.finra.org/media-center/newsreleases/2026/finra-expels-reid-rudiger-bars-cofounders",
     "cta_text": "Need help reviewing your firm's trade surveillance and supervisory procedures?",
     "cta_link": "contact.html?ref=tracker-finra-expels-reid-rudiger"
+  },
+  {
+    "id": "finra-governor-election-july-2026",
+    "track": "finra",
+    "status": "in-effect",
+    "status_label": "Annual Meeting July 13, 2026",
+    "date_posted": "2026-06-08",
+    "headline": "Small and large broker-dealers vote for FINRA Board Governors on July 13",
+    "the_change": "FINRA announced its Annual Meeting for July 13, 2026, to elect one Large Firm Governor and one Small Firm Governor to its Board of Governors. Member firms registered as of the June 5, 2026 record date are eligible to cast ballots. Scott Curtis is the nominee for the Large Firm seat, while Carlos Barrientos and Jay Gettenberg are contesting the Small Firm seat.",
+    "why_it_matters": "Board governors directly shape FINRA's policy priorities, rulemaking, and fee structures. For small broker-dealers without dedicated compliance departments, having active representation on the Board is critical to preventing unworkable regulatory burdens. To count, your firm's ballot must be signed and submitted specifically by your designated Executive Representative.",
+    "action_items": [
+      "Confirm in FINRA Gateway that your firm's designated Executive Representative is current and authorized.",
+      "Review candidate backgrounds for the contested Small Firm seat (Carlos Barrientos and Jay Gettenberg).",
+      "Submit your proxy vote online, by phone, or by mail before the July 13, 2026 meeting."
+    ],
+    "source_name": "FINRA Election Notice (June 8, 2026)",
+    "source_url": "https://www.finra.org/rules-guidance/notices/election-notice-060826",
+    "cta_text": "Questions about updating your firm's FINRA Gateway designations or regulatory filings?",
+    "cta_link": "contact.html?ref=tracker-finra-governor-election-july-2026"
   }
 ]
