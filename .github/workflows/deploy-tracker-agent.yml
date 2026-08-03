@@ -1,0 +1,45 @@
+name: Deploy Tracker Agent to VPS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tracker-agent/**"
+      - "!tracker-agent/README.md"
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up deploy key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.TRACKER_VPS_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan "${{ secrets.TRACKER_VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      # No --delete, and .env / state.db / logs / .venv are excluded so this
+      # never touches secrets, the pending-drafts database, or the installed
+      # virtualenv on the VPS — it only ever refreshes the agent's source.
+      - name: Rsync tracker-agent source to VPS
+        run: |
+          rsync -avz \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes" \
+            --exclude=".env" \
+            --exclude=".env.example" \
+            --exclude=".gitignore" \
+            --exclude="__pycache__/" \
+            --exclude=".venv/" \
+            --exclude="*.log" \
+            --exclude="state.db" \
+            --exclude="*.bak-*" \
+            tracker-agent/ "${{ secrets.TRACKER_VPS_USER }}@${{ secrets.TRACKER_VPS_HOST }}:/root/tracker-agent/"
+
+      - name: Sync Python dependencies
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes \
+            "${{ secrets.TRACKER_VPS_USER }}@${{ secrets.TRACKER_VPS_HOST }}" \
+            "/root/tracker-agent/.venv/bin/pip install -q -r /root/tracker-agent/requirements.txt"
