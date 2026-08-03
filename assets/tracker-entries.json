@@ -344,5 +344,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/election-notice-060826",
     "cta_text": "Questions about updating your firm's FINRA Gateway designations or regulatory filings?",
     "cta_link": "contact.html?ref=tracker-finra-governor-election-july-2026"
+  },
+  {
+    "id": "sec-proposed-regulation-e-delivery",
+    "track": "finra",
+    "status": "proposed",
+    "status_label": "Proposed Rule",
+    "date_posted": "2026-03-30",
+    "headline": "SEC proposes Regulation E-Delivery to modernize disclosure obligations for broker-dealers and advisers",
+    "the_change": "The SEC has proposed Regulation E-Delivery, establishing a modern framework to expand electronic delivery for mandatory investor communications. The rule applies across broker-dealers, registered investment advisers, and reporting issuers. If finalized, it replaces decades of piecemeal guidance with a single, streamlined delivery standard.",
+    "why_it_matters": "Paper printing and mailing expenses remain a significant administrative tax on wealth management practices and fund managers. Defaulting to electronic delivery lowers distribution costs and eliminates manual mailing workflows. Firms will still need clear opt-out mechanics and updated written supervisory procedures before relying on the expanded rules.",
+    "action_items": [
+      "Audit current mailing and vendor expenditures for investor disclosures to quantify potential operational savings.",
+      "Review existing investor onboarding and communication channels to evaluate e-delivery readiness.",
+      "Confirm with counsel how this specific change applies to your firm's ongoing disclosure obligations."
+    ],
+    "source_name": "SEC Press Release: SEC Proposes New E-Delivery Approach",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-67-sec-proposes-new-e-delivery-approach-make-information-more-readily-accessible-useful-investors",
+    "cta_text": "Need help evaluating how Regulation E-Delivery impacts your firm's compliance procedures?",
+    "cta_link": "contact.html?ref=tracker-sec-proposed-regulation-e-delivery"
   }
 ]
