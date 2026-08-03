@@ -382,5 +382,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-66-sec-office-municipal-securities-updates-faqs-registration-municipal-advisors",
     "cta_text": "Need help aligning your municipal advisor policies with updated SEC guidance?",
     "cta_link": "contact.html?ref=tracker-sec-municipal-advisor-faq-update"
+  },
+  {
+    "id": "sec-comment-novel-etf-strategies",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comment Period Open",
+    "date_posted": "2026-03-31",
+    "headline": "SEC requests public comment on regulating novel ETFs and complex investment strategies",
+    "the_change": "The SEC is asking the public for feedback on how it should regulate exchange-traded funds that use novel strategies or invest in non-traditional asset classes. The agency wants input on facilitating product innovation without sacrificing regulatory oversight. This proceeding lays the groundwork for how future complex fund applications will be evaluated.",
+    "why_it_matters": "Sponsors and broker-dealers marketing complex funds should prepare for updated SEC scrutiny around product structures. Although no new rules take effect today, the agency's inquiries signal where future registration and exemptive relief standards are heading. Early participation in the comment process gives market participants a direct say in shaping those boundaries.",
+    "action_items": [
+      "Audit upcoming fund launches that utilize non-traditional asset classes or complex strategies.",
+      "Evaluate whether to submit a public comment addressing specific operational or liquidity challenges.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "SEC Press Releases: SEC Seeks Public Comment on Novel Exchange-Traded Funds",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-60-sec-seeks-public-comment-novel-exchange-traded-funds",
+    "cta_text": "Planning a novel ETF launch or complex fund strategy?",
+    "cta_link": "contact.html?ref=tracker-sec-comment-novel-etf-strategies"
   }
 ]
