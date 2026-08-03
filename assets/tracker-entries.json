@@ -440,5 +440,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-57-sec-cftc-seek-public-comment-further-clarify-harmonize-derivatives-product-definitions",
     "cta_text": "Need help navigating SEC and CFTC derivatives compliance?",
     "cta_link": "contact.html?ref=tracker-sec-cftc-derivatives-definitions"
+  },
+  {
+    "id": "finra-board-approves-remote-inspections",
+    "track": "finra",
+    "status": "proposed",
+    "status_label": "Board Approved Proposals",
+    "date_posted": "2026-06-15",
+    "headline": "FINRA moves to make remote office inspections permanent and expand private placement exemptions.",
+    "the_change": "The FINRA Board of Governors approved four rule proposals under its FINRA Forward initiative to be submitted to the SEC. The package makes the temporary Remote Inspections Pilot Program permanent, modernizes non-branch supervisory cycles, relaxes Continuing Education timing for multiply registered reps, and expands private placement filing exemptions.",
+    "why_it_matters": "Firms gain long-term operational certainty without the threat of a returning mandatory in-person inspection regime. Compliance teams can permanently embed remote audit workflows into their Written Supervisory Procedures. Capital raising firms and smaller broker-dealers will also see lower deal costs through simplified conflict-of-interest rules and reduced private placement filing burdens.",
+    "action_items": [
+      "Audit your current Written Supervisory Procedures to ensure remote inspection protocols meet permanent standards before SEC rulemaking concludes.",
+      "Map CE schedules for dually or multiply registered personnel to identify incoming deadline flexibility.",
+      "Review capital raising and private placement workflows to prepare for expanded filing exemptions."
+    ],
+    "source_name": "FINRA Board of Governors Meeting Report (June 2026)",
+    "source_url": "https://www.finra.org/media-center/newsreleases/2026/report-finra-board-governors-meeting-june-2026",
+    "cta_text": "Need help updating your supervisory procedures or private placement compliance frameworks?",
+    "cta_link": "contact.html?ref=tracker-finra-board-approves-remote-inspections"
   }
 ]
