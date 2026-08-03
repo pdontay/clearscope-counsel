@@ -421,5 +421,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-59-sec-cftc-seek-public-comment-harmonization-portfolio-margining-frameworks",
     "cta_text": "Need help evaluating your margin arrangements or drafting a regulatory comment letter?",
     "cta_link": "contact.html?ref=tracker-sec-cftc-portfolio-margining-harmonization"
+  },
+  {
+    "id": "sec-cftc-derivatives-definitions",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comment Period Open",
+    "date_posted": "2026-03-30",
+    "headline": "SEC and CFTC Seek Public Comment to Align Derivatives Definitions",
+    "the_change": "The SEC and CFTC issued a joint request for public comment seeking to clarify and harmonize key derivatives definitions. The agencies are focusing on resolving operational friction between CFTC-regulated swaps and SEC-regulated security-based swaps.",
+    "why_it_matters": "Regulatory misalignment between the two agencies forces market participants to maintain dual compliance tracks for similar financial products. Standardizing these definitions will likely reduce jurisdictional ambiguity and lower reporting overhead across both regimes.",
+    "action_items": [
+      "Inventory your firm's active swap transactions to identify where SEC and CFTC jurisdictional boundaries overlap.",
+      "Assess whether submitting public comments on specific product structures could reduce your compliance burdens.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "SEC Press Releases: SEC, CFTC Seek Public Comment to Further Clarify and Harmonize Derivatives Product Definitions",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-57-sec-cftc-seek-public-comment-further-clarify-harmonize-derivatives-product-definitions",
+    "cta_text": "Need help navigating SEC and CFTC derivatives compliance?",
+    "cta_link": "contact.html?ref=tracker-sec-cftc-derivatives-definitions"
   }
 ]
