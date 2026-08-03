@@ -363,5 +363,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-67-sec-proposes-new-e-delivery-approach-make-information-more-readily-accessible-useful-investors",
     "cta_text": "Need help evaluating how Regulation E-Delivery impacts your firm's compliance procedures?",
     "cta_link": "contact.html?ref=tracker-sec-proposed-regulation-e-delivery"
+  },
+  {
+    "id": "sec-municipal-advisor-faq-update",
+    "track": "finra",
+    "status": "in-effect",
+    "status_label": "FAQs Updated July 10, 2026",
+    "date_posted": "2026-07-10",
+    "headline": "The SEC updated its guidance on registration and recordkeeping for municipal advisors.",
+    "the_change": "The SEC Office of Municipal Securities updated its Registration of Municipal Advisors guidance on July 10, 2026. The revised web page provides technical clarifications on who must register as a municipal advisor and how firms must maintain required records. These staff interpretations apply immediately.",
+    "why_it_matters": "Updated staff guidance signals where SEC examiners will focus during their next examination sweep. While the underlying regulations remain unchanged, staff FAQs reflect operational expectations for advisory recordkeeping and registration triggers. Firms active in municipal securities must ensure their compliance procedures match this updated guidance.",
+    "action_items": [
+      "Review the updated SEC FAQ guidance on municipal advisor registration and recordkeeping.",
+      "Audit your firm's existing municipal advisory recordkeeping procedures against the clarified staff guidance.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "SEC Press Release: SEC Office of Municipal Securities Updates FAQs for Registration of Municipal Advisors",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-66-sec-office-municipal-securities-updates-faqs-registration-municipal-advisors",
+    "cta_text": "Need help aligning your municipal advisor policies with updated SEC guidance?",
+    "cta_link": "contact.html?ref=tracker-sec-municipal-advisor-faq-update"
   }
 ]
