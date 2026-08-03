@@ -401,5 +401,25 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-60-sec-seeks-public-comment-novel-exchange-traded-funds",
     "cta_text": "Planning a novel ETF launch or complex fund strategy?",
     "cta_link": "contact.html?ref=tracker-sec-comment-novel-etf-strategies"
+  },
+  {
+    "id": "sec-cftc-portfolio-margining-harmonization",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comment Period Open",
+    "date_posted": "2026-03-30",
+    "headline": "SEC and CFTC ask for public input to align portfolio margining rules across securities and derivatives",
+    "the_change": "The SEC and CFTC issued a joint request for public comment seeking ways to harmonize portfolio margining rules across securities and futures markets. The agencies are soliciting feedback from market participants before drafting formal regulatory updates.",
+    "why_it_matters": "Conflicting SEC and CFTC margin regimes currently force firms trading across asset classes to tie up redundant collateral in separate accounts. Streamlining these frameworks will directly affect capital efficiency and risk management for dually registered broker-dealers and futures commission merchants.",
+    "action_items": [
+      "Review your firm's current cross-margining arrangements and account structures.",
+      "Identify specific operational frictions created by overlapping SEC and CFTC margin rules.",
+      "Consider submitting a public comment letter detailing your capital and operational experience.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "SEC Press Releases: SEC, CFTC Seek Public Comment on the Harmonization of Portfolio Margining Frameworks",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-59-sec-cftc-seek-public-comment-harmonization-portfolio-margining-frameworks",
+    "cta_text": "Need help evaluating your margin arrangements or drafting a regulatory comment letter?",
+    "cta_link": "contact.html?ref=tracker-sec-cftc-portfolio-margining-harmonization"
   }
 ]
