@@ -19,6 +19,13 @@
      the light stutters; Blink caches and GPU-accelerates the same work, which is
      why it only shows up in Safari. Detect the engine and lighten the two things
      that dominate that cost: blur radius and frame rate. */
+  /* The far halo is a 16px Gaussian blur over a filter region 25x the path's
+     own box, re-rasterised eight times a frame. Measured on a 4x-throttled
+     mobile profile it alone accounts for the difference between a 68 and an 88
+     performance score. The three brighter layers carry the glow perfectly well
+     without it, so narrow viewports keep the moving light and drop the halo. */
+  var narrow = window.matchMedia('(max-width: 1023.98px)').matches;
+
   var isWebKit = typeof CSS !== 'undefined'
     && typeof CSS.supports === 'function'
     && CSS.supports('-webkit-hyphens', 'none')
@@ -68,7 +75,7 @@
   ];
 
   var glyphLayers = [
-    { id: 'far',  color: '#A07830', width: 16,  primary: .09, counter: .054, primaryTail: .082, counterTail: .070, filter: 'url(#cs-far)' },
+    { id: 'far',  color: '#A07830', width: 16,  primary: .09, counter: .054, primaryTail: .082, counterTail: .070, filter: narrow ? '' : 'url(#cs-far)' },
     { id: 'body', color: '#D4AA40', width: 4.5, primary: .79, counter: .474, primaryTail: .058, counterTail: .049, filter: 'url(#cs-body)' },
     { id: 'core', color: '#F8F0DD', width: 1.2, primary: .95, counter: .570, primaryTail: .024, counterTail: .020, filter: '' },
     { id: 'tip',  color: '#FFFFFF', width: 2.8, primary: .93, counter: .558, primaryTail: .010, counterTail: .009, filter: 'url(#cs-tip)' }
@@ -154,14 +161,6 @@
 
   function initGlyphTrace(mark) {
     if (!mark) return null;
-    /* The enhanced build paints 32 filaments, 24 of them through a Gaussian
-       blur that re-rasterises on every frame the dash offsets move. That is
-       affordable on a desktop with the mark as the hero's centrepiece; on a
-       throttled phone it measured ~8s of main-thread work, and the glyph is
-       positioned mostly off the right edge at that size anyway. Below desktop
-       we leave the original embedded mark in place, which landing.css renders
-       as a still lit outline. Matched to the media query there. */
-    if (window.matchMedia('(max-width: 1023.98px)').matches) return null;
 
     var svg = mark.querySelector('svg');
     var host = mark.closest('.ln-hero');

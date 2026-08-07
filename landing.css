@@ -179,15 +179,10 @@ body.landing .ln-glyph[data-motion-logo] .g-filament{mix-blend-mode:screen}
    sits mostly off the right edge here anyway. Same treatment the reduced-motion
    block uses, for the same reason: keep the mark, drop the moving glow.
    The JS motion-logo build is gated on the same width in landing.js. */
-@media (max-width:1023.98px){
-  body.landing .ln-glyph .g-glow{display:none}
-  body.landing .ln-glyph .g-trace{
-    animation:none;stroke-dasharray:none;opacity:.34;filter:none;
-  }
-}
 @media (max-width:860px){
   body.landing .ln-glyph{right:-30vw;top:48%;width:min(82vw,500px)}
   body.landing .ln-glyph .g-base{opacity:.13}
+  body.landing .ln-glyph .g-glow{stroke-width:4;filter:blur(8px)}
 }
 
 body.landing .ln-hero .container{position:relative;z-index:1}
