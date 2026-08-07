@@ -69,10 +69,16 @@
   if (!reduce && 'IntersectionObserver' in window) {
     var vh = window.innerHeight || root.clientHeight;
     var below = [];
+    /* Read every rect first, then write. Interleaving them — measure, reveal,
+       measure, reveal — invalidates layout on each reveal and forces a fresh
+       synchronous layout on the next measure, once per [data-reveal] element.
+       Lighthouse attributed ~500ms of forced reflow to this loop. */
+    var above = [];
     items.forEach(function (el) {
       var r = el.getBoundingClientRect();
-      if (r.top < vh && r.bottom > 0) { show(el); } else { below.push(el); }
+      if (r.top < vh && r.bottom > 0) { above.push(el); } else { below.push(el); }
     });
+    above.forEach(show);
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }

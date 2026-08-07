@@ -271,12 +271,22 @@
     var visible = true;
     var pointer = { targetX: 0, targetY: 0, x: 0, y: 0 };
     var finePointer = window.matchMedia('(pointer:fine)').matches;
-    /* The trace is a 15.5s ambient loop, so it carries no motion detail that
-       needs 60fps. Halving the rate on WebKit halves the filter rasterisation
-       and the pointer tilt still eases smoothly, because its own easing is
-       frame-rate independent enough at this speed. */
-    var minFrameMs = isWebKit ? 32 : 0;
+    /* Re-dashing 32 paths a frame, 24 of them under a Gaussian blur, is far
+       more main-thread work than an ambient background glow can justify. Two
+       limits keep it honest:
+
+       1. 30fps everywhere, not just WebKit. This is a 15.5s loop with no
+          motion detail that 60fps would resolve, and halving the rate halves
+          the filter rasterisation on every engine.
+       2. The loop does not start until the page has loaded and the main
+          thread has gone idle. Lighthouse measures Total Blocking Time during
+          load, and an animation this heavy running through that window is
+          what took TBT from 0ms to 6s. Deferring it costs nothing visually —
+          the mark is fully drawn by its static layers meanwhile — and it
+          means the page is interactive before the glow starts. */
+    var minFrameMs = 32;
     var lastFrame = 0;
+    var started = false;
 
     function render(time) {
       raf = 0;
@@ -326,8 +336,22 @@
     }
 
     function wake() {
-      if (visible && !document.hidden && !raf) raf = window.requestAnimationFrame(render);
+      if (started && visible && !document.hidden && !raf) raf = window.requestAnimationFrame(render);
     }
+
+    /* Hand the first frame to an idle callback after load, so the trace never
+       competes with parse, layout and paint for the main thread. */
+    function begin() {
+      if (started) return;
+      started = true;
+      wake();
+    }
+    function scheduleBegin() {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(begin, { timeout: 2000 });
+      else window.setTimeout(begin, 600);
+    }
+    if (document.readyState === 'complete') scheduleBegin();
+    else window.addEventListener('load', scheduleBegin, { once: true });
 
     if (typeof IntersectionObserver === 'function') {
       new IntersectionObserver(function (entries) {

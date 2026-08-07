@@ -90,21 +90,30 @@ body.landing .btn:hover .arr{transform:translateX(4px)}
    ========================================================================= */
 body.landing .ln-rail{
   position:fixed;left:max(1.1rem,env(safe-area-inset-left));top:50%;translate:0 -50%;
-  z-index:90;display:none;flex-direction:column;gap:.85rem;align-items:center;
+  z-index:90;display:none;flex-direction:column;gap:.35rem;align-items:center;
 }
 html.js body.landing .ln-rail{display:flex}
+/* The dot stays 7px; the link around it is 24px so it meets the minimum tap
+   target. Painting the dot as a pseudo-element keeps the visual size and the
+   hit area independent — previously the link *was* the dot, so it was a 7px
+   target. gap is reduced to keep the rail the same overall height. */
 body.landing .ln-rail a{
-  display:block;width:7px;height:7px;border-radius:50%;
+  display:grid;place-items:center;width:24px;height:24px;
+}
+body.landing .ln-rail a::before{
+  content:"";display:block;width:7px;height:7px;border-radius:50%;
   background:var(--ln-c26);
   transition:background-color .4s var(--ease),transform .4s var(--ease);
 }
-body.landing .ln-rail a:hover{background:var(--ln-c72)}
-body.landing .ln-rail a[data-on]{background:var(--ln-ivory);transform:scale(1.6)}
+body.landing .ln-rail a:hover::before{background:var(--ln-c72)}
+/* the dot grows, the link box does not — scaling the box made the active
+   target overlap its neighbours, which reads as "partially obscured" */
+body.landing .ln-rail a[data-on]::before{background:var(--ln-ivory);transform:scale(1.6)}
 /* Over the daylight act the ivory dots disappear into the cream, so the rail
    inverts to ink for exactly that stretch (set by the scroll engine). */
-body.landing .ln-rail[data-on-light] a{background:rgba(20,16,12,.28)}
-body.landing .ln-rail[data-on-light] a:hover{background:rgba(20,16,12,.6)}
-body.landing .ln-rail[data-on-light] a[data-on]{background:#14100c}
+body.landing .ln-rail[data-on-light] a::before{background:rgba(20,16,12,.28)}
+body.landing .ln-rail[data-on-light] a:hover::before{background:rgba(20,16,12,.6)}
+body.landing .ln-rail[data-on-light] a[data-on]::before{background:#14100c}
 @media (max-width:1180px){html.js body.landing .ln-rail{display:none}}
 
 /* =========================================================================
@@ -257,16 +266,21 @@ body.landing .ln-line{
   padding:clamp(.95rem,.7rem + .9vw,1.5rem) 0;border-bottom:1px solid var(--ln-hair);
   transition:opacity .5s var(--ease);
 }
-html.js body.landing .ln-line{opacity:.42}
+/* Row opacity multiplies through every child, so .42 dragged the note down to
+   1.95:1 and the label to 3.75:1 — the rows you are not reading were not
+   legible at all. .70 still reads as clearly recessed next to the focused row
+   at 1, and the note and price move up a token so their effective alpha
+   (.72 x .70 = .50) clears the .48 needed for 4.5:1 on this ground. */
+html.js body.landing .ln-line{opacity:.70}
 html.js body.landing .ln-line[data-on]{opacity:1}
 body.landing .ln-line-label{font-size:clamp(1rem,.95rem + .45vw,1.22rem);color:var(--ln-ivory);font-weight:400}
-body.landing .ln-line-note{display:block;margin-top:.3rem;font-size:.86rem;color:var(--ln-c45);max-width:44ch}
+body.landing .ln-line-note{display:block;margin-top:.3rem;font-size:.86rem;color:var(--ln-c72);max-width:44ch}
 body.landing .ln-line-price{
   font-family:var(--mono);font-size:.86rem;letter-spacing:.02em;color:var(--ln-c72);white-space:nowrap;text-align:right;
 }
 /* the struck price is 14px, so it needs the 4.5:1 token, not the decorative one;
    the strikethrough already carries the "was" meaning without dimming it away */
-body.landing .ln-line-price s{color:var(--ln-c45);text-decoration-thickness:1px;margin-right:.4em}
+body.landing .ln-line-price s{color:var(--ln-c72);text-decoration-thickness:1px;margin-right:.4em}
 body.landing .ln-line[data-on] .ln-line-price{color:var(--ln-accent)}
 body.landing .ln-ledger-foot{
   margin-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 1.8rem;
