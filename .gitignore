@@ -23,6 +23,22 @@ Website Design Review*.html
 /clearscope-site-upload.zip
 /Photos/
 
+# Raw generation sources (~148MB of mp4/png) that assets/media/ derivatives are
+# built from via assets/generated-media/build-derivatives.sh. Nothing on the site
+# links to them, and the Hostinger rsync has no exclude for assets/, so tracking
+# these would publish the raw masters and bloat every deploy.
+/assets/generated-media/
+
+# Agent tooling and working notes. None of it is site content, and the deploy
+# rsync only excludes .git/, .github/, .claude/, tracker-agent/ and worker/ —
+# anything else tracked here would be served publicly.
+/.agents/
+/.impeccable/
+/design-research/
+/scripts/
+/skills-lock.json
+/.claude/skills/
+
 # Stale root-level duplicates superseded by assets/ and resources/ reorg
 # (site references assets/... and resources/... only; .htaccess 301s the old paths)
 /Legal Excellence Award.png

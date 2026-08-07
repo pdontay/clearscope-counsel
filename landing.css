@@ -1,0 +1,454 @@
+/* =========================================================================
+   ClearScope Night — the landing page (index.html only, body.landing)
+
+   The one art-directed surface on the site. It commits to a single visual
+   world — the darkest expression of ClearScope's own palette, sitting
+   between Register A's teal-ink and Register B's forest — so the theme
+   toggle is hidden here (same pattern as Register B).
+
+   Motion grammar: ONE idea, used five ways — position-scrubbed reveal.
+   Nothing animates on a timer, nothing hijacks the scroll, nothing fades a
+   whole section in. Scroll position drives state directly, so what you see
+   always matches where you are.
+   ========================================================================= */
+
+body.landing{
+  --ln-ground:#0a1f1c;
+  --ln-ground-2:#0d2723;
+  --ln-ivory:#f7f4eb;
+  --ln-c72:rgba(247,244,235,.72);
+  --ln-c45:rgba(247,244,235,.45);
+  --ln-c26:rgba(247,244,235,.26);
+  --ln-hair:rgba(247,244,235,.14);
+  --ln-accent:#e07a52;              /* brand persimmon, warmed for the dark ground */
+  --ln-door-a:#0e2724;              /* Register A ink   — startup counsel */
+  --ln-door-b:#0b211c;              /* Register B forest — FINRA */
+  --ln-door-pi:#1f0d0b;             /* Register B burgundy — personal injury */
+  background:var(--ln-ground);
+  color:var(--ln-ivory);
+}
+body.landing{background-image:none}
+
+/* ---- Base overrides inside the world ---- */
+body.landing h1,body.landing h2,body.landing h3{color:var(--ln-ivory)}
+body.landing p{color:var(--ln-c72)}
+body.landing .lede{color:var(--ln-c72)}
+body.landing .fine-print,body.landing .muted{color:var(--ln-c45)}
+body.landing ::selection{background:var(--ln-ivory);color:var(--ln-ground)}
+body.landing :focus-visible{outline:2px solid var(--ln-ivory);outline-offset:4px}
+
+/* ---- Header: transparent over the hero, then it lands ---- */
+body.landing .site-header{
+  background:color-mix(in srgb,var(--ln-ground) 72%,transparent);
+  border-bottom:1px solid transparent;
+  backdrop-filter:saturate(130%) blur(10px);
+  transition:background-color .45s var(--ease),border-color .45s var(--ease);
+}
+body.landing .site-header[data-landed]{
+  background:color-mix(in srgb,var(--ln-ground) 86%,transparent);
+  border-bottom-color:var(--ln-hair);
+  backdrop-filter:saturate(130%) blur(14px);
+}
+body.landing .nav-links a{color:var(--ln-c72)}
+body.landing .nav-links a:hover{color:var(--ln-ivory)}
+body.landing .cs-name,body.landing .cs-name span{color:var(--ln-ivory)}
+body.landing .cs-sub{color:var(--ln-c45)}
+body.landing .cs-mark-teal{fill:var(--ln-ivory)}
+body.landing .cs-mark-orange{fill:var(--ln-accent)}
+/* single-theme world — a toggle that does nothing reads as broken */
+body.landing .theme-btn{display:none}
+body.landing .menu-toggle{background:transparent;border-color:var(--ln-hair);color:var(--ln-ivory)}
+/* matches the shared header collapse breakpoint in styles.css */
+@media (max-width:860px){
+  body.landing .nav-links{background:var(--ln-ground);border-bottom:1px solid var(--ln-hair)}
+}
+
+/* ---- Buttons ---- */
+body.landing .btn{border-radius:999px;padding:.95rem 1.8rem;font-size:1rem;box-shadow:none;font-weight:500}
+body.landing .btn:hover{transform:none}
+body.landing .btn-primary{
+  background:var(--ln-ivory);color:var(--ln-ground);border:1px solid transparent;
+  transition:background-color .3s var(--ease),color .3s var(--ease);
+}
+body.landing .btn-primary:hover{background:#fff;color:#000}
+body.landing .btn-secondary{background:transparent;border:1px solid var(--ln-c26);color:var(--ln-ivory)}
+body.landing .btn-secondary:hover{border-color:var(--ln-ivory);background:transparent;color:#fff}
+body.landing .btn .arr{display:inline-block;transition:transform .32s var(--ease)}
+body.landing .btn:hover .arr{transform:translateX(4px)}
+
+/* =========================================================================
+   Scroll rail — answers "how far into this am I", which a long scrolling
+   page otherwise hides. Functional, not decorative.
+   ========================================================================= */
+body.landing .ln-rail{
+  position:fixed;left:max(1.1rem,env(safe-area-inset-left));top:50%;translate:0 -50%;
+  z-index:90;display:none;flex-direction:column;gap:.85rem;align-items:center;
+}
+html.js body.landing .ln-rail{display:flex}
+body.landing .ln-rail a{
+  display:block;width:7px;height:7px;border-radius:50%;
+  background:var(--ln-c26);
+  transition:background-color .4s var(--ease),transform .4s var(--ease);
+}
+body.landing .ln-rail a:hover{background:var(--ln-c72)}
+body.landing .ln-rail a[data-on]{background:var(--ln-ivory);transform:scale(1.6)}
+/* Over the daylight act the ivory dots disappear into the cream, so the rail
+   inverts to ink for exactly that stretch (set by the scroll engine). */
+body.landing .ln-rail[data-on-light] a{background:rgba(20,16,12,.28)}
+body.landing .ln-rail[data-on-light] a:hover{background:rgba(20,16,12,.6)}
+body.landing .ln-rail[data-on-light] a[data-on]{background:#14100c}
+@media (max-width:1180px){html.js body.landing .ln-rail{display:none}}
+
+/* =========================================================================
+   ACT I — Hero
+   ========================================================================= */
+body.landing .ln-hero{
+  position:relative;overflow:hidden;isolation:isolate;
+  min-height:min(92svh,900px);display:flex;align-items:center;
+  padding-block:clamp(3.5rem,2rem + 7vw,8rem) clamp(3rem,2rem + 4vw,5rem);
+}
+/* The firm's own mark is the hero's authored motion moment. The enhanced
+   renderer treats its four contours as one measured route, so exactly two
+   filaments travel at a constant physical speed and the complete mark remains
+   visible underneath them. */
+body.landing .ln-glyph{
+  position:absolute;z-index:0;pointer-events:none;
+  right:clamp(1rem,4vw,5rem);top:51%;width:min(42vw,520px);aspect-ratio:340/354;
+  translate:0 -50%;
+  --g-brass:#b98a50;
+  --g-hot:#fff3d6;
+  --g-tilt-x:0px;
+  --g-tilt-y:0px;
+}
+body.landing .ln-glyph::before{
+  content:"";position:absolute;inset:-18%;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(5,20,14,.52),transparent 70%);
+}
+body.landing .ln-glyph svg{
+  width:100%;height:100%;display:block;overflow:visible;
+  transform:translate3d(var(--g-tilt-x),var(--g-tilt-y),0);
+  transform-origin:center;
+  will-change:transform;
+}
+body.landing .ln-glyph path{
+  fill:none;vector-effect:non-scaling-stroke;
+  stroke-linejoin:round;stroke-linecap:round;
+}
+/* No-JS fallback for the original embedded mark. */
+body.landing .ln-glyph .g-base{stroke:var(--g-brass);stroke-width:1.25;opacity:.16}
+body.landing .ln-glyph .g-base-accent{stroke:var(--ln-accent);stroke-width:1.4;opacity:.20}
+body.landing .ln-glyph .g-glow,
+body.landing .ln-glyph .g-trace{
+  stroke-dasharray:88 912;
+  animation:lnTrace 15.5s linear infinite;
+}
+body.landing .ln-glyph .g-glow{
+  stroke:var(--g-brass);stroke-width:5;opacity:.34;
+  filter:blur(12px);
+}
+body.landing .ln-glyph .g-trace{
+  stroke:var(--g-hot);stroke-width:1.15;opacity:.92;
+  filter:drop-shadow(0 0 4px rgba(240,205,150,.72));
+}
+@keyframes lnTrace{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+/* The approved Figma vector scales its optical widths with the artwork; the
+   older fallback remains a fixed hairline until JavaScript upgrades it. */
+body.landing .ln-glyph[data-motion-logo] .g-route-base,
+body.landing .ln-glyph[data-motion-logo] .g-filament{vector-effect:none}
+body.landing .ln-glyph[data-motion-logo] .g-filament{mix-blend-mode:screen}
+@media (max-width:860px){
+  body.landing .ln-glyph{right:-30vw;top:48%;width:min(82vw,500px)}
+  body.landing .ln-glyph .g-base{opacity:.13}
+  body.landing .ln-glyph .g-glow{stroke-width:4;filter:blur(8px)}
+}
+
+body.landing .ln-hero .container{position:relative;z-index:1}
+body.landing .ln-hero-copy{display:flex;flex-direction:column;gap:1.4rem;max-width:min(100%,58rem)}
+body.landing .ln-display{
+  font-size:clamp(2.6rem,1.3rem + 4.6vw,5.6rem);
+  font-weight:400;line-height:.96;letter-spacing:-.035em;color:var(--ln-ivory);
+  max-width:16ch;
+}
+body.landing .ln-hero .lede{max-width:54ch;font-size:clamp(1.02rem,.98rem + .4vw,1.22rem);line-height:1.6}
+body.landing .ln-hero .cluster{margin-top:.6rem;gap:.7rem}
+body.landing .ln-hero-meta{
+  display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:1.6rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ln-c45);
+}
+body.landing .ln-hero-meta span{white-space:nowrap}
+
+/* =========================================================================
+   ACT II — Three moments. Stacked statements; the one at reading height is
+   the bright one. Scrubbed, so it can never be out of sync with the scroll.
+   ========================================================================= */
+body.landing .ln-moments{padding-block:clamp(4rem,2.5rem + 6vw,9rem);border-top:1px solid var(--ln-hair)}
+body.landing .ln-moment-list{display:flex;flex-direction:column;gap:clamp(1rem,.4rem + 2vw,2.2rem)}
+body.landing .ln-moment{
+  font-size:clamp(1.6rem,1.05rem + 2.6vw,3.6rem);
+  font-weight:400;line-height:1.08;letter-spacing:-.03em;
+  color:var(--ln-ivory);
+  transition:color .6s var(--ease);
+}
+/* JS dims the statements you are not reading; without it all three stay legible */
+html.js body.landing .ln-moment{color:var(--ln-c26)}
+html.js body.landing .ln-moment[data-on]{color:var(--ln-ivory)}
+body.landing .ln-moment-close{
+  margin-top:clamp(2rem,1.2rem + 2.4vw,3.6rem);padding-top:clamp(1.4rem,1rem + 1.4vw,2.2rem);
+  border-top:1px solid var(--ln-hair);
+  font-size:clamp(1.02rem,.98rem + .45vw,1.22rem);color:var(--ln-c72);max-width:52ch;
+}
+body.landing .ln-moment-close b{color:var(--ln-ivory);font-weight:500}
+
+/* =========================================================================
+   ACT III — The ledger. The signature moment: the firm's real prices, all
+   visible at once (never gated behind interaction), with scroll driving
+   which one is enlarged alongside.
+   ========================================================================= */
+body.landing .ln-ledger{position:relative;border-top:1px solid var(--ln-hair)}
+body.landing .ln-ledger-sticky{
+  position:sticky;top:0;min-height:100svh;display:grid;align-content:center;
+  padding-block:clamp(3rem,2rem + 4vw,5rem);
+}
+body.landing .ln-ledger-grid{
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:clamp(2rem,1rem + 4vw,4.5rem);align-items:center;
+}
+body.landing .ln-ledger-head{max-width:20ch}
+body.landing .ln-act-display{
+  font-size:clamp(2rem,1.4rem + 3vw,4.2rem);
+  font-weight:400;line-height:1;letter-spacing:-.032em;color:var(--ln-ivory);
+}
+
+/* the enlarged figure: pure emphasis, so it is JS-gated and hidden from AT */
+body.landing .ln-figure{display:none;margin-top:clamp(1.6rem,1rem + 2vw,2.8rem);min-height:8.5rem}
+html.js body.landing .ln-figure{display:block}
+body.landing .ln-figure-stack{position:relative}
+/* the outgoing figure clears fast, the incoming one settles — a handoff, not
+   a dissolve, so two prices are never legible at once */
+body.landing .ln-fig{
+  position:absolute;inset:0;opacity:0;transform:translateY(.4em);
+  transition:opacity .18s var(--ease),transform .18s var(--ease);
+}
+body.landing .ln-fig[data-on]{
+  opacity:1;transform:none;position:relative;
+  transition:opacity .45s var(--ease) .16s,transform .55s var(--ease) .16s;
+}
+body.landing .ln-fig b{
+  display:block;font-size:clamp(2.8rem,1.9rem + 5vw,6.4rem);
+  font-weight:400;line-height:.92;letter-spacing:-.045em;color:var(--ln-ivory);
+}
+body.landing .ln-fig span{
+  display:block;margin-top:1.35rem;font-family:var(--mono);font-size:.74rem;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ln-accent);
+}
+
+/* the lines themselves — complete on their own, with or without JS */
+body.landing .ln-lines{border-top:1px solid var(--ln-hair)}
+body.landing .ln-line{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:baseline;
+  padding:clamp(.95rem,.7rem + .9vw,1.5rem) 0;border-bottom:1px solid var(--ln-hair);
+  transition:opacity .5s var(--ease);
+}
+html.js body.landing .ln-line{opacity:.42}
+html.js body.landing .ln-line[data-on]{opacity:1}
+body.landing .ln-line-label{font-size:clamp(1rem,.95rem + .45vw,1.22rem);color:var(--ln-ivory);font-weight:400}
+body.landing .ln-line-note{display:block;margin-top:.3rem;font-size:.86rem;color:var(--ln-c45);max-width:44ch}
+body.landing .ln-line-price{
+  font-family:var(--mono);font-size:.86rem;letter-spacing:.02em;color:var(--ln-c72);white-space:nowrap;text-align:right;
+}
+body.landing .ln-line-price s{color:var(--ln-c26);text-decoration-thickness:1px;margin-right:.4em}
+body.landing .ln-line[data-on] .ln-line-price{color:var(--ln-accent)}
+body.landing .ln-ledger-foot{
+  margin-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 1.8rem;
+}
+body.landing .ln-ledger-foot .fine-print{max-width:62ch}
+
+/* the scroll distance the sticky panel rides on */
+body.landing .ln-beats{position:relative}
+body.landing .ln-beat{display:block;height:42vh}
+@media (max-width:900px){
+  body.landing .ln-ledger-sticky{position:static;min-height:0}
+  body.landing .ln-ledger-grid{grid-template-columns:1fr;gap:2rem}
+  body.landing .ln-beats{display:none}
+  html.js body.landing .ln-line{opacity:1}
+  html.js body.landing .ln-figure{display:none}
+}
+
+/* =========================================================================
+   ACT IV — The three doors. Each band previews the world behind it.
+   ========================================================================= */
+body.landing .ln-doors{border-top:1px solid var(--ln-hair)}
+body.landing .ln-doors-head{padding-block:clamp(3.5rem,2rem + 5vw,7rem) clamp(1.6rem,1rem + 2vw,3rem)}
+body.landing .ln-door{
+  display:block;position:relative;overflow:hidden;
+  border-top:1px solid var(--ln-hair);
+  transition:background-color .5s var(--ease);
+}
+body.landing .ln-door--a{background:var(--ln-door-a)}
+body.landing .ln-door--b{background:var(--ln-door-b)}
+body.landing .ln-door--pi{background:var(--ln-door-pi)}
+body.landing .ln-door:hover{background:color-mix(in srgb,var(--ln-ivory) 7%,var(--ln-door-c,var(--ln-ground)))}
+body.landing .ln-door--a:hover{--ln-door-c:var(--ln-door-a)}
+body.landing .ln-door--b:hover{--ln-door-c:var(--ln-door-b)}
+body.landing .ln-door--pi:hover{--ln-door-c:var(--ln-door-pi)}
+/* a rule that draws across the top on hover — presence added, never removed */
+body.landing .ln-door::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--ln-accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);
+}
+body.landing .ln-door:hover::before,body.landing .ln-door:focus-visible::before{transform:scaleX(1)}
+
+body.landing .ln-door-grid{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(1.6rem,1rem + 3vw,4rem);align-items:start;
+  padding-block:clamp(2.6rem,1.6rem + 4vw,5rem);
+}
+body.landing .ln-door-title{
+  font-size:clamp(1.7rem,1.2rem + 2.4vw,3.4rem);font-weight:400;
+  line-height:1.02;letter-spacing:-.03em;max-width:16ch;
+  transition:transform .5s var(--ease);
+}
+body.landing .ln-door:hover .ln-door-title{transform:translateX(8px)}
+body.landing .ln-door-kicker{
+  display:block;margin-bottom:1rem;font-family:var(--mono);font-size:.74rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ln-c45);
+}
+/* Matter list: plain rows on hairlines. No chips — a container around every
+   two words is noise, and the rule already carries the separation. */
+body.landing .ln-door-matters{
+  display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(1.5rem,1rem + 2vw,3rem);
+  margin-top:1.8rem;border-top:1px solid var(--ln-hair);
+}
+body.landing .ln-door-matters li{
+  font-size:.94rem;color:var(--ln-c72);padding:.72rem 0;
+  border-bottom:1px solid var(--ln-hair);
+  transition:color .35s var(--ease);
+}
+body.landing .ln-door:hover .ln-door-matters li{color:var(--ln-ivory)}
+@media (max-width:620px){body.landing .ln-door-matters{grid-template-columns:1fr}}
+body.landing .ln-door-side{display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start}
+body.landing .ln-door-fact{
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ln-accent);line-height:1.7;
+}
+body.landing .ln-door-go{
+  display:inline-flex;align-items:center;gap:.7rem;font-size:1rem;color:var(--ln-ivory);
+  border-bottom:1px solid var(--ln-c26);padding-bottom:.35rem;
+  transition:border-color .4s var(--ease);
+}
+body.landing .ln-door:hover .ln-door-go{border-color:var(--ln-ivory)}
+body.landing .ln-door-go span{transition:transform .4s var(--ease)}
+body.landing .ln-door:hover .ln-door-go span{transform:translateX(5px)}
+@media (max-width:820px){
+  body.landing .ln-door-grid{grid-template-columns:1fr;gap:1.4rem}
+  body.landing .ln-door:hover .ln-door-title{transform:none}
+}
+
+body.landing .ln-day{background:var(--ln-ivory);color:#14100c;padding-block:clamp(3.5rem,2rem + 5vw,7rem)}
+body.landing .ln-day h2,body.landing .ln-day h3{color:#0d0d0d}
+body.landing .ln-day p{color:#443c34}
+body.landing .ln-day .fine-print{color:#8a7f72}
+body.landing .ln-day .ln-act-display{color:#0d0d0d}
+body.landing .ln-who{
+  display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);
+  gap:clamp(2rem,1.2rem + 3.4vw,4.5rem);align-items:start;margin-top:clamp(2rem,1.2rem + 2.4vw,3.4rem);
+}
+body.landing .ln-portrait{
+  margin:0;overflow:hidden;border-radius:2px;background:#e8e2d6;aspect-ratio:4/5;
+}
+body.landing .ln-portrait img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%;
+  transform:scale(1.07);transform-origin:50% 30%;
+  transition:transform 1.3s var(--ease);
+}
+html.js body.landing .ln-portrait[data-on] img{transform:scale(1)}
+/* the bio above runs long, so the rule needs air or it reads as a underline
+   on the last line rather than the start of the credential list */
+body.landing .ln-creds{border-top:1px solid rgba(13,13,13,.14);margin-top:1.6rem}
+body.landing .ln-cred{
+  display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.6fr);gap:1.4rem;
+  padding:1.15rem .1rem;border-bottom:1px solid rgba(13,13,13,.14);
+}
+body.landing .ln-cred strong{font-weight:500;font-size:1.02rem;color:#0d0d0d;letter-spacing:-.01em}
+body.landing .ln-cred span{color:#443c34;font-size:.95rem}
+body.landing .ln-day .btn-primary{background:#1a120e;color:var(--ln-ivory)}
+body.landing .ln-day .btn-primary:hover{background:#000;color:#fff}
+body.landing .ln-day .btn-secondary{border-color:rgba(13,13,13,.22);color:#1a120e}
+body.landing .ln-day .btn-secondary:hover{border-color:#1a120e;color:#000}
+@media (max-width:820px){body.landing .ln-who{grid-template-columns:1fr}body.landing .ln-portrait{max-width:420px}}
+
+/* guides row inside the daylight act.
+   No negative inline margin: the first and last cells already drop their
+   outer padding, so the row aligns to the container on its own. Bleeding it
+   out by 2rem put this row 32px left of every other element in the act, and
+   overflowed the viewport below 1244px where the gutter is smaller than the
+   bleed. */
+body.landing .ln-guides{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  margin-top:clamp(2.6rem,1.6rem + 3vw,4.5rem);border-top:1px solid rgba(13,13,13,.14);
+}
+body.landing .ln-guide{
+  padding:1.6rem 2rem;border-right:1px solid rgba(13,13,13,.14);
+  display:flex;flex-direction:column;gap:.45rem;
+}
+body.landing .ln-guide:first-child{padding-left:0}
+body.landing .ln-guide:last-child{border-right:0;padding-right:0}
+body.landing .ln-guide > *{transition:transform .4s var(--ease)}
+body.landing .ln-guide:hover > *{transform:translateX(7px)}
+body.landing .ln-guide strong{font-weight:500;color:#0d0d0d;font-size:1rem;letter-spacing:-.01em}
+body.landing .ln-guide span{color:#443c34;font-size:.9rem;line-height:1.5}
+body.landing .ln-guide em{
+  font-style:normal;margin-top:.35rem;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.08em;text-transform:uppercase;color:#8a7f72;
+}
+@media (max-width:820px){
+  body.landing .ln-guides{grid-template-columns:1fr}
+  body.landing .ln-guide{border-right:0;border-bottom:1px solid rgba(13,13,13,.14);padding-right:0}
+}
+
+/* =========================================================================
+   ACT V — Close
+   ========================================================================= */
+body.landing .ln-close{
+  padding-block:clamp(4.5rem,3rem + 6vw,9rem);text-align:center;
+  border-top:1px solid var(--ln-hair);
+}
+body.landing .ln-close .ln-act-display{margin-inline:auto;max-width:18ch;line-height:1.12}
+body.landing .ln-close p{max-width:54ch;margin:1.3rem auto 2.2rem}
+body.landing .ln-close .cluster{justify-content:center}
+body.landing .ln-close .fine-print{margin-top:2.4rem;max-width:70ch;margin-inline:auto}
+
+/* ---- Footer, tuned to the night ground ---- */
+body.landing .site-footer{background:var(--ln-ground-2);border-top:1px solid var(--ln-hair);margin-top:0}
+body.landing .site-footer h3{color:var(--ln-c45)}
+body.landing .site-footer p,body.landing .site-footer .fine-print{color:var(--ln-c45)}
+body.landing .footer-links a{color:var(--ln-c72)}
+body.landing .footer-links a:hover{color:var(--ln-ivory)}
+body.landing .site-footer .cs-name,body.landing .site-footer .cs-name span{color:var(--ln-ivory)}
+body.landing .site-footer .cs-sub{color:var(--ln-c45)}
+body.landing .site-footer .cs-mark-teal{fill:var(--ln-ivory)}
+body.landing .site-footer .cs-mark-orange{fill:var(--ln-accent)}
+body.landing .footer-bottom{border-top:1px solid var(--ln-hair)}
+body.landing .footer-bottom a{color:var(--ln-c72)}
+body.landing .mobile-sticky{
+  background:color-mix(in srgb,var(--ln-ground) 90%,transparent);
+  box-shadow:inset 0 1px 0 var(--ln-hair);
+}
+body.landing .mobile-sticky .btn{padding:.8rem 1rem;font-size:.92rem}
+
+/* =========================================================================
+   Motion safety — with reduced motion or without JS the page is complete
+   and static: every price, every matter, every link already visible.
+   ========================================================================= */
+@media (prefers-reduced-motion:reduce){
+  html.js body.landing .ln-moment{color:var(--ln-ivory)}
+  html.js body.landing .ln-line{opacity:1}
+  html.js body.landing .ln-portrait img{transform:none;transition:none}
+  body.landing .ln-glyph{transform:none!important}
+  body.landing .ln-glyph svg{transform:none;will-change:auto}
+  /* no travelling light: the mark rests as a lit brass outline instead */
+  body.landing .ln-glyph .g-glow{display:none}
+  body.landing .ln-glyph .g-trace{animation:none;stroke-dasharray:none;opacity:.34;filter:none}
+  body.landing .ln-door:hover .ln-door-title{transform:none}
+  body.landing .ln-fig{transition:none}
+}

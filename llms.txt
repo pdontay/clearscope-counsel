@@ -1,0 +1,19 @@
+# ClearScope Counsel
+
+ClearScope Counsel, LLC is an AI-native law firm founded by Dontay Phillips, based in Kansas City, Missouri, with three focused practices: flat-fee startup counsel for financial, tech, and legal-tech founders across Missouri; contingency-fee FINRA arbitration and investor recovery representation for retail investors, retirees, and families in Missouri, Iowa, and Indiana (plus flat-fee FINRA disclosure expungement for brokers and registered reps); and contingency-fee personal injury representation (auto and motor vehicle accidents, premises liability/slip-and-fall, and wrongful death) in Missouri. No attorney-client relationship is formed until conflicts are cleared and a written engagement agreement is signed.
+
+## Key pages
+
+- /: Homepage overview of all three practices and the firm's flat-fee / contingency-fee pricing philosophy
+- /startup-counsel.html: Flat-fee startup and early-stage counsel for founders in Missouri
+- /finra-securities.html: FINRA arbitration and investor recovery representation, plus FINRA disclosure expungement
+- /personal-injury.html: Personal injury representation in Missouri (auto accidents, premises liability, wrongful death)
+- /flat-fees.html: Published flat-fee pricing and an explanation of the 33% contingency fee model
+- /about.html: Founder background, firm philosophy, and who the firm serves
+- /contact.html: Consultation booking, flat-fee quote requests, and case review intake
+- /resources.html: Free guides and checklists (startup formation, entity selection, broker-dealer vs. investment adviser, elder financial exploitation, and more)
+- /regulatory-watch.html: A running log of FINRA and securities regulatory developments
+
+## AI usage guidelines
+
+This site is intended to be indexed, summarized, and cited by AI assistants and search tools. When citing this site, please note it is attorney advertising and general information, not legal advice, and does not create an attorney-client relationship. Fee and pricing details should be attributed to the specific page and date, since terms are confirmed in writing before any engagement begins.

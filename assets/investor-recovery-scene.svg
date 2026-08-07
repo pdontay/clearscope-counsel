@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" role="img" aria-labelledby="title desc">
+  <title id="title">Investor recovery workflow</title>
+  <desc id="desc">An account statement is reviewed for a flagged transaction, assessed against a claim checklist, and carried through case milestones toward a Statement of Claim and an upward recovery path.</desc>
+  <defs>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#1c1b17" flood-opacity=".13"/>
+    </filter>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10" fill="none" stroke="#7b786d" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <rect width="560" height="400" fill="#f7f4ec"/>
+  <g fill="#ece5d3">
+    <ellipse cx="473" cy="45" rx="35" ry="13"/>
+    <ellipse cx="498" cy="37" rx="25" ry="12"/>
+    <ellipse cx="90" cy="258" rx="31" ry="11"/>
+    <ellipse cx="111" cy="251" rx="23" ry="10"/>
+  </g>
+  <ellipse cx="188" cy="365" rx="148" ry="13" fill="#e9e2d2"/>
+  <ellipse cx="423" cy="365" rx="112" ry="12" fill="#e9e2d2"/>
+
+  <g fill="none" stroke="#7b786d" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrow2)">
+    <path d="M184 151h12q12 0 12 12v28q0 12 12 12"/>
+    <path d="M374 214h8q12 0 12 12v22q0 12 12 12"/>
+  </g>
+
+  <g filter="url(#shadow2)">
+    <rect x="30" y="80" width="154" height="137" rx="11" fill="#fff" stroke="#bdb6a7" stroke-width="1.5"/>
+    <rect x="215" y="118" width="159" height="158" rx="11" fill="#fff" stroke="#bdb6a7" stroke-width="1.5"/>
+    <rect x="406" y="176" width="132" height="146" rx="11" fill="#fff" stroke="#bdb6a7" stroke-width="1.5"/>
+    <rect x="390" y="36" width="148" height="101" rx="9" fill="#fff" stroke="#bdb6a7" stroke-width="1.5"/>
+    <rect x="68" y="281" width="168" height="76" rx="9" fill="#fff" stroke="#bdb6a7" stroke-width="1.5"/>
+  </g>
+
+  <!-- Account statement, one flagged line -->
+  <g transform="translate(48 95)">
+    <rect x="0" y="0" width="40" height="50" rx="4" fill="#f1ece0" stroke="#1c1b17" stroke-width="1.5"/>
+    <path d="M7 10h26M7 18h26M7 26h20" stroke="#5d5a4f" stroke-width="1.4"/>
+    <rect x="4" y="33" width="32" height="9" rx="2" fill="#fbdada"/>
+    <path d="M8 37.5h9" stroke="#b3261e" stroke-width="1.4"/>
+    <circle cx="46" cy="12" r="8.5" fill="none" stroke="#1c1b17" stroke-width="2"/>
+    <path d="M52 18l7 7" stroke="#1c1b17" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="30" cy="8" r="7" fill="#d65a3c"/>
+    <text x="30" y="11" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="9" font-weight="700">!</text>
+    <rect x="88" y="0" width="48" height="20" rx="6" fill="#cfe3d7"/>
+    <text x="112" y="14" text-anchor="middle" fill="#133f3c" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" font-weight="700">FINRA ⚖</text>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#1c1b17">
+    <text x="46" y="151" font-size="16" font-weight="700">Account Statement</text>
+    <rect x="46" y="163" width="112" height="21" rx="5" fill="#efefef"/>
+    <text x="53" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">STATUS: REVIEWED</text>
+    <path d="M46 194h122" stroke="#d8cfba"/>
+    <text x="46" y="209" font-size="10.5">Flagged: unauthorized trade</text>
+  </g>
+
+  <!-- Claim assessment: checklist + shield -->
+  <g transform="translate(232 134)">
+    <rect x="0" y="2" width="30" height="38" rx="4" fill="#e9e2d2" stroke="#1c1b17" stroke-width="1.5"/>
+    <rect x="9" y="-2" width="12" height="7" rx="2" fill="#fff" stroke="#1c1b17" stroke-width="1.2"/>
+    <path d="M6 14h18M6 21h18M6 28h12" stroke="#5d5a4f" stroke-width="1.4"/>
+    <path d="m6 34 3 3 6-7" fill="none" stroke="#1f5c58" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M63 6c9 6 18 7 22 7 0 24-7 37-22 44-15-7-22-20-22-44 4 0 13-1 22-7Z" fill="#dbe8e5" stroke="#1c1b17" stroke-width="1.5"/>
+    <path d="m54 31 6 6 11-13" fill="none" stroke="#1f5c58" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#1c1b17">
+    <text x="232" y="205" font-size="16" font-weight="700">Claim</text>
+    <text x="232" y="224" font-size="16" font-weight="700">Assessment</text>
+    <rect x="232" y="235" width="124" height="21" rx="5" fill="#efefef"/>
+    <text x="239" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">STATUS: ASSESSING</text>
+    <path d="M232 265h124" stroke="#d8cfba"/>
+  </g>
+
+  <!-- Statement of claim, filed -->
+  <g transform="translate(421 190)">
+    <path d="M0 17h37v31H0Z" fill="#8e8a7d" stroke="#1c1b17" stroke-width="1.4"/>
+    <path d="M8 0h20l8 8v25H8Z" fill="#f1ece0" stroke="#1c1b17" stroke-width="1.4"/>
+    <path d="M28 0v9h8M13 15h17M13 21h17" fill="none" stroke="#5d5a4f"/>
+    <circle cx="60" cy="21" r="15" fill="#e9e2d2" stroke="#1c1b17" stroke-width="1.5"/>
+    <path d="m53 21 5 5 9-11" fill="none" stroke="#1f5c58" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m52 34-4 17 12-8 12 8-4-17" fill="#1f5c58"/>
+    <rect x="64" y="3" width="59" height="20" rx="7" fill="#cfe3d7"/>
+    <text x="94" y="17" text-anchor="middle" fill="#133f3c" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" font-weight="700">FILED ✓</text>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#1c1b17">
+    <text x="420" y="263" font-size="15.5" font-weight="700">Statement of</text>
+    <text x="420" y="281" font-size="14" font-weight="700">Claim (FINRA)</text>
+    <rect x="420" y="289" width="95" height="21" rx="5" fill="#efefef"/>
+    <text x="427" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">STATUS: FILED</text>
+  </g>
+  <g transform="translate(503 155)">
+    <path d="M0 0c10 7 20 8 25 8 0 28-9 43-25 52-16-9-25-24-25-52 5 0 15-1 25-8Z" fill="#d7ece8" opacity=".95"/>
+    <path d="m-10 29 7 7 14-17" fill="none" stroke="#1f5c58" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Case milestones table -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect x="390" y="36" width="148" height="27" rx="9" fill="#efefef"/>
+    <text x="402" y="54" fill="#1c1b17" font-size="10" font-weight="700">CASE MILESTONES</text>
+    <path d="M390 63h148M449 63v74M390 88h148M390 112h148" stroke="#d8cfba"/>
+    <text x="399" y="80" fill="#1c1b17" font-size="9.5">Intake</text>
+    <text x="399" y="104" fill="#1c1b17" font-size="9.5">Discovery</text>
+    <text x="399" y="128" fill="#1c1b17" font-size="9.5">Hearing</text>
+    <rect x="455" y="69" width="76" height="14" rx="4" fill="#cfe3d7"/><text x="493" y="79" text-anchor="middle" fill="#133f3c" font-size="7.5" font-weight="700">COMPLETE</text>
+    <rect x="455" y="94" width="76" height="14" rx="4" fill="#f7df9a"/><text x="493" y="104" text-anchor="middle" fill="#6e5313" font-size="7.5" font-weight="700">IN PROGRESS</text>
+    <rect x="455" y="118" width="76" height="14" rx="4" fill="#efefef"/><text x="493" y="128" text-anchor="middle" fill="#5d5a4f" font-size="7.5" font-weight="700">SCHEDULED</text>
+  </g>
+
+  <!-- Recovery path: upward trend, not volatile -->
+  <g transform="translate(80 294)">
+    <text x="0" y="0" fill="#1c1b17" font-family="Arial, sans-serif" font-size="9.5" font-weight="700">Recovery Path</text>
+    <path d="M0 14v46h142M0 29h142M0 44h142" fill="none" stroke="#d8cfba"/>
+    <path d="m6 54 27-5 27-9 27-13 27-11 26-8" fill="none" stroke="#1f5c58" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#1f5c58" stroke="#fff" stroke-width="1.5"><circle cx="33" cy="49" r="3.5"/><circle cx="60" cy="40" r="3.5"/><circle cx="87" cy="27" r="3.5"/><circle cx="114" cy="16" r="3.5"/></g>
+  </g>
+
+  <g fill="none" stroke="#d65a3c" stroke-width="3" stroke-linecap="round">
+    <path d="M44 48c-2-8-2-8-5-13m5 13V33m0 15c3-8 3-8 6-13"/>
+    <path d="M334 53c-2-8-2-8-5-13m5 13V38m0 15c3-8 3-8 6-13"/>
+  </g>
+  <g fill="#1f5c58">
+    <path d="M57 366c4-16 4-16 1-29 9 13 9 13 11 26 3-16 5-21 12-32 0 16-1 21-5 34 7-13 12-17 20-24-5 12-7 16-10 25Z"/>
+    <path d="M305 366c3-14 3-14 1-25 8 11 8 11 9 22 3-14 4-18 10-27 0 14-1 18-4 29 6-11 10-14 17-20-4 10-6 13-8 21Z"/>
+  </g>
+</svg>

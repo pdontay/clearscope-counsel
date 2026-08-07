@@ -1,0 +1,374 @@
+/* =========================================================================
+   Register A — flat-fee B2B advisory (anchor: general.legal)
+   Scope: body.reg-a only (startup-counsel.html, flat-fees.html).
+   Loaded synchronously after the async styles.css link; every selector is
+   body-scoped so it outranks the base sheet regardless of load order.
+   ========================================================================= */
+
+body.reg-a{
+  --ra-ink:#0e2724;                 /* deep teal-ink: GL's #0C1826 translated to brand */
+  --ra-ink-2:#143430;
+  --ra-cream:#f7f4ec;
+  --ra-card:#ffffff;
+  --ra-hairline:color-mix(in oklab, var(--ink) 14%, transparent);
+  --ra-grad:linear-gradient(110deg,#5a3a20 0%,#b8854e 100%);
+  --ra-radius:22px;
+  background:var(--bg);
+}
+[data-theme="dark"] body.reg-a{
+  --ra-ink:#0d211e;
+  --ra-ink-2:#12302c;
+  --ra-card:var(--surface);
+  --ra-grad:linear-gradient(110deg,#c99a63 0%,#8a6236 100%);
+}
+
+/* ---- Type scale ---- */
+body.reg-a .ra-display{
+  font-size:clamp(2.7rem,1.6rem + 4.6vw,5.6rem);
+  font-weight:400;line-height:.98;letter-spacing:-.025em;max-width:14ch;
+}
+body.reg-a h2{font-weight:500;letter-spacing:-.025em}
+body.reg-a .ra-grad{
+  background:var(--ra-grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* Section mark: "§ 02 — Pricing" hairline pill */
+body.reg-a .ra-mark{
+  display:inline-flex;align-items:center;gap:.45em;width:max-content;
+  font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line-strong);border-radius:999px;padding:.42rem .9rem;
+  background:color-mix(in oklab,var(--surface) 60%,transparent);
+}
+
+/* ---- Buttons: ink, radius 8, arrow-in-circle that nudges on hover ---- */
+body.reg-a .btn{border-radius:9px;font-weight:500}
+body.reg-a .btn:hover{transform:none}
+body.reg-a .btn-primary{
+  background:var(--ra-ink);color:#fff;box-shadow:none;border:1px solid transparent;
+  transition:background-color .22s var(--ease),color .22s var(--ease);
+}
+body.reg-a .btn-primary:hover{background:var(--ra-ink-2);box-shadow:none}
+[data-theme="dark"] body.reg-a .btn-primary{background:var(--teal);color:#06201d}
+[data-theme="dark"] body.reg-a .btn-primary:hover{background:var(--teal-600)}
+body.reg-a .btn-secondary{
+  background:var(--surface);border-color:var(--line-strong);color:var(--ink);box-shadow:var(--shadow-xs);
+  transition:border-color .22s var(--ease),background-color .22s var(--ease),box-shadow .22s var(--ease);
+}
+body.reg-a .btn-secondary:hover{border-color:var(--ink);background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+/* arrow-in-circle suffix */
+body.reg-a .btn-arr{
+  display:inline-grid;place-items:center;width:1.55em;height:1.55em;margin-right:-.35em;
+  border-radius:50%;background:rgba(255,255,255,.16);
+}
+body.reg-a .btn-arr svg{width:.9em;height:.9em;transition:transform .3s var(--ease)}
+body.reg-a .btn-primary:hover .btn-arr svg{transform:translateX(3px)}
+body.reg-a .btn-secondary .btn-arr{background:color-mix(in oklab,var(--ink) 8%,transparent)}
+body.reg-a .btn-secondary:hover .btn-arr svg{transform:translateX(3px)}
+
+/* ---- Hero ---- */
+body.reg-a .ra-hero{padding-block:clamp(3.4rem,2.2rem + 5vw,7rem) clamp(2.6rem,2rem + 3vw,4.6rem);position:relative;overflow:hidden}
+body.reg-a .ra-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.9fr);gap:clamp(2rem,1.4rem + 3vw,4.5rem);align-items:end}
+body.reg-a .ra-hero-copy{display:flex;flex-direction:column;gap:1.4rem}
+body.reg-a .ra-hero .lede{max-width:56ch}
+/* A coherent contour field rather than five independently sliding lines.
+   JavaScript reshapes these paths at a restrained 30fps; this authored still
+   remains complete when scripting or motion is unavailable. */
+body.reg-a .ra-wave{
+  position:absolute;inset:auto -7% -20% -7%;width:114%;height:76%;
+  pointer-events:none;opacity:.86;z-index:0;overflow:visible;
+}
+body.reg-a .ra-wave-line{
+  fill:none;stroke:url(#raWaveGrad);stroke-width:1.4;
+  vector-effect:non-scaling-stroke;stroke-linecap:round;
+}
+body.reg-a .ra-wave-line:nth-of-type(2n){opacity:.78}
+body.reg-a .ra-wave-line:nth-of-type(3n){opacity:.56}
+[data-theme="dark"] body.reg-a .ra-wave{opacity:.42}
+@media (max-width:720px){
+  body.reg-a .ra-wave{inset:auto -28% -9% -28%;width:156%;height:58%;opacity:.68}
+}
+body.reg-a .ra-hero-grid{position:relative;z-index:1}
+
+/* right-side action card (replaces illustration frames) */
+body.reg-a .ra-action{
+  background:var(--ra-card);border:1px solid var(--line);border-radius:var(--ra-radius);
+  box-shadow:var(--shadow-md);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;
+}
+body.reg-a .ra-action p{font-size:.98rem;line-height:1.5}
+body.reg-a .ra-action hr{border:0;border-top:1px solid var(--line);margin:.2rem 0}
+body.reg-a .ra-action .btn{width:100%}
+body.reg-a .ra-action-hint{font-size:.85rem;color:var(--muted)}
+
+/* ---- Stat strip: light-weight numerals ---- */
+body.reg-a .ra-stats{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:2rem;padding-block:clamp(1.6rem,1rem + 2vw,3rem);border-block:1px solid var(--line)}
+/* Headlines differ in length, so a longer one wraps to two or three lines while
+   its neighbours stay on one. Subgrid puts every headline in a shared first row
+   and every label in a shared second row, so the labels stay on one baseline
+   regardless of where each headline wraps. */
+body.reg-a .ra-stat{display:grid;grid-row:span 2;grid-template-rows:subgrid;align-content:start;gap:.45rem}
+body.reg-a .ra-stat b{display:block;font-size:clamp(1.9rem,1.35rem + 2.1vw,2.9rem);font-weight:400;letter-spacing:-.02em;line-height:1.05;color:var(--ink);text-wrap:balance}
+body.reg-a .ra-stat span{display:block;color:var(--muted);font-size:.95rem}
+@supports not (grid-template-rows:subgrid){
+  body.reg-a .ra-stats{grid-template-rows:none}
+  body.reg-a .ra-stat{display:block}
+  body.reg-a .ra-stat span{margin-top:.45rem}
+}
+
+/* ---- Hairline value columns (replaces card trios) ---- */
+body.reg-a .ra-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid var(--line)}
+body.reg-a .ra-col{padding:1.8rem 1.6rem;border-left:1px solid var(--line)}
+body.reg-a .ra-col:first-child{border-left:0;padding-left:0}
+body.reg-a .ra-col h3{font-size:1.05rem;font-weight:500;margin-bottom:.9rem}
+body.reg-a .ra-col li{position:relative;padding-left:1.5rem;margin-bottom:.55rem;font-size:.93rem;color:var(--ink-2)}
+body.reg-a .ra-col li::before{content:"";position:absolute;left:0;top:.52em;width:.55rem;height:1px;background:var(--muted)}
+
+/* ---- Signature component: dark comparison panel, raised winner column ---- */
+body.reg-a .ra-compare{
+  background:var(--ra-ink);border-radius:26px;padding:clamp(1.8rem,1.2rem + 2.4vw,3.2rem);
+  color:#eef0ee;position:relative;
+}
+body.reg-a .ra-compare h2{color:#f4f0ec}
+body.reg-a .ra-compare .ra-compare-lede{color:color-mix(in oklab,#f4f0ec 72%,transparent);max-width:44ch}
+body.reg-a .ra-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;align-items:stretch}
+body.reg-a .ra-lose{padding:1.9rem 1.9rem 1.9rem 0;border-right:1px solid rgba(244,240,236,.16)}
+body.reg-a .ra-lose .ra-verdict{
+  display:inline-grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;
+  border:1px solid rgba(244,240,236,.4);color:rgba(244,240,236,.75);font-size:.9rem;margin-bottom:1.2rem;
+}
+body.reg-a .ra-lose h3{color:#f4f0ec;font-size:1.12rem;margin-bottom:.9rem}
+body.reg-a .ra-lose li{position:relative;padding-left:1.4rem;margin-bottom:.6rem;font-size:.93rem;color:rgba(244,240,236,.72)}
+body.reg-a .ra-lose li::before{content:"×";position:absolute;left:0;color:rgba(244,240,236,.5)}
+body.reg-a .ra-win{
+  background:var(--ra-cream);color:var(--ink);border-radius:18px;
+  margin:-1.1rem -.4rem -1.1rem 1.9rem;padding:1.9rem;box-shadow:var(--shadow-lg);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+body.reg-a .ra-win:hover{transform:translateY(-4px);box-shadow:var(--shadow-xl)}
+body.reg-a .ra-win .ra-verdict{
+  display:inline-grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;
+  background:#1f5c58;color:#fff;font-size:.95rem;margin-bottom:1.2rem;
+}
+body.reg-a .ra-win h3{font-size:1.12rem;margin-bottom:.9rem}
+body.reg-a .ra-win li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:.93rem;color:var(--ink-2)}
+body.reg-a .ra-win li::before{content:"✓";position:absolute;left:0;color:#1f5c58;font-weight:600}
+[data-theme="dark"] body.reg-a .ra-win{background:var(--surface-2)}
+
+/* ---- Pricing cards, GL grammar ---- */
+body.reg-a .ra-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch}
+body.reg-a .ra-price{
+  position:relative;display:flex;flex-direction:column;gap:.9rem;
+  background:var(--ra-card);border:1px solid var(--line);border-radius:var(--ra-radius);
+  padding:1.7rem 1.6rem 1.5rem;transition:border-color .3s var(--ease),box-shadow .3s var(--ease),transform .3s var(--ease);
+}
+body.reg-a .ra-price:hover{border-color:color-mix(in oklab,var(--ink) 30%,var(--line));box-shadow:var(--shadow-md);transform:translateY(-3px)}
+body.reg-a .ra-price h3{font-size:1.25rem;font-weight:500;letter-spacing:-.02em}
+body.reg-a .ra-price .ra-for{color:var(--muted);font-size:.92rem;min-height:2.6em}
+body.reg-a .ra-amount{font-size:clamp(2.4rem,2rem + 1.6vw,3.4rem);font-weight:400;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+body.reg-a .ra-amount .ra-was{display:block;font-size:.42em;color:var(--muted);text-decoration:line-through;letter-spacing:0;margin-bottom:.25em;font-weight:400}
+body.reg-a .ra-unit{font-size:.85rem;color:var(--muted);margin-top:.2rem}
+body.reg-a .ra-price ul{margin-top:.4rem;flex:1}
+body.reg-a .ra-price li{position:relative;padding-left:1.7rem;margin-bottom:.6rem;font-size:.92rem;color:var(--ink-2)}
+body.reg-a .ra-price li::before{
+  content:"✓";position:absolute;left:0;top:.05em;width:1.15rem;height:1.15rem;border-radius:50%;
+  display:grid;place-items:center;font-size:.68rem;background:var(--ink);color:var(--bg);
+}
+body.reg-a .ra-price .btn{width:100%;margin-top:.8rem;background:var(--surface-2);border:1px solid transparent;color:var(--ink)}
+body.reg-a .ra-price .btn:hover{background:var(--ra-ink);color:#fff}
+/* featured, inverted */
+body.reg-a .ra-price--featured{background:var(--ra-ink);border-color:transparent;color:#f4f0ec;box-shadow:var(--shadow-lg)}
+body.reg-a .ra-price--featured h3,body.reg-a .ra-price--featured .ra-amount{color:#f4f0ec}
+body.reg-a .ra-price--featured .ra-for,body.reg-a .ra-price--featured .ra-unit{color:rgba(244,240,236,.65)}
+body.reg-a .ra-price--featured .ra-amount .ra-was{color:rgba(244,240,236,.55)}
+body.reg-a .ra-price--featured li{color:rgba(244,240,236,.85)}
+body.reg-a .ra-price--featured li::before{background:#f4f0ec;color:var(--ra-ink)}
+body.reg-a .ra-price--featured .btn{background:#f4f0ec;color:var(--ra-ink)}
+body.reg-a .ra-price--featured .btn:hover{background:#fff;color:var(--ra-ink)}
+body.reg-a .ra-badge{
+  position:absolute;top:-0.9rem;left:50%;transform:translateX(-50%);
+  background:var(--ra-ink);border:1px solid rgba(244,240,236,.35);color:#f4f0ec;
+  font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  padding:.34rem .8rem;border-radius:999px;white-space:nowrap;
+}
+
+/* ---- FAQ: hairline rows, animated open ---- */
+body.reg-a .ra-faq{border-top:1px solid var(--line)}
+body.reg-a .ra-faq .faq-item{
+  background:transparent;border:0;border-radius:0;overflow:visible;box-shadow:none;
+  border-bottom:1px solid var(--line);transition:background-color .3s var(--ease);
+}
+body.reg-a .ra-faq .faq-item.is-open{background:color-mix(in oklab,var(--surface) 55%,transparent)}
+body.reg-a .ra-faq button{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;text-align:left;
+  background:none;border:0;cursor:pointer;padding:1.25rem .35rem;
+  font:inherit;font-weight:500;font-size:1.04rem;color:var(--ink);letter-spacing:-.01em;
+}
+body.reg-a .ra-faq button span:last-child{
+  font-weight:400;font-size:1.3rem;color:var(--muted);line-height:1;
+  transition:transform .35s var(--ease),color .35s var(--ease);
+}
+body.reg-a .ra-faq .faq-item.is-open button span:last-child{transform:rotate(45deg);color:var(--ink)}
+body.reg-a .ra-faq .faq-panel{
+  display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease);
+}
+body.reg-a .ra-faq .faq-panel > p{
+  overflow:hidden;min-height:0;color:var(--ink-2);max-width:64ch;font-size:.96rem;
+  opacity:0;transform:translateY(-4px);transition:opacity .35s var(--ease) .08s,transform .35s var(--ease) .08s;
+}
+body.reg-a .ra-faq .faq-item.is-open .faq-panel{grid-template-rows:1fr}
+body.reg-a .ra-faq .faq-item.is-open .faq-panel > p{opacity:1;transform:none;padding-bottom:1.25rem}
+
+/* ---- Index rows (cities etc.) ---- */
+body.reg-a .ra-index{border-top:1px solid var(--line)}
+body.reg-a .ra-row{
+  display:grid;grid-template-columns:minmax(150px,.85fr) 2fr;gap:1.4rem;align-items:start;
+  padding:1.35rem .2rem;border-bottom:1px solid var(--line);
+}
+body.reg-a .ra-row h3{font-size:1.05rem;font-weight:500}
+body.reg-a .ra-row p{color:var(--muted);font-size:.94rem;max-width:62ch}
+
+/* ---- Dark final CTA band ---- */
+body.reg-a .ra-cta{
+  background:var(--ra-ink);border-radius:26px;padding:clamp(2rem,1.4rem + 2.6vw,3.4rem);
+  display:grid;grid-template-columns:1.3fr .7fr;gap:2rem;align-items:center;
+}
+body.reg-a .ra-cta h2{color:#f4f0ec}
+body.reg-a .ra-cta p{color:rgba(244,240,236,.75)}
+body.reg-a .ra-cta .btn-primary{background:#f4f0ec;color:var(--ra-ink)}
+body.reg-a .ra-cta .btn-primary:hover{background:#fff}
+body.reg-a .ra-cta .btn-primary .btn-arr{background:color-mix(in oklab,var(--ra-ink) 12%,transparent)}
+/* This button sits on the ink panel, so it has to restate `background` and not
+   only the colours: `body.reg-a .btn-secondary` sets background:var(--surface),
+   and a rule that overrides colour alone leaves cream text on a white pill —
+   1.13:1, unreadable at rest and only legible once hovered. Every button that
+   lands on a dark panel now declares all three properties in both states. */
+body.reg-a .ra-cta .btn-secondary{
+  background:transparent;border-color:rgba(244,240,236,.4);color:#f4f0ec;box-shadow:none;
+}
+/* Hover adds light rather than removing it: the wash and border brighten. */
+body.reg-a .ra-cta .btn-secondary:hover{
+  background:rgba(244,240,236,.1);border-color:#f4f0ec;color:#fff;box-shadow:none;
+}
+
+/* ---- Existing components, re-tuned inside Register A ---- */
+body.reg-a .card{border-radius:var(--ra-radius);box-shadow:none}
+body.reg-a .card:hover{box-shadow:var(--shadow-sm)}
+body.reg-a .eyebrow{color:var(--muted)}
+body.reg-a .step::before{background:var(--ra-ink);border-radius:50%}
+body.reg-a .offer-band{border-radius:26px}
+/* Same half-applied cascade as the ink CTA: `.offer-band .btn` never outranked
+   `body.reg-a .btn-primary`, so the pill rendered dark teal on the red band and
+   then, on hover, took only the component rule's colour — a dark red label on a
+   dark green pill. Restated here at the register's own weight.
+   Hover lights the pill up instead of pushing it toward the band's own red:
+   red is the darker colour, so darkening reads as the button receding just as
+   the visitor reaches for it. */
+body.reg-a .offer-band .btn-primary{
+  background:#fff;color:#a23e28;border-color:#fff;box-shadow:none;
+  transition:box-shadow .25s var(--ease),color .25s var(--ease);
+}
+body.reg-a .offer-band .btn-primary:hover{
+  background:#fff;color:#8f3520;
+  box-shadow:0 0 0 4px rgba(255,255,255,.3);
+}
+body.reg-a .feature-band{border-radius:26px;box-shadow:none}
+body.reg-a .feature-band::after{display:none}
+
+/* ---- Reveal stagger support ---- */
+html.js body.reg-a [data-reveal]{transition-duration:.8s}
+
+/* ---- Responsive ---- */
+@media (max-width:960px){
+  body.reg-a .ra-hero-grid{grid-template-columns:1fr}
+  body.reg-a .ra-action{max-width:520px}
+  body.reg-a .ra-cols{grid-template-columns:1fr;border-block:0}
+  body.reg-a .ra-col{border-left:0;padding:1.3rem 0;border-top:1px solid var(--line)}
+  body.reg-a .ra-col:first-child{border-top:0}
+  body.reg-a .ra-prices{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
+  body.reg-a .ra-stats{grid-template-columns:1fr;gap:1.2rem}
+  body.reg-a .ra-compare-grid{grid-template-columns:1fr}
+  body.reg-a .ra-lose{border-right:0;border-bottom:1px solid rgba(244,240,236,.16);padding:0 0 1.9rem}
+  body.reg-a .ra-win{margin:1.9rem 0 -1.1rem}
+  body.reg-a .ra-cta{grid-template-columns:1fr}
+  body.reg-a .ra-row{grid-template-columns:1fr;gap:.4rem}
+}
+@media (prefers-reduced-motion:reduce){
+  body.reg-a .ra-win:hover,body.reg-a .ra-price:hover{transform:none}
+}
+
+/* =========================================================================
+   Register A — guide/article layer (resources/*.html, Read mode)
+   Applies over the shared guide template: .page-hero → .narrow.legal → .band-cta
+   ========================================================================= */
+
+body.reg-a .page-hero{padding-block:clamp(3rem,2rem + 4vw,5.5rem) clamp(1.6rem,1.2rem + 1.6vw,2.6rem)}
+body.reg-a .page-hero h1{
+  font-size:clamp(2.1rem,1.5rem + 2.6vw,3.6rem);
+  font-weight:400;line-height:1.04;letter-spacing:-.025em;max-width:none;
+}
+body.reg-a .page-hero .lede{max-width:60ch}
+
+/* prose rhythm */
+body.reg-a .legal{max-width:70ch}
+body.reg-a .legal p{line-height:1.7}
+body.reg-a .legal h2{
+  font-size:clamp(1.35rem,1.15rem + 1vw,1.8rem);font-weight:500;letter-spacing:-.02em;
+  margin-top:2.8rem;padding-top:1.8rem;
+}
+body.reg-a .legal .legal-updated{color:var(--muted)}
+
+/* callouts: quiet hairline box, mono label */
+body.reg-a .legal .legal-callout{
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;
+  padding:1.2rem 1.35rem;
+}
+body.reg-a .legal .callout-label{color:var(--muted);letter-spacing:.08em}
+body.reg-a .legal .legal-callout--warn{border-color:var(--line-strong)}
+body.reg-a .legal .legal-callout--warn .callout-label{color:var(--persimmon-600)}
+[data-theme="dark"] body.reg-a .legal .legal-callout--warn .callout-label{color:var(--persimmon)}
+
+/* tables: hairline discipline */
+body.reg-a .table-wrap{border-color:var(--line-strong);border-radius:12px}
+body.reg-a .data-table thead th{
+  background:transparent;color:var(--muted);border-bottom:1px solid var(--line-strong);
+  font-size:.68rem;letter-spacing:.08em;
+}
+
+/* guide FAQs: hairline accordion rows (same grammar as .ra-faq) */
+body.reg-a .legal .faq{border-top:1px solid var(--line);margin-top:1rem}
+body.reg-a .legal .faq .faq-item{
+  background:transparent;border:0;border-radius:0;overflow:visible;box-shadow:none;
+  border-bottom:1px solid var(--line);transition:background-color .3s var(--ease);
+}
+body.reg-a .legal .faq .faq-item.is-open{background:color-mix(in oklab,var(--surface) 55%,transparent)}
+body.reg-a .legal .faq button{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;text-align:left;
+  background:none;border:0;cursor:pointer;padding:1.15rem .3rem;
+  font:inherit;font-weight:500;font-size:1rem;color:var(--ink);letter-spacing:-.01em;
+}
+body.reg-a .legal .faq button span:last-child{
+  font-weight:400;font-size:1.25rem;color:var(--muted);line-height:1;
+  transition:transform .35s var(--ease),color .35s var(--ease);
+}
+body.reg-a .legal .faq .faq-item.is-open button span:last-child{transform:rotate(45deg);color:var(--ink)}
+body.reg-a .legal .faq .faq-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease);padding:0}
+body.reg-a .legal .faq .faq-panel > p{
+  overflow:hidden;min-height:0;margin-top:0;color:var(--ink-2);max-width:62ch;font-size:.95rem;
+  opacity:0;transform:translateY(-4px);transition:opacity .35s var(--ease) .08s,transform .35s var(--ease) .08s;
+}
+body.reg-a .legal .faq .faq-item.is-open .faq-panel{grid-template-rows:1fr}
+body.reg-a .legal .faq .faq-item.is-open .faq-panel > p{opacity:1;transform:none;padding-bottom:1.15rem}
+
+/* guide CTA band: the register's ink panel instead of the teal gradient */
+body.reg-a .band-cta{
+  background:var(--ra-ink);border:0;border-radius:26px;box-shadow:none;
+}
+body.reg-a .band-cta::before,body.reg-a .band-cta::after{display:none}
+body.reg-a .band-cta h2{color:#f4f0ec;font-weight:500;letter-spacing:-.025em}
+body.reg-a .band-cta p{color:rgba(244,240,236,.75)}
+body.reg-a .band-cta .eyebrow{color:rgba(244,240,236,.55)}
+body.reg-a .band-cta .btn-primary,body.reg-a .band-cta .btn-accent{
+  background:#f4f0ec;color:var(--ra-ink);
+}
+body.reg-a .band-cta .btn-primary:hover,body.reg-a .band-cta .btn-accent:hover{background:#fff;color:var(--ra-ink)}
+body.reg-a .band-cta .btn-secondary{background:transparent;border-color:rgba(244,240,236,.35);color:#f4f0ec}
+body.reg-a .band-cta .btn-secondary:hover{border-color:#f4f0ec;background:transparent;color:#fff}

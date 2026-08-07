@@ -1,0 +1,294 @@
+/* =========================================================================
+   ClearScope Counsel — the media layer
+   Added 2026-08-06 with the approved generated-media set.
+
+   Photography enters this site in exactly three grammars and no others.
+   Anything that does not fit one of them does not go on the page.
+
+   1. GROUND — the photograph *under* a section, at low opacity, scrimmed in
+      the section's own colour so it fades out before it reaches any text.
+      It gives a flat register colour a material. You feel it more than you
+      see it, and contrast is identical to a section with no photograph.
+
+   2. BAND — full-bleed, edge to edge, at full strength, with one mono line
+      beneath it. The only place a photograph is allowed to be a photograph.
+      It is a breath between sections, not a section. The budget: at most one
+      band per four sections, never two in a row, and never more than one of
+      them moving. A twelve-section page earns two; the landing page, which
+      already carries five scrubbed reveals, earns none.
+
+   3. PLATE — a contained image inside a grid column (resources hero, the
+      founder portraits). Existing grammar, untouched by this file.
+
+   Every ground and band is decorative: alt="" and aria-hidden where it
+   carries no information, real alt text where it does. Nothing here is ever
+   the only source of a fact.
+   ========================================================================= */
+
+/* =========================================================================
+   1 — GROUND
+   ========================================================================= */
+.cs-ground{
+  position:absolute;inset:var(--gd-inset,0);z-index:0;overflow:hidden;pointer-events:none;
+  --gd-tint:#0a1f1c;          /* the section's own colour */
+  --gd-strength:.34;
+}
+.cs-ground img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:var(--gd-pos,50% 50%);
+  opacity:var(--gd-strength);
+}
+/* The scrim. Two passes, both built from the section's own colour: one down
+   the page so the band hands off cleanly to whatever follows, one across it
+   so left-aligned type never sits on picture. */
+.cs-ground::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to right,
+      var(--gd-tint) 0%,
+      color-mix(in srgb,var(--gd-tint) 74%,transparent) var(--gd-x1,44%),
+      color-mix(in srgb,var(--gd-tint) 14%,transparent) 100%),
+    linear-gradient(to bottom,
+      color-mix(in srgb,var(--gd-tint) var(--gd-top,70%),transparent) 0%,
+      transparent var(--gd-y1,34%),
+      transparent var(--gd-y2,66%),
+      var(--gd-tint) 100%);
+}
+/* Sections that host a ground must establish a stacking context and lift
+   their own content above it. */
+.has-ground{position:relative;isolation:isolate}
+.has-ground > .container,
+.has-ground > *:not(.cs-ground){position:relative;z-index:1}
+
+/* =========================================================================
+   2 — BAND
+   ========================================================================= */
+.cs-band{margin:0;display:block}
+.cs-band-frame{
+  position:relative;overflow:hidden;line-height:0;background:var(--band-rest,#0a1f1c);
+  height:var(--band-h,clamp(230px,33vw,500px));
+}
+/* Most bands are a fixed slice of whatever the picture is. A few carry a
+   composition that stops meaning anything once its edges leave the frame —
+   three folios that stand for three tiers are three folios or they are
+   nothing. Those lock to an aspect instead of a height, so the composition
+   survives every width down to the point where a phone forces a crop.
+
+   width:100% here is load-bearing, not tidiness: with an auto width, a
+   binding min-height makes the ratio resolve the *width* from the height,
+   and the band grows past the viewport on a phone. */
+.cs-band--fit .cs-band-frame{
+  width:100%;height:auto;aspect-ratio:var(--band-ar,2.9);min-height:210px;
+}
+.cs-band-frame > img,
+.cs-band-frame > video{
+  width:100%;height:100%;object-fit:cover;object-position:var(--band-pos,50% 50%);
+  display:block;
+}
+/* A hairline top and bottom keeps the band inside the site's structure
+   rather than floating as a slab of picture. */
+.cs-band-frame::before,
+.cs-band-frame::after{
+  content:"";position:absolute;left:0;right:0;height:1px;
+  background:var(--band-rule,rgba(247,244,235,.14));z-index:2;
+}
+.cs-band-frame::before{top:0}
+.cs-band-frame::after{bottom:0}
+
+.cs-band-cap{
+  display:block;width:min(100% - 2.5rem,var(--maxw));margin:1rem auto 0;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;line-height:1.65;
+  color:var(--band-cap,rgba(247,244,235,.45));max-width:none;
+  text-wrap:pretty;   /* a one-word second line reads like a mistake */
+}
+.cs-band-cap b{
+  font-weight:500;letter-spacing:.06em;color:var(--band-cap-hot,rgba(247,244,235,.72));
+}
+
+/* Motion bands carry two layers: a still that is the real, complete image
+   (real alt text, lazy-loaded), and the clip laid over it. The clip's source
+   is not fetched until the band is near the viewport, and never at all under
+   reduced motion — so on a page nobody scrolls to, a motion band costs
+   exactly one still. It fades in only once it is genuinely playing, which
+   means a refused autoplay leaves the still in place rather than a black box. */
+.cs-band--motion .cs-band-frame > video{
+  position:absolute;inset:0;z-index:1;
+  opacity:0;transition:opacity .8s var(--ease);
+}
+.cs-band--motion.is-playing .cs-band-frame > video{opacity:1}
+
+/* =========================================================================
+   3 — REGISTER N (index.html) — night
+   ========================================================================= */
+
+/* Hero: a warm horizon low in the frame. It sits under the buttons, never
+   under the headline, and the firm's traced mark keeps the upper right. */
+body.landing .ln-hero .cs-ground{
+  --gd-inset:42% 0 0 0;
+  --gd-tint:#0a1f1c;
+  --gd-strength:.92;
+  --gd-pos:50% 62%;
+}
+body.landing .ln-hero .cs-ground img{
+  filter:brightness(1.34) contrast(1.1) saturate(1.08);
+}
+body.landing .ln-hero .cs-ground::after{
+  background:
+    linear-gradient(to right,
+      color-mix(in srgb,var(--gd-tint) 78%,transparent) 0%,
+      color-mix(in srgb,var(--gd-tint) 46%,transparent) 34%,
+      color-mix(in srgb,var(--gd-tint) 5%,transparent) 100%),
+    linear-gradient(to bottom,
+      color-mix(in srgb,var(--gd-tint) 68%,transparent) 0%,
+      transparent 40%,
+      transparent 78%,
+      color-mix(in srgb,var(--gd-tint) 82%,transparent) 100%);
+}
+@media (max-width:860px){
+  body.landing .ln-hero .cs-ground{--gd-inset:54% 0 0 0;--gd-strength:.82}
+}
+
+/* Close: the same material as the hero, turned on its side and pulled to the
+   edges. The type here is centred, so the scrim is centred too — the warmth
+   arrives at the margins and the reading column stays pure ground. */
+body.landing .ln-close .cs-ground{
+  --gd-tint:#0a1f1c;
+  --gd-strength:.7;
+  --gd-pos:50% 50%;
+}
+body.landing .ln-close .cs-ground img{transform:rotate(180deg)}
+body.landing .ln-close .cs-ground::after{
+  background:
+    radial-gradient(78% 68% at 50% 46%,
+      var(--gd-tint) 0%,
+      color-mix(in srgb,var(--gd-tint) 92%,transparent) 46%,
+      color-mix(in srgb,var(--gd-tint) 30%,transparent) 100%),
+    linear-gradient(to bottom,var(--gd-tint) 0%,transparent 22%,transparent 72%,var(--gd-tint) 100%);
+}
+
+/* Doors: the photographs are part of the resting composition, not a hover-only
+   reveal. Each exposure is tuned to its source image, while the directional
+   mask keeps a quieter field beneath the copy and opens fully over the visual
+   subject on the right. */
+body.landing .ln-door-ground{
+  position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+}
+body.landing .ln-door--a{--door-image-rest:.30;--door-image-hover:.42;--door-image-filter:brightness(.82) saturate(.82) contrast(1.06)}
+body.landing .ln-door--b{--door-image-rest:.54;--door-image-hover:.66;--door-image-filter:brightness(1.08) saturate(.92) contrast(1.12)}
+body.landing .ln-door--pi{--door-image-rest:.50;--door-image-hover:.62;--door-image-filter:brightness(.96) saturate(.88) contrast(1.08)}
+body.landing .ln-door-ground img{
+  width:100%;height:100%;object-fit:cover;object-position:66% 50%;
+  opacity:var(--door-image-rest,.42);transform:scale(1.035);
+  filter:var(--door-image-filter,none);
+  -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,.22) 0%,rgba(0,0,0,.36) 34%,rgba(0,0,0,.78) 58%,#000 100%);
+          mask-image:linear-gradient(to right,rgba(0,0,0,.22) 0%,rgba(0,0,0,.36) 34%,rgba(0,0,0,.78) 58%,#000 100%);
+  transition:opacity .75s var(--ease),transform 1.2s var(--ease),filter .75s var(--ease);
+}
+body.landing .ln-door:hover .ln-door-ground img,
+body.landing .ln-door:focus-visible .ln-door-ground img{opacity:var(--door-image-hover,.56);transform:scale(1);filter:var(--door-image-filter,none)}
+body.landing .ln-door > .container{position:relative;z-index:1}
+/* the persimmon rule stays the topmost thing on the door */
+body.landing .ln-door::before{z-index:2}
+
+/* Band colours inside the night register */
+body.landing .cs-band-frame{--band-rest:#0a1f1c;--band-rule:rgba(247,244,235,.14)}
+body.landing .cs-band-cap{--band-cap:rgba(247,244,235,.45);--band-cap-hot:rgba(247,244,235,.78)}
+
+/* =========================================================================
+   4 — REGISTER B (finra-securities, personal-injury) — jewel grounds
+   ========================================================================= */
+
+/* Hero. The blueprint always reserved a full-bleed environmental ground
+   here; until now there was no photograph to put in it. */
+body.reg-b .rb-hero{position:relative;isolation:isolate;overflow:hidden}
+body.reg-b .rb-hero > .container{position:relative;z-index:1}
+body.reg-b .rb-hero .cs-ground{
+  --gd-tint:var(--rb-ground);
+  --gd-strength:.42;
+  --gd-pos:72% 50%;
+  --gd-x1:46%;
+  --gd-top:82%;
+  --gd-y1:30%;
+  --gd-y2:60%;
+}
+@media (max-width:860px){
+  body.reg-b .rb-hero .cs-ground{--gd-strength:.3;--gd-x1:20%}
+}
+
+/* Closing CTA. Centred type, so the scrim is centred too. */
+body.reg-b .rb-cta{position:relative;isolation:isolate;overflow:hidden}
+body.reg-b .rb-cta > .container{position:relative;z-index:1}
+body.reg-b .rb-cta .cs-ground{
+  --gd-tint:var(--rb-ground);
+  --gd-strength:.3;
+  --gd-pos:50% 55%;
+}
+body.reg-b .rb-cta .cs-ground::after{
+  background:
+    radial-gradient(120% 90% at 50% 50%,
+      var(--gd-tint) 0%,
+      color-mix(in srgb,var(--gd-tint) 88%,transparent) 42%,
+      color-mix(in srgb,var(--gd-tint) 34%,transparent) 100%),
+    linear-gradient(to bottom,var(--gd-tint) 0%,transparent 26%,transparent 74%,var(--gd-tint) 100%);
+}
+
+body.reg-b .cs-band-frame{--band-rest:var(--rb-ground);--band-rule:var(--rb-hairline)}
+body.reg-b .cs-band-cap{--band-cap:var(--rb-cream-45);--band-cap-hot:var(--rb-cream-70)}
+
+/* =========================================================================
+   5 — REGISTER A (startup-counsel, flat-fees) — cream
+   Daylight photography on a cream ground: no scrim, hairline rules only, and
+   the caption takes the register's muted ink rather than cream-on-dark.
+   ========================================================================= */
+body.reg-a .cs-band-frame{--band-rest:var(--surface-2);--band-rule:var(--line-strong)}
+body.reg-a .cs-band-cap{--band-cap:var(--muted);--band-cap-hot:var(--ink)}
+/* Register A's bands sit inside a cream page rather than closing off a dark
+   one, so they run a touch shorter and carry their own vertical rhythm.
+   Registers tune the height through the variable, never the property — the
+   aspect-locked variant has to be able to hand the height back to the image. */
+body.reg-a .cs-band{margin-block:clamp(2.4rem,1.6rem + 3vw,4.5rem);--band-h:clamp(220px,30vw,440px)}
+
+/* =========================================================================
+   6 — HUB (contact, resources, about)
+   ========================================================================= */
+body.reg-hub .cs-band-frame{--band-rest:var(--surface-2);--band-rule:var(--line-strong)}
+body.reg-hub .cs-band-cap{--band-cap:var(--muted);--band-cap-hot:var(--ink)}
+body.reg-hub .cs-band{margin-block:clamp(2rem,1.4rem + 2.4vw,3.6rem);--band-h:clamp(220px,28vw,400px)}
+
+/* Dark theme, light-register pages only.
+   These two registers are the theme-reactive ones, and their photography is
+   all bright daylight — a cream folio at full luminance on a near-black page
+   stops being a quiet band and becomes a lightbox. Pull it back just enough
+   that it sits in the page. Not so far that it reads as a dimmed thumbnail:
+   it is still a photograph, only lit for the room it is in. */
+[data-theme="dark"] body.reg-a .cs-band-frame > img,
+[data-theme="dark"] body.reg-hub .cs-band-frame > img,
+[data-theme="dark"] body.reg-hub .hero-photo{
+  filter:brightness(.84) saturate(.94);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) body.reg-a .cs-band-frame > img,
+  :root:not([data-theme="light"]) body.reg-hub .cs-band-frame > img,
+  :root:not([data-theme="light"]) body.reg-hub .hero-photo{
+    filter:brightness(.84) saturate(.94);
+  }
+}
+
+/* =========================================================================
+   7 — Motion safety and degradation
+   Reduced motion: the clip is never fetched and never played. The poster is
+   the finished state, and every band still reads exactly as intended.
+   ========================================================================= */
+@media (prefers-reduced-motion:reduce){
+  .cs-band--motion .cs-band-frame > video{display:none}
+  body.landing .ln-door-ground img{transition:none}
+  body.landing .ln-door:hover .ln-door-ground img{transform:scale(1.04)}
+}
+/* Touch has no hover, so the deliberately visible resting exposure is the
+   finished state. */
+@media (hover:none){
+  body.landing .ln-door-ground img{opacity:var(--door-image-rest,.42);transform:scale(1)}
+}
+@media print{
+  .cs-ground,.cs-band{display:none}
+}
