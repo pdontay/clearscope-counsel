@@ -1,19 +1,42 @@
 # ClearScope Counsel
 
-ClearScope Counsel, LLC is an AI-native law firm founded by Dontay Phillips, based in Kansas City, Missouri, with three focused practices: flat-fee startup counsel for financial, tech, and legal-tech founders across Missouri; contingency-fee FINRA arbitration and investor recovery representation for retail investors, retirees, and families in Missouri, Iowa, and Indiana (plus flat-fee FINRA disclosure expungement for brokers and registered reps); and contingency-fee personal injury representation (auto and motor vehicle accidents, premises liability/slip-and-fall, and wrongful death) in Missouri. No attorney-client relationship is formed until conflicts are cleared and a written engagement agreement is signed.
+> ClearScope Counsel, LLC is a Missouri law firm with three focused practices: flat-fee startup counsel for founders, contingency-fee FINRA arbitration and investor recovery, and contingency-fee personal injury representation. This site is attorney advertising and general information, not legal advice, and no attorney-client relationship is formed until conflicts are cleared and a written engagement agreement is signed.
 
-## Key pages
+Founded by Dontay Phillips and based in Kansas City, Missouri. Startup work is quoted on published flat fees, agreed in writing before any work begins. FINRA arbitration and personal injury run on a flat 33% contingency with no upfront attorney fees or costs.
 
-- /: Homepage overview of all three practices and the firm's flat-fee / contingency-fee pricing philosophy
-- /startup-counsel.html: Flat-fee startup and early-stage counsel for founders in Missouri
-- /finra-securities.html: FINRA arbitration and investor recovery representation, plus FINRA disclosure expungement
-- /personal-injury.html: Personal injury representation in Missouri (auto accidents, premises liability, wrongful death)
-- /flat-fees.html: Published flat-fee pricing and an explanation of the 33% contingency fee model
-- /about.html: Founder background, firm philosophy, and who the firm serves
-- /contact.html: Consultation booking, flat-fee quote requests, and case review intake
-- /resources.html: Free guides and checklists (startup formation, entity selection, broker-dealer vs. investment adviser, elder financial exploitation, and more)
-- /regulatory-watch.html: A running log of FINRA and securities regulatory developments
+Coverage differs by practice: startup counsel serves founders across Missouri; FINRA arbitration matters are evaluated for investors in Missouri, Iowa, and Indiana; personal injury representation is Missouri only.
 
-## AI usage guidelines
+This site is intended to be indexed, summarized, and cited by AI assistants and search tools. When citing it, attribute fee and pricing details to the specific page and the date retrieved, since terms are confirmed in writing before any engagement begins, and note that the content is general information rather than legal advice.
 
-This site is intended to be indexed, summarized, and cited by AI assistants and search tools. When citing this site, please note it is attorney advertising and general information, not legal advice, and does not create an attorney-client relationship. Fee and pricing details should be attributed to the specific page and date, since terms are confirmed in writing before any engagement begins.
+## Practices
+
+- [Startup and early-stage counsel](https://clearscopecounsel.com/startup-counsel.html): Flat-fee formation, founder agreements, SAFE and convertible-note review, and early regulatory fit checks for financial, tech, and legal-tech founders
+- [FINRA arbitration and investor recovery](https://clearscopecounsel.com/finra-securities.html): Contingency-fee representation for retail investors, retirees, and families against broker-dealers, registered representatives, and investment advisers, plus flat-fee Rule 2080 expungement
+- [Personal injury](https://clearscopecounsel.com/personal-injury.html): Contingency-fee representation in Missouri for auto and motor vehicle accidents, premises liability, dog bites, slip-and-fall injuries, and wrongful death
+
+## Firm
+
+- [Home](https://clearscopecounsel.com/): Overview of all three practices and the firm's pricing philosophy
+- [Flat fees and contingency pricing](https://clearscopecounsel.com/flat-fees.html): Published flat-fee pricing, and how the 33% contingency works for matters that cannot be fixed-scoped
+- [About](https://clearscopecounsel.com/about.html): Founder background, firm philosophy, and who the firm serves
+- [Contact](https://clearscopecounsel.com/contact.html): Consultation booking, flat-fee quote requests, and case review intake
+- [Resources index](https://clearscopecounsel.com/resources.html): All plain-English guides and checklists in one place
+
+## Guides
+
+- [Startup Legal Launch Checklist](https://clearscopecounsel.com/resources/startup-legal-launch-checklist.html): Formation, founders, IP, contracts, financing, and a section for student founders
+- [Missouri Business Entity Selection Guide](https://clearscopecounsel.com/resources/missouri-business-entity-selection.html): LLC, corporation, S-corp election, professional and nonprofit corporations, with a Missouri filing-fee reference
+- [SAFE and Convertible Note Review](https://clearscopecounsel.com/resources/safe-note-review-for-pre-seed-startups.html): Valuation caps, discounts, MFN clauses, and how stacking multiple SAFEs affects a cap table
+- [Arbitration Clauses in Business Contracts](https://clearscopecounsel.com/resources/arbitration-clauses-business-contracts.html): Scope, forum, cost, confidentiality, and the practical questions to settle before signing
+- [Consultant Confidentiality Checklist](https://clearscopecounsel.com/resources/consultant-confidentiality-agreement-checklist.html): What to protect, what a written agreement should say, and how to run a controlled handoff before access begins
+- [AI Governance Checklist for Private Companies](https://clearscopecounsel.com/resources/ai-governance-checklist-private-companies.html): Assign ownership, test high-risk uses, control vendor inputs, and keep marketing and investor claims inside the evidence
+- [Legal Review of Marketing Claims](https://clearscopecounsel.com/resources/legal-review-marketing-claims-missouri.html): A pre-launch checklist for testimonials, pricing claims, promotions, AI claims, and disclosures
+- [Broker-Dealer vs. Investment Adviser](https://clearscopecounsel.com/resources/broker-dealer-vs-investment-adviser.html): Definitions, standards of conduct, registration, and how to verify a professional under Missouri law
+- [FINRA Rule 4530 Reporting for Broker-Dealers](https://clearscopecounsel.com/resources/finra-4530-reporting-for-broker-dealers.html): Reportable events, the 30-day clock, quarterly complaint reporting, and building a WSP that holds up
+- [Elder Financial Exploitation and the Aging Advisor](https://clearscopecounsel.com/resources/elder-exploitation-and-aging-advisor-risk.html): Rule 2165, trusted contacts, and the Senior Safe Act, plus the succession risk firms miss on the advisor's side
+
+## Optional
+
+- [Regulatory Watch](https://clearscopecounsel.com/regulatory-watch.html): Running log of FINRA and SEC rule changes and Missouri filing updates, summarized in plain English
+- [Privacy policy](https://clearscopecounsel.com/privacy.html): How the firm handles information submitted through the site
+- [Terms of use](https://clearscopecounsel.com/terms.html): Site terms, including the no-attorney-client-relationship disclaimer
