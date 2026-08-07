@@ -85,8 +85,10 @@ Redirect 301 /website-compliance-scan.html /resources.html
 # own flat-fee offering on finra-securities.html, not a firm-facing consulting guide)
 Redirect 301 /finra-compliance-readiness-checklist.html /resources.html
 Redirect 301 /resources/finra-compliance-readiness-checklist.html /resources.html
-Redirect 301 /resources/finra-4530-reporting-for-broker-dealers.html /resources.html
 Redirect 301 /resources/finra-3270-oba-review-for-registered-reps.html /resources.html
+# Rule 4530 is deliberately NOT retired: the guide was rewritten and relinked
+# from resources.html and sitemap.xml in August 2026. Redirecting it here would
+# send its own index card straight back to the index it links from.
 
 # Retired guides -> resource library
 Redirect 301 /missouri-estate-planning-checklist.html /resources.html
