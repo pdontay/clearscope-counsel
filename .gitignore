@@ -23,6 +23,10 @@ Website Design Review*.html
 /clearscope-site-upload.zip
 /Photos/
 
+# Article drafts. The published page is the artifact; the source Markdown is
+# working material and has no business on the web server.
+/finra-expungement-article-revised.md
+
 # Raw generation sources (~148MB of mp4/png) that assets/media/ derivatives are
 # built from via assets/generated-media/build-derivatives.sh. Nothing on the site
 # links to them, and the Hostinger rsync has no exclude for assets/, so tracking

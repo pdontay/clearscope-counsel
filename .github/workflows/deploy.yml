@@ -37,8 +37,5 @@ jobs:
             --exclude=".gitignore" \
             --exclude="tracker-agent/" \
             --exclude="worker/" \
-            --exclude="README.md" \
-            --exclude="DEPLOY.md" \
-            --exclude="ACTIVATE-SITE-SCAN.md" \
-            --exclude="VOICE-AGENT-PROMPT.md" \
+            --exclude="*.md" \
             ./ "${{ secrets.HOSTINGER_SSH_USER }}@${{ secrets.HOSTINGER_SSH_HOST }}:domains/clearscopecounsel.com/public_html/"
