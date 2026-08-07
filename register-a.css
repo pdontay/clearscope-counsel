@@ -365,7 +365,10 @@ body.reg-a .band-cta{
 body.reg-a .band-cta::before,body.reg-a .band-cta::after{display:none}
 body.reg-a .band-cta h2{color:#f4f0ec;font-weight:500;letter-spacing:-.025em}
 body.reg-a .band-cta p{color:rgba(244,240,236,.75)}
-body.reg-a .band-cta .eyebrow{color:rgba(244,240,236,.55)}
+/* styles.css also puts opacity:.85 on .band-cta .eyebrow, so .55 here is really
+   .468 against the ink ground — 4.12:1, just under AA. .66 lands at 5.30:1 once
+   both are applied, and still reads as the quietest thing in the band. */
+body.reg-a .band-cta .eyebrow{color:rgba(244,240,236,.66)}
 body.reg-a .band-cta .btn-primary,body.reg-a .band-cta .btn-accent{
   background:#f4f0ec;color:var(--ra-ink);
 }

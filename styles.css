@@ -541,6 +541,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 
 .legal p{color:var(--ink-2);margin-top:.85rem}
 .legal ul:not(.check-list):not(.fee-list){list-style:disc;margin:.85rem 0 0;padding-left:1.4rem}
 .legal ul:not(.check-list):not(.fee-list) li{margin-bottom:.5rem;color:var(--ink-2);padding-left:.2rem}
+/* the global reset clears list-style, so an ordered list in a guide would lose
+   its numbers — which is the whole point when the list is a sequence of steps */
+.legal ol{list-style:decimal;margin:.85rem 0 0;padding-left:1.5rem}
+.legal ol li{margin-bottom:.5rem;color:var(--ink-2);padding-left:.2rem}
 .legal .check-list{margin-top:1rem;padding-left:0;list-style:none}
 .legal .check-list li{margin-bottom:0;padding-left:1.9rem}
 .legal a[href^="mailto"],.legal a[href^="http"]{color:var(--teal);font-weight:500;text-decoration:underline;text-underline-offset:2px}
