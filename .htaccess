@@ -90,6 +90,18 @@ Redirect 301 /resources/finra-3270-oba-review-for-registered-reps.html /resource
 # from resources.html and sitemap.xml in August 2026. Redirecting it here would
 # send its own index card straight back to the index it links from.
 
+# Orphaned scripts from the two retired tools above. Their pages 301 away, but
+# the deploy rsync runs without --delete, so the files themselves stay on the
+# server and kept answering 200 — including creator-catalog.js, ~147KB of
+# creator data from a product that no longer exists. 410 rather than 301
+# because these are assets, not pages: nobody should be redirected to a
+# document when the thing they asked for is simply gone. Removing the files in
+# the Hostinger File Manager would make these lines unnecessary.
+Redirect gone /creator-catalog.js
+Redirect gone /influencer-discovery.js
+Redirect gone /search-config.js
+Redirect gone /site-scan-config.js
+
 # Retired guides -> resource library
 Redirect 301 /missouri-estate-planning-checklist.html /resources.html
 Redirect 301 /will-vs-trust-missouri.html /resources.html
