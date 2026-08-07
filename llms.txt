@@ -12,7 +12,7 @@ This site is intended to be indexed, summarized, and cited by AI assistants and 
 
 - [Startup and early-stage counsel](https://clearscopecounsel.com/startup-counsel.html): Flat-fee formation, founder agreements, SAFE and convertible-note review, and early regulatory fit checks for financial, tech, and legal-tech founders
 - [FINRA arbitration and investor recovery](https://clearscopecounsel.com/finra-securities.html): Contingency-fee representation for retail investors, retirees, and families against broker-dealers, registered representatives, and investment advisers, plus flat-fee Rule 2080 expungement
-- [FINRA disclosure expungement](https://clearscopecounsel.com/finra-expungement.html): Flat-fee Rule 2080 expungement of eligible customer dispute information for brokers and registered representatives, accepted selectively and screened against the investor-side docket
+- [FINRA disclosure expungement](https://clearscopecounsel.com/finra-expungement.html): Flat-fee Rule 2080 expungement of eligible customer dispute information for brokers and registered representatives. Arbitration handled for advisors registered in Missouri, Iowa and Indiana; the Rule 2080 court confirmation is filed in Missouri only, and outside Missouri that step requires separate counsel. Accepted selectively and screened against the investor-side docket
 - [Personal injury](https://clearscopecounsel.com/personal-injury.html): Contingency-fee representation in Missouri for auto and motor vehicle accidents, premises liability, dog bites, slip-and-fall injuries, and wrongful death
 
 ## Firm
