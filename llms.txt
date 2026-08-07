@@ -12,6 +12,7 @@ This site is intended to be indexed, summarized, and cited by AI assistants and 
 
 - [Startup and early-stage counsel](https://clearscopecounsel.com/startup-counsel.html): Flat-fee formation, founder agreements, SAFE and convertible-note review, and early regulatory fit checks for financial, tech, and legal-tech founders
 - [FINRA arbitration and investor recovery](https://clearscopecounsel.com/finra-securities.html): Contingency-fee representation for retail investors, retirees, and families against broker-dealers, registered representatives, and investment advisers, plus flat-fee Rule 2080 expungement
+- [FINRA disclosure expungement](https://clearscopecounsel.com/finra-expungement.html): Flat-fee Rule 2080 expungement of eligible customer dispute information for brokers and registered representatives, accepted selectively and screened against the investor-side docket
 - [Personal injury](https://clearscopecounsel.com/personal-injury.html): Contingency-fee representation in Missouri for auto and motor vehicle accidents, premises liability, dog bites, slip-and-fall injuries, and wrongful death
 
 ## Firm
@@ -34,6 +35,7 @@ This site is intended to be indexed, summarized, and cited by AI assistants and 
 - [Legal Review of Marketing Claims](https://clearscopecounsel.com/resources/legal-review-marketing-claims-missouri.html): A pre-launch checklist for testimonials, pricing claims, promotions, AI claims, and disclosures
 - [Broker-Dealer vs. Investment Adviser](https://clearscopecounsel.com/resources/broker-dealer-vs-investment-adviser.html): Definitions, standards of conduct, registration, and how to verify a professional under Missouri law
 - [FINRA Rule 4530 Reporting for Broker-Dealers](https://clearscopecounsel.com/resources/finra-4530-reporting-for-broker-dealers.html): Reportable events, the 30-day clock, quarterly complaint reporting, and building a WSP that holds up
+- [FINRA Expungement Requirements](https://clearscopecounsel.com/resources/finra-expungement-requirements.html): The three grounds, Rules 12800, 12805 and 13805, straight-in deadlines, what cannot be expunged, and Rule 2080 court confirmation
 - [Elder Financial Exploitation and the Aging Advisor](https://clearscopecounsel.com/resources/elder-exploitation-and-aging-advisor-risk.html): Rule 2165, trusted contacts, and the Senior Safe Act, plus the succession risk firms miss on the advisor's side
 
 ## Optional
