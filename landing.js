@@ -154,6 +154,14 @@
 
   function initGlyphTrace(mark) {
     if (!mark) return null;
+    /* The enhanced build paints 32 filaments, 24 of them through a Gaussian
+       blur that re-rasterises on every frame the dash offsets move. That is
+       affordable on a desktop with the mark as the hero's centrepiece; on a
+       throttled phone it measured ~8s of main-thread work, and the glyph is
+       positioned mostly off the right edge at that size anyway. Below desktop
+       we leave the original embedded mark in place, which landing.css renders
+       as a still lit outline. Matched to the media query there. */
+    if (window.matchMedia('(max-width: 1023.98px)').matches) return null;
 
     var svg = mark.querySelector('svg');
     var host = mark.closest('.ln-hero');
