@@ -343,7 +343,11 @@ a[href^="mailto"],a[href^="tel"],a[href^="http"]{overflow-wrap:anywhere}
 .svc-cta-alt{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--teal);line-height:1.45}
 .svc-cta-alt:hover{text-decoration:underline}
 .service-card p,.resource-card p{color:var(--muted);font-size:.92rem}
-.arrow{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--teal)}
+/* A standalone .arrow link is only ~16px tall on its own, under the 24px
+   minimum tap target. Padding inside an inline-flex box grows the hit area
+   without moving the text off its baseline or adding layout height. */
+.arrow{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--teal);
+  display:inline-flex;align-items:center;min-height:24px;padding-block:.25rem}
 .card-link:hover .arrow{text-decoration:underline}
 .tag-list{display:flex;gap:.4rem;margin-bottom:.6rem}
 .tag{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
@@ -423,6 +427,11 @@ a[href^="mailto"],a[href^="tel"],a[href^="http"]{overflow-wrap:anywhere}
 .footer-links a{color:var(--ink-2);font-size:.92rem}
 .footer-links a:hover{color:var(--teal)}
 .fine-print{font-size:.78rem;color:var(--muted);line-height:1.5}
+/* Inside fine print the link colour alone is not a strong enough cue against
+   the surrounding text, so the link carries an underline as well — and the
+   padded inline-flex box brings it up to the 24px tap-target minimum. */
+.fine-print a{text-decoration:underline;text-underline-offset:.18em;
+  display:inline-flex;align-items:center;min-height:24px}
 .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
   padding-block:1.2rem;border-top:1px solid var(--line)}
 

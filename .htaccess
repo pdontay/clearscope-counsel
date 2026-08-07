@@ -34,6 +34,14 @@
     Header set Cache-Control "no-cache"
   </FilesMatch>
 
+  # llms.txt is Markdown despite the .txt name. Apache serves it as text/plain,
+  # and because we also send X-Content-Type-Options: nosniff, nothing is allowed
+  # to infer otherwise — so tooling that expects Markdown (Lighthouse's llms.txt
+  # audit among them) rejects an otherwise valid file. Declare the real type.
+  <Files "llms.txt">
+    Header set Content-Type "text/markdown; charset=utf-8"
+  </Files>
+
   # --------------------------------------------------------------------
   # 2) Trust and Safety headers
   # --------------------------------------------------------------------

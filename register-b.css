@@ -16,7 +16,9 @@ body.reg-b{
   --rb-ivory:#f7f4eb;
   --rb-oxblood:#31110f;
   --rb-cream-70:rgba(247,244,235,.72);
-  --rb-cream-45:rgba(247,244,235,.45);
+  /* .45 composites to 4.1:1 on the forest ground and 4.19:1 on the burgundy —
+     both under the 4.5:1 AA floor. .52 measures 5.03 and 5.21 respectively. */
+  --rb-cream-45:rgba(247,244,235,.52);
   --rb-hairline:rgba(247,244,235,.18);
   --rb-numeral:#c9beb2;             /* taupe — numerals rest state */
   --rb-numeral-hot:#33201c;         /* deep plum — numerals revealed state on ivory */
@@ -106,8 +108,8 @@ body.reg-b .rb-band{background:var(--rb-ivory);color:#000}
 body.reg-b .rb-band h2,body.reg-b .rb-band h3{color:#0d0d0d}
 body.reg-b .rb-band p{color:#3c352f}
 body.reg-b .rb-band .lede{color:#3c352f}
-body.reg-b .rb-band .eyebrow{color:#8a7f72}
-body.reg-b .rb-band .fine-print,body.reg-b .rb-band .muted{color:#8a7f72}
+body.reg-b .rb-band .eyebrow{color:#6f6456}
+body.reg-b .rb-band .fine-print,body.reg-b .rb-band .muted{color:#6f6456}
 
 /* stat band: giant numerals, color-shift on reveal */
 body.reg-b .rb-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding-block:clamp(2.6rem,1.8rem + 3vw,4.5rem)}
@@ -148,8 +150,8 @@ body.reg-b .rb-panel{
 body.reg-b .rb-panel h2,body.reg-b .rb-panel h3{color:#0d0d0d}
 body.reg-b .rb-panel p{color:#3c352f}
 body.reg-b .rb-panel .lede{color:#3c352f}
-body.reg-b .rb-panel .eyebrow{color:#8a7f72}
-body.reg-b .rb-panel .fine-print,body.reg-b .rb-panel .muted{color:#8a7f72}
+body.reg-b .rb-panel .eyebrow{color:#6f6456}
+body.reg-b .rb-panel .fine-print,body.reg-b .rb-panel .muted{color:#6f6456}
 body.reg-b .rb-panel .check-list li,body.reg-b .rb-band .check-list li{
   position:relative;padding:.85rem 0 .85rem 1.9rem;border-bottom:1px solid rgba(13,13,13,.1);
   color:#1c1712;font-size:1rem;
@@ -217,7 +219,7 @@ body.reg-b .rb-faq button{
   font:inherit;font-weight:500;font-size:1.05rem;color:#0d0d0d;letter-spacing:-.015em;
 }
 body.reg-b .rb-faq button span:last-child{
-  font-weight:400;font-size:1.35rem;color:#8a7f72;line-height:1;
+  font-weight:400;font-size:1.35rem;color:#6f6456;line-height:1;
   transition:transform .35s var(--ease),color .35s var(--ease);
 }
 body.reg-b .rb-faq .faq-item.is-open button span:last-child{transform:rotate(45deg);color:#0d0d0d}
@@ -243,20 +245,32 @@ body.reg-b .card{
 }
 body.reg-b .card h3{color:var(--rb-ivory)}
 body.reg-b .card p{color:var(--rb-cream-70)}
+/* The card recolour above stopped at h3 and p, so the rest of a tracker card
+   kept the light-register tokens on this dark ground: the numbered actions
+   rendered --ink-2 (#26241d) at 1.08:1, effectively invisible, and the date,
+   source link and SIFMA note sat at ~2.4:1. */
+body.reg-b .tracker-actions{color:var(--rb-cream-70)}
+body.reg-b .tracker-date,
+body.reg-b .tracker-sifma,
+body.reg-b .tracker-source{color:var(--rb-cream-45)}
+body.reg-b .tracker-sifma{border-left-color:var(--rb-hairline)}
+body.reg-b .tracker-sifma strong,
+body.reg-b .tracker-action-label strong{color:var(--rb-ivory)}
+body.reg-b .tracker-source:hover{color:var(--rb-ivory)}
 body.reg-b .arrow{color:var(--rb-ivory)}
 body.reg-b .rb-band .arrow,body.reg-b .rb-panel .arrow{color:var(--rb-oxblood)}
 body.reg-b .tag{background:transparent;border:1px solid var(--rb-hairline);color:var(--rb-cream-45)}
 
 /* ---- Footer: keep global markup; give it the ivory template treatment ---- */
 body.reg-b .site-footer{background:var(--rb-ivory);border-top:0;margin-top:0}
-body.reg-b .site-footer h3{color:#8a7f72}
+body.reg-b .site-footer h3{color:#6f6456}
 body.reg-b .site-footer p,body.reg-b .site-footer .fine-print{color:#3c352f}
 body.reg-b .footer-links a{color:#1c1712}
 body.reg-b .footer-links a:hover{color:var(--rb-oxblood)}
 body.reg-b .site-footer .cs-name,body.reg-b .site-footer .cs-name span{color:#0d0d0d}
-body.reg-b .site-footer .cs-sub{color:#8a7f72}
+body.reg-b .site-footer .cs-sub{color:#6f6456}
 body.reg-b .site-footer .cs-mark-teal{fill:#0d0d0d}
-body.reg-b .site-footer .cs-mark-orange{fill:#8a7f72}
+body.reg-b .site-footer .cs-mark-orange{fill:#6f6456}
 body.reg-b .footer-bottom{border-top:1px solid rgba(13,13,13,.12)}
 body.reg-b .site-footer a.fine-print,body.reg-b .footer-bottom a{color:#3c352f}
 
@@ -314,26 +328,26 @@ body.reg-b--guide .legal h2{
 }
 body.reg-b--guide .legal h2:first-of-type{margin-top:1rem;padding-top:0;border-top:0}
 body.reg-b--guide .legal h3{color:#0d0d0d}
-body.reg-b--guide .legal .legal-updated{color:#8a7f72}
+body.reg-b--guide .legal .legal-updated{color:#6f6456}
 body.reg-b--guide .legal ul:not(.check-list) li{color:#3c352f}
 body.reg-b--guide .legal a[href^="mailto"],body.reg-b--guide .legal a[href^="http"],
 body.reg-b--guide .legal a[href$=".html"]{color:var(--rb-oxblood);font-weight:500;text-decoration:underline;text-underline-offset:2px}
 body.reg-b--guide .legal .check-list li{color:#1c1712}
 body.reg-b--guide .legal .check-list li::before{background:transparent;color:var(--rb-oxblood);content:"—";font-weight:400}
-body.reg-b--guide .legal .resource-meta{border-top:1px solid rgba(13,13,13,.12);color:#8a7f72}
+body.reg-b--guide .legal .resource-meta{border-top:1px solid rgba(13,13,13,.12);color:#6f6456}
 
 /* callouts on ivory */
 body.reg-b--guide .legal .legal-callout{
   background:#fff;border:1px solid rgba(13,13,13,.16);border-radius:6px;padding:1.2rem 1.35rem;
 }
-body.reg-b--guide .legal .callout-label{color:#8a7f72;letter-spacing:.08em}
+body.reg-b--guide .legal .callout-label{color:#6f6456;letter-spacing:.08em}
 body.reg-b--guide .legal .legal-callout--warn{border-color:rgba(13,13,13,.16)}
 body.reg-b--guide .legal .legal-callout--warn .callout-label{color:var(--rb-oxblood)}
 
 /* tables on ivory */
 body.reg-b--guide .table-wrap{border:1px solid rgba(13,13,13,.16);border-radius:6px;background:#fff}
 body.reg-b--guide .data-table thead th{
-  background:transparent;color:#8a7f72;border-bottom:1px solid rgba(13,13,13,.2);
+  background:transparent;color:#6f6456;border-bottom:1px solid rgba(13,13,13,.2);
   font-size:.68rem;letter-spacing:.08em;
 }
 body.reg-b--guide .data-table th,body.reg-b--guide .data-table td{border-bottom:1px solid rgba(13,13,13,.1)}
@@ -352,7 +366,7 @@ body.reg-b--guide .legal .faq button{
   font:inherit;font-weight:500;font-size:1rem;color:#0d0d0d;letter-spacing:-.015em;
 }
 body.reg-b--guide .legal .faq button span:last-child{
-  font-weight:400;font-size:1.3rem;color:#8a7f72;line-height:1;
+  font-weight:400;font-size:1.3rem;color:#6f6456;line-height:1;
   transition:transform .35s var(--ease),color .35s var(--ease);
 }
 body.reg-b--guide .legal .faq .faq-item.is-open button span:last-child{transform:rotate(45deg);color:#0d0d0d}

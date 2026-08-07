@@ -17,7 +17,15 @@ body.landing{
   --ln-ground-2:#0d2723;
   --ln-ivory:#f7f4eb;
   --ln-c72:rgba(247,244,235,.72);
-  --ln-c45:rgba(247,244,235,.45);
+  /* .45 composited over the grounds here lands at 4.1:1 — just under the 4.5:1
+     WCAG AA floor for body-sized text, which is what Lighthouse was flagging.
+     .52 measures 5.03–5.21 across every ground the site uses. */
+  --ln-c45:rgba(247,244,235,.52);
+  /* Dimmed display text. Only ever used at 25.6px and up, so it answers to the
+     3:1 large-text floor; .38 measures 3.31 while still reading as "dimmed"
+     next to full ivory. */
+  --ln-c38:rgba(247,244,235,.38);
+  /* Decorative only — hairline borders and rail dots, never text. */
   --ln-c26:rgba(247,244,235,.26);
   --ln-hair:rgba(247,244,235,.14);
   --ln-accent:#e07a52;              /* brand persimmon, warmed for the dark ground */
@@ -190,7 +198,7 @@ body.landing .ln-moment{
   transition:color .6s var(--ease);
 }
 /* JS dims the statements you are not reading; without it all three stay legible */
-html.js body.landing .ln-moment{color:var(--ln-c26)}
+html.js body.landing .ln-moment{color:var(--ln-c38)}
 html.js body.landing .ln-moment[data-on]{color:var(--ln-ivory)}
 body.landing .ln-moment-close{
   margin-top:clamp(2rem,1.2rem + 2.4vw,3.6rem);padding-top:clamp(1.4rem,1rem + 1.4vw,2.2rem);
@@ -256,7 +264,9 @@ body.landing .ln-line-note{display:block;margin-top:.3rem;font-size:.86rem;color
 body.landing .ln-line-price{
   font-family:var(--mono);font-size:.86rem;letter-spacing:.02em;color:var(--ln-c72);white-space:nowrap;text-align:right;
 }
-body.landing .ln-line-price s{color:var(--ln-c26);text-decoration-thickness:1px;margin-right:.4em}
+/* the struck price is 14px, so it needs the 4.5:1 token, not the decorative one;
+   the strikethrough already carries the "was" meaning without dimming it away */
+body.landing .ln-line-price s{color:var(--ln-c45);text-decoration-thickness:1px;margin-right:.4em}
 body.landing .ln-line[data-on] .ln-line-price{color:var(--ln-accent)}
 body.landing .ln-ledger-foot{
   margin-top:1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 1.8rem;
@@ -347,7 +357,9 @@ body.landing .ln-door:hover .ln-door-go span{transform:translateX(5px)}
 body.landing .ln-day{background:var(--ln-ivory);color:#14100c;padding-block:clamp(3.5rem,2rem + 5vw,7rem)}
 body.landing .ln-day h2,body.landing .ln-day h3{color:#0d0d0d}
 body.landing .ln-day p{color:#443c34}
-body.landing .ln-day .fine-print{color:#8a7f72}
+/* on the cream daylight ground #8a7f72 measured 3.56:1, under the AA floor;
+   #6f6456 is the smallest step that clears it (5.26:1) and keeps the warm grey */
+body.landing .ln-day .fine-print{color:#6f6456}
 body.landing .ln-day .ln-act-display{color:#0d0d0d}
 body.landing .ln-who{
   display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);
@@ -399,7 +411,7 @@ body.landing .ln-guide strong{font-weight:500;color:#0d0d0d;font-size:1rem;lette
 body.landing .ln-guide span{color:#443c34;font-size:.9rem;line-height:1.5}
 body.landing .ln-guide em{
   font-style:normal;margin-top:.35rem;font-family:var(--mono);font-size:.72rem;
-  letter-spacing:.08em;text-transform:uppercase;color:#8a7f72;
+  letter-spacing:.08em;text-transform:uppercase;color:#6f6456;
 }
 @media (max-width:820px){
   body.landing .ln-guides{grid-template-columns:1fr}
