@@ -361,8 +361,16 @@ a[href^="mailto"],a[href^="tel"],a[href^="http"]{overflow-wrap:anywhere}
 .resource-card h3{margin-bottom:.45rem;font-size:1.02rem}
 
 /* ---- Feature band ---- */
-.feature-band{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
-  padding:clamp(1.7rem,1.3rem + 1.6vw,2.8rem);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.feature-band{--band-pad:clamp(1.7rem,1.3rem + 1.6vw,2.8rem);
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:var(--band-pad);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+/* .container and .feature-band land on the same element. The landscape
+   safe-area rule below sets .container{padding-inline}, which at equal
+   specificity and later in the file was flattening the band's side padding to
+   zero and pushing its text against the border. Raising specificity restores
+   it, and max() still honours a larger safe-area inset in landscape. */
+.container.feature-band{
+  padding-inline:max(var(--band-pad),env(safe-area-inset-left)) max(var(--band-pad),env(safe-area-inset-right))}
 .feature-band::after{content:"";position:absolute;inset:auto -10% -60% auto;width:380px;height:380px;
   background:radial-gradient(circle,color-mix(in oklab,var(--teal) 16%,transparent),transparent 70%);pointer-events:none}
 .band-grid{align-items:center;gap:2rem;position:relative;z-index:1}
