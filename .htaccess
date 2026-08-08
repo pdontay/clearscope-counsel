@@ -70,6 +70,19 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteRule ^\.well-known/traffic-advice$ - [T=application/trafficadvice+json,END]
+
+  # Canonical host. www served the identical page at 200 rather than
+  # redirecting, so every URL on the site existed twice for crawlers. The
+  # canonical tags already pointed at the apex, but a 301 is what actually
+  # collapses the duplicate.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # Canonical homepage. / and /index.html both returned 200. THE_REQUEST is
+  # matched rather than the path, because DirectoryIndex rewrites / to
+  # index.html internally and matching the rewritten path would loop.
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
 </IfModule>
 
 # Legacy root guide URLs -> canonical /resources/ locations
