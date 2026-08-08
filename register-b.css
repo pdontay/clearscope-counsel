@@ -383,7 +383,12 @@ body.reg-b .band-cta{background:transparent;border:0;border-radius:0;box-shadow:
 body.reg-b .band-cta::before,body.reg-b .band-cta::after{display:none}
 body.reg-b .band-cta h2{color:var(--rb-ivory);font-weight:400;letter-spacing:-.025em;font-size:clamp(1.7rem,1.3rem + 1.8vw,2.8rem)}
 body.reg-b .band-cta p{color:var(--rb-cream-70)}
-body.reg-b .band-cta .eyebrow{color:var(--rb-cream-45)}
+/* styles.css also applies opacity:.85 to .band-cta .eyebrow, so the .52 token
+   resolves to .442 here and measures 4.00:1 — the failure axe reported on the
+   elder-exploitation guide. .66 lands at 5.63:1 on the forest ground and
+   5.89:1 on the burgundy once both are applied. The reg-a band was corrected
+   for the same reason; this one was missed. */
+body.reg-b .band-cta .eyebrow{color:rgba(247,244,235,.66)}
 body.reg-b .band-cta .btn-accent{background:var(--rb-ivory);color:var(--rb-ground);border-radius:999px}
 body.reg-b .band-cta .btn-accent:hover{background:#fff;color:var(--rb-oxblood)}
 
