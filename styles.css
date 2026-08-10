@@ -555,14 +555,29 @@ input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 
 .legal h2:first-of-type{margin-top:1rem;padding-top:0;border-top:0}
 .legal h3{margin-top:1.6rem;color:var(--ink)}
 .legal p{color:var(--ink-2);margin-top:.85rem}
-.legal ul:not(.check-list):not(.fee-list){list-style:disc;margin:.85rem 0 0;padding-left:1.4rem}
-.legal ul:not(.check-list):not(.fee-list) li{margin-bottom:.5rem;color:var(--ink-2);padding-left:.2rem}
+.legal ul:not(.check-list):not(.fee-list):not(.dl-list){list-style:disc;margin:.85rem 0 0;padding-left:1.4rem}
+.legal ul:not(.check-list):not(.fee-list):not(.dl-list) li{margin-bottom:.5rem;color:var(--ink-2);padding-left:.2rem}
 /* the global reset clears list-style, so an ordered list in a guide would lose
    its numbers — which is the whole point when the list is a sequence of steps */
 .legal ol{list-style:decimal;margin:.85rem 0 0;padding-left:1.5rem}
 .legal ol li{margin-bottom:.5rem;color:var(--ink-2);padding-left:.2rem}
 .legal .check-list{margin-top:1rem;padding-left:0;list-style:none}
 .legal .check-list li{margin-bottom:0;padding-left:1.9rem}
+
+/* Download list. The badge marks a file download at a glance so the forms read
+   as files rather than prose; --ext marks a link that leaves the site instead.
+   The link rule is not decoration: these five point at /downloads/, so they miss
+   the .legal a[href^="http"] rule below that colours every other link in a guide,
+   and without it they render as plain body text with no affordance at all. */
+.legal ul.dl-list{list-style:none;margin:.9rem 0 0;padding-left:0}
+.legal ul.dl-list li{position:relative;margin-bottom:.75rem;padding-left:2.1rem;color:var(--ink-2)}
+.legal ul.dl-list li::before{content:"↓";position:absolute;left:0;top:.1rem;
+  width:1.45rem;height:1.45rem;display:grid;place-items:center;border-radius:999px;
+  background:var(--teal-200);color:var(--teal);font-size:.85rem;font-weight:700;line-height:1}
+.legal ul.dl-list--ext li::before{content:"↗";background:transparent;color:var(--muted);font-weight:600}
+.legal .dl-list a{color:var(--teal);font-weight:500;text-decoration:underline;text-underline-offset:2px}
+.legal .dl-heading{margin-top:1.6rem;font-family:var(--mono);font-size:.72rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .legal a[href^="mailto"],.legal a[href^="http"]{color:var(--teal);font-weight:500;text-decoration:underline;text-underline-offset:2px}
 .legal address{font-style:normal;margin-top:.85rem;color:var(--ink-2);line-height:1.7}
 .legal .legal-callout{margin-top:1.2rem;padding:1.1rem 1.2rem;border:1px solid var(--line-strong);
