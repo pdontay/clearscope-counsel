@@ -497,5 +497,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-56-sec-cftc-seek-public-input-data-reporting-frameworks-security-based-swap-swap-markets",
     "cta_text": "Need help assessing your swap reporting framework or drafting public comments?",
     "cta_link": "contact.html?ref=tracker-sec-cftc-swap-reporting-harmony"
+  },
+  {
+    "id": "sec-fdta-joint-data-standards",
+    "track": "finra",
+    "status": "effective",
+    "status_label": "Final Rule Established",
+    "date_posted": "2026-03-30",
+    "headline": "The SEC established joint technical data standards for financial agency filings under the Financial Data Transparency Act.",
+    "the_change": "The SEC finalized joint technical data standards required under the Financial Data Transparency Act of 2022. The rule establishes common, machine-readable formats for information submitted across nine federal financial regulatory agencies. It sets uniform technical definitions and legal entity identifiers for future regulatory filings.",
+    "why_it_matters": "Standardized data rules mean broker-dealers and regulated entities will need to update electronic reporting systems and data pipelines. Legacy submission tools will eventually require technical overhauls to conform to these shared agency formats. Precise operational requirements will turn on how individual regulators adopt these baseline standards into their specific filing rules.",
+    "action_items": [
+      "Inventory your firm's existing filing mechanisms and third-party compliance data software.",
+      "Monitor upcoming FINRA and SEC operational updates for implementation schedules and schemas.",
+      "Confirm with counsel how this specific change applies to your firm's regulatory reporting obligations."
+    ],
+    "source_name": "SEC Press Release (2026-53)",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-53-sec-establishes-joint-data-standards-required-under-financial-data-transparency-act-2022",
+    "cta_text": "Need help evaluating your firm's regulatory reporting infrastructure?",
+    "cta_link": "contact.html?ref=tracker-sec-fdta-joint-data-standards"
   }
 ]
