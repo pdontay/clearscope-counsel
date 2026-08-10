@@ -516,5 +516,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-53-sec-establishes-joint-data-standards-required-under-financial-data-transparency-act-2022",
     "cta_text": "Need help evaluating your firm's regulatory reporting infrastructure?",
     "cta_link": "contact.html?ref=tracker-sec-fdta-joint-data-standards"
+  },
+  {
+    "id": "sec-proposes-rescinding-climate-disclosure-rules",
+    "track": "finra",
+    "status": "proposed",
+    "status_label": "Proposed",
+    "date_posted": "2026-03-30",
+    "headline": "The SEC has proposed eliminating climate-related disclosure rules for public reporting companies.",
+    "the_change": "The Securities and Exchange Commission issued a proposal to rescind its climate-related disclosure obligations for registration statements and annual reports. The agency cited excessive operational costs and administrative burdens on public companies as the driver behind the decision. Because this is a proposal, existing disclosure requirements remain in place while the SEC collects feedback.",
+    "why_it_matters": "Public reporting companies will gain substantial relief from compliance overhead if this rescission is finalized. However, stopping compliance efforts today creates legal risk because current rules stay active during the rulemaking process. Firms should hold off on dismantling disclosure controls until the SEC publishes a final rule.",
+    "action_items": [
+      "Maintain current disclosure controls and reporting procedures while the proposal is pending.",
+      "Evaluate internal compliance budgets dedicated to climate tracking to prepare for potential cost reductions.",
+      "Confirm with counsel how this specific change applies to your firm's upcoming registration statements or annual filings."
+    ],
+    "source_name": "SEC Press Release 2026-49",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-49-sec-proposes-rescission-climate-related-disclosure-rules",
+    "cta_text": "Need help reviewing your SEC reporting obligations?",
+    "cta_link": "contact.html?ref=tracker-sec-proposes-rescinding-climate-disclosure-rules"
   }
 ]
