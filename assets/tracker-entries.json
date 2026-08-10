@@ -535,5 +535,24 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-49-sec-proposes-rescission-climate-related-disclosure-rules",
     "cta_text": "Need help reviewing your SEC reporting obligations?",
     "cta_link": "contact.html?ref=tracker-sec-proposes-rescinding-climate-disclosure-rules"
+  },
+  {
+    "id": "sec-proposes-rescinding-reg-nms-order-protection-rule",
+    "track": "finra",
+    "status": "proposed",
+    "status_label": "Proposed Rule Amendment",
+    "date_posted": "2026-03-30",
+    "headline": "SEC Proposes Rescinding Key Regulation NMS Order Protection Rules After 20 Years",
+    "the_change": "The Securities and Exchange Commission proposed repealing Rules 611 and 610(e) of Regulation NMS. Rule 611, commonly called the Order Protection Rule, has mandated order routing across trading venues since 2005. The SEC is moving to eliminate these rules following a review of their long-term unintended market consequences.",
+    "why_it_matters": "Rescinding Rule 611 will fundamentally shift how trading desks and broker-dealers evaluate best execution and market structure. Removing mandatory quote protection across exchanges gives firms greater routing flexibility, but introduces new compliance obligations for documenting best execution. Execution algorithms and smart order routers will require structural updates to reflect the new market dynamics.",
+    "action_items": [
+      "Audit current order-routing systems and best execution policies to identify direct dependencies on Rule 611.",
+      "Track public comment submissions to assess potential implementation timelines and venue adjustments.",
+      "Confirm with counsel how this specific change applies to your firm's regulatory obligations."
+    ],
+    "source_name": "SEC Press Releases: SEC Proposes Rescission of Regulation NMS Rules 611 and 610(e)",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-54-sec-proposes-rescission-regulation-nms-rules-611-610e",
+    "cta_text": "Need help evaluating how proposed Reg NMS changes affect your trading desk?",
+    "cta_link": "contact.html?ref=tracker-sec-proposes-rescinding-reg-nms-order-protection-rule"
   }
 ]
