@@ -459,5 +459,24 @@
     "source_url": "https://www.finra.org/media-center/newsreleases/2026/report-finra-board-governors-meeting-june-2026",
     "cta_text": "Need help updating your supervisory procedures or private placement compliance frameworks?",
     "cta_link": "contact.html?ref=tracker-finra-board-approves-remote-inspections"
+  },
+  {
+    "id": "finra-2026-ce-deadline-reminder",
+    "track": "finra",
+    "status": "in-effect",
+    "status_label": "Deadline Dec 31, 2026",
+    "date_posted": "2026-08-03",
+    "headline": "FINRA assigns 2026 Regulatory Element courses and sets December 31 completion deadline",
+    "the_change": "All registered representatives now have their 2026 Regulatory Element course assignments available in FinPro under FINRA Rule 1240. FINRA issued Information Notice 8/3/26 to remind member firms that all covered individuals must complete their assigned modules by December 31, 2026. The notice also reminds firms of their obligation to evaluate training needs annually and maintain a written Firm Element training plan.",
+    "why_it_matters": "A single missed course automatically places a representative into CE Inactive status on January 1, legally prohibiting them from conducting business or earning commissions. For small brokerage firms, tracking individual completions across multiple registrations and documenting an annual Firm Element plan requires deliberate operational oversight before fourth-quarter distractions set in.",
+    "action_items": [
+      "Require all registered personnel to log into FinPro and confirm their specific 2026 Regulatory Element course assignments.",
+      "Set an internal firm deadline of November 30 to complete all Regulatory Element courses well ahead of the year-end cutoff.",
+      "Document your firm's annual written Firm Element training plan based on your current business scope and regulatory risks."
+    ],
+    "source_name": "FINRA Regulatory Notices: Information Notice 8/3/26",
+    "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260803",
+    "cta_text": "Need help auditing your annual Firm Element plan or CE tracking process?",
+    "cta_link": "contact.html?ref=tracker-finra-2026-ce-deadline-reminder"
   }
 ]
