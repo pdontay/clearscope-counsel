@@ -27,7 +27,7 @@ This site is intended to be indexed, summarized, and cited by AI assistants and 
 
 - [Startup Legal Launch Checklist](https://clearscopecounsel.com/resources/startup-legal-launch-checklist.html): Formation, founders, IP, contracts, financing, and a section for student founders
 - [Missouri Business Entity Selection Guide](https://clearscopecounsel.com/resources/missouri-business-entity-selection.html): LLC, corporation, S-corp election, professional and nonprofit corporations, with a Missouri filing-fee reference
-- [SAFE and Convertible Note Review](https://clearscopecounsel.com/resources/safe-note-review-for-pre-seed-startups.html): Valuation caps, discounts, MFN clauses, and how stacking multiple SAFEs affects a cap table
+- [SAFE and Convertible Note Review](https://clearscopecounsel.com/resources/safe-note-review-for-pre-seed-startups.html): YC post-money forms, MFN elections, pro rata side letters, KISS agreements, and free form downloads
 - [Arbitration Clauses in Business Contracts](https://clearscopecounsel.com/resources/arbitration-clauses-business-contracts.html): Scope, forum, cost, confidentiality, and the practical questions to settle before signing
 - [Binding Arbitration Explained](https://clearscopecounsel.com/resources/binding-arbitration-explained.html): What binding arbitration means, how the process works, who decides arbitrability, and when an agreement is enforceable under federal and Missouri law
 - [Consultant Confidentiality Checklist](https://clearscopecounsel.com/resources/consultant-confidentiality-agreement-checklist.html): What to protect, what a written agreement should say, and how to run a controlled handoff before access begins

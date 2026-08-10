@@ -34,6 +34,16 @@
     Header set Cache-Control "no-cache"
   </FilesMatch>
 
+  # Word forms in /downloads/ are third-party licensed documents served
+  # unchanged. Declare the real type so browsers save rather than mangle them,
+  # and force an attachment so a click downloads instead of handing the file to
+  # an in-browser viewer that could re-save it altered.
+  <FilesMatch "^.*\.docx$">
+    Header set Content-Type "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    Header set Content-Disposition "attachment"
+    Header set X-Robots-Tag "noindex"
+  </FilesMatch>
+
   # llms.txt is Markdown despite the .txt name. Apache serves it as text/plain,
   # and because we also send X-Content-Type-Options: nosniff, nothing is allowed
   # to infer otherwise — so tooling that expects Markdown (Lighthouse's llms.txt
