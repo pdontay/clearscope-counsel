@@ -478,5 +478,24 @@
     "source_url": "https://www.finra.org/rules-guidance/notices/information-notice-20260803",
     "cta_text": "Need help auditing your annual Firm Element plan or CE tracking process?",
     "cta_link": "contact.html?ref=tracker-finra-2026-ce-deadline-reminder"
+  },
+  {
+    "id": "sec-cftc-swap-reporting-harmony",
+    "track": "finra",
+    "status": "comment-open",
+    "status_label": "Comment Period Open",
+    "date_posted": "2026-03-30",
+    "headline": "The SEC and CFTC are seeking public input on how to harmonize and simplify swap data reporting.",
+    "the_change": "The SEC and CFTC issued a joint request for public comment seeking feedback on aligning data reporting rules for swap and security-based swap markets. The agencies are looking for practical ways to modernize systems and eliminate redundant submissions across both regulatory regimes. Public comments are currently open.",
+    "why_it_matters": "Running parallel compliance systems for SEC and CFTC swap reporting increases technology costs and data mapping errors. Streamlining these rules into a cohesive framework would lower operational burdens for active market participants. Because this joint effort is an early-stage request for input, existing reporting obligations remain fully in effect.",
+    "action_items": [
+      "Audit your firm's current SEC and CFTC swap data reporting workflows to identify duplicate processes.",
+      "Draft feedback on specific technical bottlenecks where SEC and CFTC reporting rules conflict.",
+      "Confirm with counsel how this specific change applies to your situation."
+    ],
+    "source_name": "SEC Press Releases: SEC, CFTC Seek Public Input on Data Reporting Frameworks for Security-Based Swap and Swap Markets",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-56-sec-cftc-seek-public-input-data-reporting-frameworks-security-based-swap-swap-markets",
+    "cta_text": "Need help assessing your swap reporting framework or drafting public comments?",
+    "cta_link": "contact.html?ref=tracker-sec-cftc-swap-reporting-harmony"
   }
 ]
