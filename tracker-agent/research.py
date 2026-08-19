@@ -1,5 +1,7 @@
 import json
 import re
+from datetime import datetime
+from email.utils import parsedate_to_datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -41,6 +43,30 @@ Return ONLY valid JSON, no prose, in exactly this shape:
 }"""
 
 
+def normalize_feed_date(raw: str):
+    """Feed pubDates to an ISO date, or None if unparseable. The three feeds
+    don't agree on a format: SEC and FINRA News send RFC-822
+    ("Mon, 03 Aug 26 12:00:00 +0000", two-digit year and all), FINRA Notices
+    sends "Aug 03, 2026"."""
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+
+    try:
+        parsed = parsedate_to_datetime(raw)
+        if parsed is not None:
+            return parsed.date().isoformat()
+    except (TypeError, ValueError):
+        pass
+
+    for fmt in ("%b %d, %Y", "%B %d, %Y", "%Y-%m-%d", "%m/%d/%Y"):
+        try:
+            return datetime.strptime(raw, fmt).date().isoformat()
+        except ValueError:
+            continue
+    return None
+
+
 def fetch_page_text(url: str, max_chars: int = 6000) -> str:
     try:
         resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -77,4 +103,7 @@ def extract_facts(feed_item: dict) -> dict:
     facts["source_name"] = feed_item["feed_name"] + ": " + feed_item["title"]
     facts["source_url"] = feed_item["link"]
     facts["track"] = feed_item["track"]
+    # The entry's date_posted is derived from this, never from the model —
+    # see the note in voice.draft_entry().
+    facts["source_published"] = normalize_feed_date(feed_item.get("published"))
     return facts

@@ -46,7 +46,13 @@ def draft_entry(facts: dict, revision_notes: str = None) -> dict:
         match = re.search(r"\{.*\}", raw, re.DOTALL)
         entry = json.loads(match.group(0))
 
-    entry.setdefault("date_posted", date.today().isoformat())
+    # Overwrite, don't setdefault: the model reliably invents a date_posted
+    # rather than omitting it, and a wrong one is worse than a missing one
+    # because tracker.js sorts the grid by this field — a bad date silently
+    # buries a current entry mid-page. Seven live entries were stamped
+    # 2026-03-30 this way before this was caught. The feed's own pubDate is
+    # authoritative; today's date is the fallback when it won't parse.
+    entry["date_posted"] = facts.get("source_published") or date.today().isoformat()
     entry.setdefault("source_name", facts.get("source_name"))
     entry.setdefault("source_url", facts.get("source_url"))
     entry.setdefault("track", facts.get("track"))
@@ -70,6 +76,11 @@ def revise_entry(previous_entry: dict, revision_notes: str) -> dict:
     except json.JSONDecodeError:
         match = re.search(r"\{.*\}", raw, re.DOTALL)
         entry = json.loads(match.group(0))
+
+    # Same reason as in draft_entry(): the date carries over from the draft
+    # being revised, it is not up for renegotiation by the model.
+    if previous_entry.get("date_posted"):
+        entry["date_posted"] = previous_entry["date_posted"]
 
     for field in ("date_posted", "source_name", "source_url", "track", "id"):
         entry.setdefault(field, previous_entry.get(field))
