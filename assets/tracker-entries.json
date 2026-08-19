@@ -554,5 +554,25 @@
     "source_url": "https://www.sec.gov/newsroom/press-releases/2026-54-sec-proposes-rescission-regulation-nms-rules-611-610e",
     "cta_text": "Need help evaluating how proposed Reg NMS changes affect your trading desk?",
     "cta_link": "contact.html?ref=tracker-sec-proposes-rescinding-reg-nms-order-protection-rule"
+  },
+  {
+    "id": "sec-proposes-regulation-crypto-assets",
+    "track": "finra",
+    "status": "proposed",
+    "status_label": "Proposed Rule",
+    "date_posted": "2026-08-18",
+    "headline": "SEC proposes Regulation Crypto Assets, with a $5 million and a $75 million exemption for token offerings",
+    "the_change": "The SEC proposed Regulation Crypto Assets on August 18, 2026, creating two new exemptions from Securities Act registration for certain investment contracts involving crypto assets. The first is a one-time exemption for offerings up to $5 million over four years; the second allows up to $75 million in each 12-month period, with financial statements and ongoing reporting attached. The proposal also adds a conditional safe harbor under which a crypto asset is deemed not subject to an investment contract for purposes of the \"security\" definitions in the 1933 and 1934 Acts, and it preempts state registration and qualification requirements for offerings made under either exemption.",
+    "why_it_matters": "A token offering that previously had no clean registration path now has two, and the compliance cost difference between them is substantial. The $75 million tier carries audited-style financial statements and continuing reporting obligations; the $5 million tier carries only principles-based narrative disclosure. State blue-sky preemption removes what has often been the more expensive half of a small offering's legal budget. This is a proposal, not a rule: nothing here is available to rely on yet.",
+    "action_items": [
+      "Size any planned token offering against the two tiers before choosing a structure; the $5 million one-time cap runs four years, not annually.",
+      "If the $75 million tier is in view, price the ongoing reporting and financial statement obligations into the budget now.",
+      "Read the conditional safe harbor against your own facts: it turns on completing or permanently ceasing the essential managerial efforts the issuer promised.",
+      "Calendar the comment deadline, which falls 60 days after the proposal is published in the Federal Register, and submit under file number S7-2026-27 if you want a say."
+    ],
+    "source_name": "SEC Press Release 2026-76: SEC Proposes New Regulation Crypto Assets",
+    "source_url": "https://www.sec.gov/newsroom/press-releases/2026-76-sec-proposes-new-regulation-crypto-assets",
+    "cta_text": "Weighing which exemption a token offering should be built around?",
+    "cta_link": "contact.html?ref=tracker-sec-proposes-regulation-crypto-assets"
   }
 ]
